@@ -1,6 +1,6 @@
 <?php
 
-require_once 'lib/Mobile-Detect/Mobile_Detect.php';
+require_once(__DIR__.'lib/Mobile-Detect/Mobile_Detect.php');
 
 /**
  *Override or insert variables into the html template.
