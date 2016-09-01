@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__.'/lib/Mobile-Detect/Mobile_Detect.php');
+require_once('Mobile_Detect.php');
 
 /**
  *Override or insert variables into the html template.
@@ -41,13 +41,6 @@ function footmali_preprocess_html(&$variables) {
     );
 }
 
-function footmali_js_alter(&$javascript){
-    // if(footmali_ismobile()){
-    //     unset($javascript['sites/all/themes/footmali-drupal-theme/js/custom.js']);
-    // }else{
-    //     unset($javascript['sites/all/themes/footmali-drupal-theme/js/custom-mobile.js']);
-    // }
-}
 
 function footmali_css_alter(&$css) {
     global $user;
