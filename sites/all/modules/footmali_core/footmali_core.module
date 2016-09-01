@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Footmali Core feature.
+ */
+
+include_once 'footmali_core.features.inc';
