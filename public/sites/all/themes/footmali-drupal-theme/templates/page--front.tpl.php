@@ -79,19 +79,6 @@
 
     <div id="main-content" class="custom">
 
-    <?php if(!footmali_ismobile()): ?>
-        <div class="wrapper mb-30">
-
-            <div class="widget-area-1">
-                <?php include('includes/partials/_homepage_featured_carrousel_small.php'); ?>
-                <?php include('includes/partials/_homepage_top_stories_small.php'); ?>
-            </div>
-            <!-- widget-area-1 -->
-
-        </div>
-        <!-- wrapper featured-->
-    <?php endif; ?>
-
         <div class="wrapper">
             <div class="spacer" style="margin-bottom: 10px;">&nbsp;</div>
             <?php if(!footmali_ismobile()): ?>
@@ -102,17 +89,14 @@
             <?php endif; ?>
             <div class="content-wrap">
                 <div class="row">
-
                     <div class="kopa-main-col">
+                        <?php include('includes/partials/_homepage_featured_2col.php'); ?>
 
                         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-                        <?php if(footmali_ismobile()): ?>
-                            <?php include('includes/partials/_mobile_top_stories.php'); ?>
-                        <?php elseif(!footmali_ismobile()): ?>
-                            <?php include('includes/partials/_homepage_headlines.php'); ?>
-                            <?php include('includes/partials/_ad_content_wide.php'); ?>
-                            <?php include('includes/partials/_video_carrousel.php'); ?>
-                        <?php endif; ?>
+
+                        <?php include('includes/partials/_homepage_headlines.php'); ?>
+                        <?php include('includes/partials/_ad_content_wide.php'); ?>
+                        <?php include('includes/partials/_video_carrousel.php'); ?>
 
                     </div>
                     <!-- main-col -->
