@@ -21,7 +21,7 @@
 
  *-----------------------------------------------------------------
  **/
- 
+
 
 "use strict";
 
@@ -76,22 +76,6 @@
 
                 var map;
 
-
-                /* =========================================================
-                 0. Custom
-                 ============================================================ */
-                
-                // Mailchimp subscribe popup
-                 Modernizr.load([{
-                    load: kopa_variable.url.template_directory_uri + 'js/jquery.cookie.js',
-                    complete: function () {
-                        var showModal = $.cookie('MCEvilPopupClosed');
-                        if (showModal === undefined) {
-                            $('#mailchimp-modal').modal('show');
-                            $.cookie('MCEvilPopupClosed', 'yes', {expires: 30} );
-                        }
-                    }
-                }]);
 
                 /* =========================================================
                  1. top Menu
@@ -549,96 +533,96 @@
                  ============================================================ */
 
 
-                if ($('.scroll-slider').length > 0) {
-                    Modernizr.load([
-                        {
-                            load:[ kopa_variable.url.template_directory_uri + 'js/mCustomScrollbar.js', kopa_variable.url.template_directory_uri + 'js/jquery.mousewheel.min.js'],
-                            complete: function () {
-
-                                $(".scroll-slider").each(function() {
-                                    var slider = $(this);
-                                    var itemList = slider.find("ul");
-                                    var prevSlide = slider.find("a.s-prev");
-                                    var nextSlide = slider.find("a.s-next");
-                                    var pos = 0;
-                                    var itemCount = itemList.find("li").length;
-                                    slider.find('.loading').fadeOut(function(){$('.loading').remove()});
-
-                                    var w = Math.round((slider.find("ul").width() - 105) / 4);
-                                    slider.find(".s-item").width(w);
-                                    var h = slider.find(".s-item").height();
-                                    slider.height(h + 20);
-                                    var W = 0;
-                                    slider.find("li").each(function(){
-                                        W += $(this).width() + 30;
-                                    });
-                                    $(".mCSB_container").width(W - 15);
-
-                                    $(window).resize(function() {
-                                        var w = Math.round((slider.find("ul").width() - 105) / 4);
-                                        slider.find(".s-item").width(w);
-                                        var h = slider.find(".s-item").height();
-                                        slider.height(h + 20);
-                                        var W = 0;
-                                        slider.find("li").each(function(){
-                                            W += $(this).width() + 30;
-                                        });
-                                        $(".mCSB_container").width(W - 15);
-                                    });
-
-
-                                    var itemW = w + 30;
-
-                                    itemList.mCustomScrollbar({
-                                        horizontalScroll: true,
-                                        mouseWheel: true,
-                                        autoHideScrollbar: false,
-                                        contentTouchScroll: true,
-                                        scrollButtons: {
-                                            enable: false
-                                        },
-                                        advanced:{
-                                            updateOnContentResize: true,
-                                            updateOnBrowserResize: true
-                                        }
-                                    });
-
-                                    nextSlide.click(function(e){
-                                        e.preventDefault();
-                                        if(pos < itemCount) {
-                                            var offset;
-                                            pos++;
-                                            offset = (itemW * pos);
-                                            itemList.mCustomScrollbar("scrollTo", offset);
-                                            if(pos+3 >= itemCount){
-                                                pos=itemCount - 4;
-                                            }
-                                        }
-
-                                    });
-
-                                    prevSlide.click(function(e){
-                                        e.preventDefault();
-                                        if(pos > 0) {
-                                            var offset;
-                                            pos--;
-                                            offset = itemW * pos;
-                                            itemList.mCustomScrollbar("scrollTo", offset);
-                                            if(pos - 3 >= itemCount){
-                                                pos=0;
-                                                offset = itemW * pos;
-                                                itemList.mCustomScrollbar("scrollTo", offset);
-                                            }
-                                        }
-
-                                    });
-
-                                });
-
-                            }
-                        }
-                    ]);
-                };
+                // if ($('.scroll-slider').length > 0) {
+                //     Modernizr.load([
+                //         {
+                //             load:[ kopa_variable.url.template_directory_uri + 'js/mCustomScrollbar.js', kopa_variable.url.template_directory_uri + 'js/jquery.mousewheel.min.js'],
+                //             complete: function () {
+                //
+                //                 $(".scroll-slider").each(function() {
+                //                     var slider = $(this);
+                //                     var itemList = slider.find("ul");
+                //                     var prevSlide = slider.find("a.s-prev");
+                //                     var nextSlide = slider.find("a.s-next");
+                //                     var pos = 0;
+                //                     var itemCount = itemList.find("li").length;
+                //                     slider.find('.loading').fadeOut(function(){$('.loading').remove()});
+                //
+                //                     var w = Math.round((slider.find("ul").width() - 105) / 4);
+                //                     slider.find(".s-item").width(w);
+                //                     var h = slider.find(".s-item").height();
+                //                     slider.height(h + 20);
+                //                     var W = 0;
+                //                     slider.find("li").each(function(){
+                //                         W += $(this).width() + 30;
+                //                     });
+                //                     $(".mCSB_container").width(W - 15);
+                //
+                //                     $(window).resize(function() {
+                //                         var w = Math.round((slider.find("ul").width() - 105) / 4);
+                //                         slider.find(".s-item").width(w);
+                //                         var h = slider.find(".s-item").height();
+                //                         slider.height(h + 20);
+                //                         var W = 0;
+                //                         slider.find("li").each(function(){
+                //                             W += $(this).width() + 30;
+                //                         });
+                //                         $(".mCSB_container").width(W - 15);
+                //                     });
+                //
+                //
+                //                     var itemW = w + 30;
+                //
+                //                     itemList.mCustomScrollbar({
+                //                         horizontalScroll: true,
+                //                         mouseWheel: true,
+                //                         autoHideScrollbar: false,
+                //                         contentTouchScroll: true,
+                //                         scrollButtons: {
+                //                             enable: false
+                //                         },
+                //                         advanced:{
+                //                             updateOnContentResize: true,
+                //                             updateOnBrowserResize: true
+                //                         }
+                //                     });
+                //
+                //                     nextSlide.click(function(e){
+                //                         e.preventDefault();
+                //                         if(pos < itemCount) {
+                //                             var offset;
+                //                             pos++;
+                //                             offset = (itemW * pos);
+                //                             itemList.mCustomScrollbar("scrollTo", offset);
+                //                             if(pos+3 >= itemCount){
+                //                                 pos=itemCount - 4;
+                //                             }
+                //                         }
+                //
+                //                     });
+                //
+                //                     prevSlide.click(function(e){
+                //                         e.preventDefault();
+                //                         if(pos > 0) {
+                //                             var offset;
+                //                             pos--;
+                //                             offset = itemW * pos;
+                //                             itemList.mCustomScrollbar("scrollTo", offset);
+                //                             if(pos - 3 >= itemCount){
+                //                                 pos=0;
+                //                                 offset = itemW * pos;
+                //                                 itemList.mCustomScrollbar("scrollTo", offset);
+                //                             }
+                //                         }
+                //
+                //                     });
+                //
+                //                 });
+                //
+                //             }
+                //         }
+                //     ]);
+                // };
 
                 /* =========================================================
                  16. Masonry
@@ -742,43 +726,43 @@
                  18. Mobile-menu
                  =============================================== */
 
-                Modernizr.load([{
-                    load: [kopa_variable.url.template_directory_uri + 'js/jquery.navgoco.js'],
-                    complete: function () {
-
-                        $(".main-menu-mobile").navgoco({
-                            accordion: true
-                        });
-                        $(".main-menu-mobile").find(".sf-mega").removeClass("sf-mega").addClass("sf-mega-mobile");
-                        $(".main-menu-mobile").find(".sf-mega-section").removeClass("sf-mega-section").addClass("sf-mega-section-mobile");
-
-                        $(".main-nav-mobile > .pull").click(function () {
-                            $(this).closest(".main-nav-mobile").find(".main-menu-mobile").slideToggle("slow");
-                        });
-                        $(".caret").removeClass("caret");
-
-                        $(".bottom-nav-mobile > .pull").click(function () {
-                            $(this).closest(".bottom-nav-mobile").find(".main-menu-mobile").slideToggle("slow");
-                        });
-
-                    }
-                }]);
+                // Modernizr.load([{
+                //     load: [kopa_variable.url.template_directory_uri + 'js/jquery.navgoco.js'],
+                //     complete: function () {
+                //
+                //         $(".main-menu-mobile").navgoco({
+                //             accordion: true
+                //         });
+                //         $(".main-menu-mobile").find(".sf-mega").removeClass("sf-mega").addClass("sf-mega-mobile");
+                //         $(".main-menu-mobile").find(".sf-mega-section").removeClass("sf-mega-section").addClass("sf-mega-section-mobile");
+                //
+                //         $(".main-nav-mobile > .pull").click(function () {
+                //             $(this).closest(".main-nav-mobile").find(".main-menu-mobile").slideToggle("slow");
+                //         });
+                //         $(".caret").removeClass("caret");
+                //
+                //         $(".bottom-nav-mobile > .pull").click(function () {
+                //             $(this).closest(".bottom-nav-mobile").find(".main-menu-mobile").slideToggle("slow");
+                //         });
+                //
+                //     }
+                // }]);
 
                 /* ============================================
                  19. Bootstrap Slider
                  =============================================== */
 
-                if (jQuery('.kopa-slider-ip').length > 0) {
-
-                    Modernizr.load([{
-                        load: [kopa_variable.url.template_directory_uri + 'js/bootstrap-slider.min.js'],
-                        complete: function () {
-                            jQuery('.kopa-slider-ip').slider({
-                                tooltip: "show"
-                            });
-                        }
-                    }]);
-                };
+                // if (jQuery('.kopa-slider-ip').length > 0) {
+                //
+                //     Modernizr.load([{
+                //         load: [kopa_variable.url.template_directory_uri + 'js/bootstrap-slider.min.js'],
+                //         complete: function () {
+                //             jQuery('.kopa-slider-ip').slider({
+                //                 tooltip: "show"
+                //             });
+                //         }
+                //     }]);
+                // };
 
                 /* =========================================================
                  20. Sticky menu

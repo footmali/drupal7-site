@@ -41,7 +41,6 @@ $index = 1;
                 <?php if($index == 4): ?>
                   <!-- headlines ad -->
                   <li class="headlines responsive-ad">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Between Headlines -->
                     <ins class="adsbygoogle"
                          style="display:block"

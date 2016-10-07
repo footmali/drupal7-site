@@ -79,19 +79,6 @@
 
     <div id="main-content" class="custom">
 
-    <?php if(!footmali_ismobile()): ?>
-        <div class="wrapper mb-30">
-
-            <div class="widget-area-1">
-                <?php include('includes/partials/_homepage_featured_carrousel_small.php'); ?>
-                <?php include('includes/partials/_homepage_top_stories_small.php'); ?>
-            </div>
-            <!-- widget-area-1 -->
-
-        </div>
-        <!-- wrapper featured-->
-    <?php endif; ?>
-
         <div class="wrapper">
             <div class="spacer" style="margin-bottom: 10px;">&nbsp;</div>
             <?php if(!footmali_ismobile()): ?>
@@ -102,17 +89,14 @@
             <?php endif; ?>
             <div class="content-wrap">
                 <div class="row">
-
                     <div class="kopa-main-col">
+                        <?php include('includes/partials/_homepage_featured_2col.php'); ?>
 
                         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-                        <?php if(footmali_ismobile()): ?>
-                            <?php include('includes/partials/_mobile_top_stories.php'); ?>
-                        <?php elseif(!footmali_ismobile()): ?>
-                            <?php include('includes/partials/_homepage_headlines.php'); ?>
-                            <?php include('includes/partials/_ad_content_wide.php'); ?>
-                            <?php include('includes/partials/_video_carrousel.php'); ?>
-                        <?php endif; ?>
+
+                        <?php include('includes/partials/_homepage_headlines.php'); ?>
+                        <?php include('includes/partials/_ad_content_wide.php'); ?>
+                        <?php include('includes/partials/_video_carrousel.php'); ?>
 
                     </div>
                     <!-- main-col -->
@@ -133,22 +117,17 @@
     <!-- main-content -->
 
 <?php include('includes/footer.php'); ?>
-<?php if(footmali_ismobile()): ?>
-  <div id="mobile-footer-ad">
-    <button type="button" class="btn btn-default" aria-label="close"
-      style="position: absolute; right: 0; top: 0; z-index: 10;"
-      onclick="jQuery('#mobile-footer-ad').hide(); jQuery('#kopa-footer').css('margin-bottom', '0');">
-        <span class="fa fa-remove" aria-hidden="true"></span>
-    </button>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- Mobile Footer Homepage -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7538390076513661"
-         data-ad-slot="1011026713"
-         data-ad-format="auto"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-<?php endif; ?>
+
+<div id="mobile-footer-ad" class="visible-xs visible-sm">
+<button type="button" class="btn btn-default" aria-label="close"
+  style="position: absolute; right: 0; top: 0; z-index: 10;"
+  onclick="jQuery('#mobile-footer-ad').hide(); jQuery('#kopa-footer').css('margin-bottom', '0');">
+    <span class="fa fa-remove" aria-hidden="true"></span>
+</button>
+<!-- Mobile Footer Homepage -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7538390076513661"
+     data-ad-slot="1011026713"
+     data-ad-format="auto"></ins>
+</div>
