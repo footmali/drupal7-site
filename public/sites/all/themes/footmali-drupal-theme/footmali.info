@@ -7,11 +7,8 @@ core        = 7.x
 stylesheets[all][] = css/bootstrap.min.css
 stylesheets[all][] = css/font-awesome.css
 stylesheets[all][] = css/superfish.css
-stylesheets[all][] = css/megafish.css
-stylesheets[all][] = css/jquery.navgoco.css
 stylesheets[all][] = css/owl.carousel.css
 stylesheets[all][] = css/owl.theme.css
-stylesheets[all][] = css/jquery.mCustomScrollbar.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/custom_styles.css
 
