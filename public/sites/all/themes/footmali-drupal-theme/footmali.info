@@ -15,6 +15,7 @@ stylesheets[all][] = css/jquery.mCustomScrollbar.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/custom_styles.css
 
+scripts[] = js/modernizr.custom.js
 scripts[] = js/bootstrap.min.js
 scripts[] = js/custom.js
 scripts[] = js/script.js

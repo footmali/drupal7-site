@@ -62,22 +62,6 @@ global $theme_path;
             }
         </style>
     </noscript>
-
-    <!-- remove admin menu for mobile -->
-    <?php  if(footmali_ismobile()): ?>
-        <style type="text/css">
-            #admin-menu{ display:none; }
-            body.admin-menu {
-                margin-top: 0 !important;
-            }
-        </style>
-    <?php endif; ?>
-    <script>
-        var footmali = {
-            template_directory: "/<?php echo $theme_path; ?>/"
-        };
-    </script>
-    <script src="/<?php echo $theme_path; ?>/js/modernizr.custom.js"></script>
 </head>
 <body class="<?php echo $is_admin? 'admin_user': 'none_admin_user'; ?> <?php echo $is_front ? 'kopa-home-page' : 'kopa-sub-page kopa-single-page';?> <?php print $classes; ?>" <?php print $attributes; ?>>
     <div id="fb-root"></div>
@@ -87,6 +71,12 @@ global $theme_path;
 
     <a href="#" class="scrollup"><span class="fa fa-chevron-up"></span></a>
 
+
+    <script>
+        var footmali = {
+            template_directory: "/<?php echo $theme_path; ?>/"
+        };
+    </script>
     <?php print $scripts; ?>
     <!-- Web Font Loader -->
     <script>
