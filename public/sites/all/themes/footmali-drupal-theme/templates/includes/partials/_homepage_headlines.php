@@ -32,16 +32,12 @@ $index = 1;
                 <?php if($index == 4): ?>
                   <!-- headlines ad -->
                   <li class="headlines responsive-ad">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Between Headlines -->
                     <ins class="adsbygoogle"
                          style="display:block"
                          data-ad-client="ca-pub-7538390076513661"
                          data-ad-slot="6917959512"
                          data-ad-format="auto"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
                   </li>
                 <?php endif; ?>
             <?php $index++; endforeach; ?>
