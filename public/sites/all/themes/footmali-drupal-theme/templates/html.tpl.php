@@ -145,22 +145,5 @@ global $theme_path;
 
     <!-- Google -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-
-    <!-- Mailchimp subscribe popup -->
-    <?php if($is_front && !footmali_ismobile()) : ?>
-        <div id="mailchimp-modal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Footmali Newsletter</h4>
-                    </div>
-                    <div class="modal-body">
-                        <?php include_once('includes/partials/_mailchimp_signup_form.php'); ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
 </body>
 </html>
