@@ -12,7 +12,7 @@ $index = 1;
                     <article class="entry-item">
                         <div class="entry-thumb">
                             <a href="<?php echo drupal_get_path_alias("node/{$article->nid}"); ?>">
-                                <?php echo footmali_output_image('article_teaser', $article->field_image); ?>
+                                <?php echo footmali_output_image('content_carrousel_large', $article->field_image); ?>
                             </a>
                         </div>
                         <div class="entry-content">
