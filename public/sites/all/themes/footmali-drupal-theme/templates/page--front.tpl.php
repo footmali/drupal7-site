@@ -100,9 +100,7 @@
 
                     </div>
                     <!-- main-col -->
-                    <?php if(!footmali_ismobile()): ?>
-                        <?php include('includes/sidebar.php'); ?>
-                    <?php endif; ?>
+                    <?php include('includes/sidebar.php'); ?>
                 </div>
                 <!-- row -->
             </div>

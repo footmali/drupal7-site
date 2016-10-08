@@ -72,12 +72,16 @@ $featured_articles = footmali_featured_articles();
                         </div>
                         <div class="entry-content">
                             <div class="content-top">
-                                <h4 class="entry-title"><a href="<?php echo drupal_get_path_alias("node/{$featured_article->nid}"); ?>"><?php echo $article->title; ?></a></h4>
+                                <h4 class="entry-title">
+                                    <a href="<?php echo drupal_get_path_alias("node/{$featured_article->nid}"); ?>">
+                                        <?php echo $featured_article->title; ?>
+                                    </a>
+                                </h4>
                             </div>
                             <?php echo footmali_trim_paragraph($featured_article->body[LANGUAGE_NONE][0]['value'],  140) . '...'; ?>
                             <footer>
                                 <!-- todo: link arthur's other articles -->
-                                <p class="entry-author"><?php echo t('by'); ?> <?php echo footmali_get_article_author($article); ?></p>
+                                <p class="entry-author"><?php echo t('by'); ?> <?php echo footmali_get_article_author($featured_article); ?></p>
                             </footer>
                         </div>
                     </article>
