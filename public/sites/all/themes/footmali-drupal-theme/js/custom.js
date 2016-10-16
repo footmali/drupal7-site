@@ -87,8 +87,7 @@
                         complete: function () {
 
                             //Main menu
-                            $('.top-menu').superfish({
-                            });
+                            $('.top-menu').superfish({});
 
                         }
                     }
@@ -726,27 +725,27 @@
                  18. Mobile-menu
                  =============================================== */
 
-                // Modernizr.load([{
-                //     load: [kopa_variable.url.template_directory_uri + 'js/jquery.navgoco.js'],
-                //     complete: function () {
-                //
-                //         $(".main-menu-mobile").navgoco({
-                //             accordion: true
-                //         });
-                //         $(".main-menu-mobile").find(".sf-mega").removeClass("sf-mega").addClass("sf-mega-mobile");
-                //         $(".main-menu-mobile").find(".sf-mega-section").removeClass("sf-mega-section").addClass("sf-mega-section-mobile");
-                //
-                //         $(".main-nav-mobile > .pull").click(function () {
-                //             $(this).closest(".main-nav-mobile").find(".main-menu-mobile").slideToggle("slow");
-                //         });
-                //         $(".caret").removeClass("caret");
-                //
-                //         $(".bottom-nav-mobile > .pull").click(function () {
-                //             $(this).closest(".bottom-nav-mobile").find(".main-menu-mobile").slideToggle("slow");
-                //         });
-                //
-                //     }
-                // }]);
+                Modernizr.load([{
+                    load: [kopa_variable.url.template_directory_uri + 'js/jquery.navgoco.js'],
+                    complete: function () {
+
+                        $(".main-menu-mobile").navgoco({
+                            accordion: true
+                        });
+                        $(".main-menu-mobile").find(".sf-mega").removeClass("sf-mega").addClass("sf-mega-mobile");
+                        $(".main-menu-mobile").find(".sf-mega-section").removeClass("sf-mega-section").addClass("sf-mega-section-mobile");
+
+                        $(".main-nav-mobile > .pull").click(function () {
+                            $(this).closest(".main-nav-mobile").find(".main-menu-mobile").slideToggle("slow");
+                        });
+                        $(".caret").removeClass("caret");
+
+                        $(".bottom-nav-mobile > .pull").click(function () {
+                            $(this).closest(".bottom-nav-mobile").find(".main-menu-mobile").slideToggle("slow");
+                        });
+
+                    }
+                }]);
 
                 /* ============================================
                  19. Bootstrap Slider
