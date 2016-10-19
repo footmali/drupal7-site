@@ -655,9 +655,9 @@ function footmali_get_player_squad($nid)
     return $squad;
 }
 
-function footmali_get_matches($season, $type)
+function footmali_get_matches($season, $competition = 'League 1', $country = 'Mali', $type = 'all')
 {
-    $cid = 'footmali_get_matches:'.$type;
+    $cid = 'footmali_get_matches_'. str_replace(' ', '_', strtolower($competition));
     $bin = 'cache';
 
     if ($cached = cache_get($cid, $bin)) {
@@ -670,7 +670,7 @@ function footmali_get_matches($season, $type)
         $query .= 'hscore.field_home_team_score_value as goalsfor, ascore.field_away_team_score_value as goalsagainst, ';
         $query .= 'ateam.field_away_team_nid as awayteam, tcompetition.name as competition, tround.name as round ';
         $query .= 'FROM node as n ';
-        $query .= 'JOIN field_data_field_season as s ON n.nid = s.entity_id ';
+        $query .= 'LEFT JOIN field_data_field_season as s ON n.nid = s.entity_id ';
         $query .= 'JOIN field_data_field_home_team as hteam ON n.nid = hteam.entity_id ';
         $query .= 'JOIN field_data_field_home_team_score as hscore ON n.nid = hscore.entity_id ';
         $query .= 'JOIN field_data_field_away_team as ateam ON n.nid = ateam.entity_id ';
@@ -685,28 +685,46 @@ function footmali_get_matches($season, $type)
         $query .= 'JOIN field_data_field_competition_round as mround ON n.nid = mround.entity_id ';
         $query .= 'JOIN taxonomy_term_data as tround ON mround.field_competition_round_target_id = tround.tid ';
         $query .= "WHERE n.type = 'fixture' ";
-        $query .= "AND country.field_country_value = 'Mali' ";
-        $query .= "AND tcompetition.name = 'League 1' ";
-        $query .= 'AND s.field_season_value = :season ';
-        $query .= 'AND mstatus.field_match_played_value = :type ';
-        if ($type === 1) { //result
-          $query .= 'ORDER BY tround.name DESC, mdate.field_date_time_value DESC ';
-        } else { //fixture
-          $query .= 'ORDER BY tround.name ASC, mdate.field_date_time_value DESC ';
+        $query .= 'AND country.field_country_value = :country ';
+        $query .= 'AND tcompetition.name = :competition ';
+        if($season){
+            $query .= 'AND s.field_season_value = :season ';
+        }
+        if($type === 1){ //result
+            $query .= 'AND mstatus.field_match_played_value = 1 ';
+            $query .= 'ORDER BY tround.name DESC, mdate.field_date_time_value DESC ';
+        } elseif ($type === 0) { //fixture
+            $query .= 'AND mstatus.field_match_played_value = 0 ';
+            $query .= 'ORDER BY tround.name ASC, mdate.field_date_time_value DESC ';
+        } else { //all
+            $query .= 'ORDER BY mdate.field_date_time_value ASC ';
         }
         $query .= 'LIMIT 10';
-        $query_result = db_query($query, array(':season' => $season, ':type' => $type))->fetchAllAssoc('nid');
+
+        if($season){
+            $query_result = db_query($query, array(
+                ':season' => $season,
+                ':competition' => $competition,
+                ':country' => $country
+            ));
+        }else {
+            $query_result = db_query($query, array(
+                ':competition' => $competition,
+                ':country' => $country
+            ));
+        }
+        $matches = $query_result->fetchAllAssoc('nid');
 
         $expire = strtotime('+4 days', time());
-        cache_set($cid, $query_result, $bin, $expire);
+        //cache_set($cid, $matches, $bin, $expire);
 
-        return $query_result;
+        return $matches;
     }
 }
 
-function footmali_get_standings($season, $limit = false)
+function footmali_get_standings($season, $competition = 'League 1', $country = 'Mali', $limit = false, $pool = true)
 {
-    $cid = 'footmali_get_standings';
+    $cid = 'footmali_get_standings_' . str_replace(' ', '_', strtolower($competition));
     $bin = 'cache';
 
     if ($cached = cache_get($cid, $bin)) {
@@ -721,7 +739,7 @@ function footmali_get_standings($season, $limit = false)
         $fixture_query .= 'ateam.field_away_team_nid as awayteam, ';
         $fixture_query .= 'tgroup.name as pool ';
         $fixture_query .= 'FROM node as n ';
-        $fixture_query .= 'JOIN field_data_field_season as s ON n.nid = s.entity_id ';
+        $fixture_query .= 'LEFT JOIN field_data_field_season as s ON n.nid = s.entity_id ';
         $fixture_query .= 'JOIN field_data_field_home_team as hteam ON n.nid = hteam.entity_id ';
         $fixture_query .= 'JOIN field_data_field_home_team_score as hscore ON n.nid = hscore.entity_id ';
         $fixture_query .= 'JOIN field_data_field_away_team as ateam ON n.nid = ateam.entity_id ';
@@ -734,12 +752,14 @@ function footmali_get_standings($season, $limit = false)
         $fixture_query .= 'JOIN field_data_field_competition_group as mgroup ON n.nid = mgroup.entity_id ';
         $fixture_query .= 'JOIN taxonomy_term_data as tgroup ON mgroup.field_competition_group_target_id = tgroup.tid ';
         $fixture_query .= "WHERE n.type = 'fixture' ";
-        $fixture_query .= "AND country.field_country_value = 'Mali' ";
-        $fixture_query .= "AND tcompetition.name = 'League 1' ";
-        $fixture_query .= 'AND mstatus.field_match_played_value = 1 ';
-        $fixture_query .= 'AND s.field_season_value = :season ';
+        $fixture_query .= "AND country.field_country_value = :country ";
+        $fixture_query .= "AND tcompetition.name = :competition ";
+        $fixture_query .= "AND mstatus.field_match_played_value = 1 ";
+        if($season){
+            $fixture_query .= "AND s.field_season_value = :season ";
+        }
 
-        $query = 'SELECT pool, team, count(*) played, ';
+        $query  = 'SELECT results.pool, results.team, count(*) played, ';
         $query .= 'count(case when goalsfor > goalsagainst then 1 end) wins, ';
         $query .= 'count(case when goalsagainst > goalsfor then 1 end) lost, ';
         $query .= 'count(case when goalsfor = goalsagainst then 1 end) draws, ';
@@ -760,27 +780,43 @@ function footmali_get_standings($season, $limit = false)
         $query .= ') ';
         $query .= ') AS results ';
 
-        $query .= 'GROUP BY team ';
-        $query .= 'ORDER BY pool ASC, points DESC, goal_diff DESC ';
+        $query .= 'GROUP BY results.pool, results.team ';
+        $query .= 'ORDER BY results.pool ASC, points DESC, goal_diff DESC ';
         if ($limit) {
             $query .= "LIMIT {$limit}";
         }
 
-        $query_result = db_query($query, array(':season' => $season))->fetchAll();
-        $returnArray = array();
+        if($season){
+            $query_result = db_query($query, array(
+                ':season' => $season,
+                ':competition' => $competition,
+                ':country' => $country
+            ));
+        }else {
+            $query_result = db_query($query, array(
+                ':competition' => $competition,
+                ':country' => $country
+            ));
+        }
 
-        foreach ($query_result as $standing) {
-            if ($standing->pool === 'Poule A') {
-                $returnArray['pouleA'][] = $standing;
-            } else {
-                $returnArray['pouleB'][] = $standing;
+        $standings = $query_result->fetchAllAssoc('team');
+
+        if($pool){
+            $returnArray = array();
+            foreach ($standings as $standing) {
+                if ($standing->pool === 'Poule A') {
+                    $returnArray['pouleA'][] = $standing;
+                } else {
+                    $returnArray['pouleB'][] = $standing;
+                }
             }
+            $standings = $returnArray;
         }
 
         $expire = strtotime('+4 days', time());
-        cache_set($cid, $returnArray, $bin, $expire);
+        //cache_set($cid, $standings, $bin, $expire);
 
-        return $returnArray;
+        return $standings;
     }
 }
 

@@ -3,8 +3,8 @@ global $theme_path;
 $default_team_logo = '/' . $theme_path . '/images/default_club_logo.png';
 $team_logo = '<img src="' . $default_team_logo .'" width="90px" height="90px">';
 
-$fixtures = footmali_get_matches('2015-2016', 0);
-$results = footmali_get_matches('2015-2016', 1);
+$fixtures = footmali_get_matches('2015-2016', $type=0);
+$results = footmali_get_matches('2015-2016', $type=1);
 
 ?>
 

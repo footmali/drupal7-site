@@ -152,6 +152,52 @@ article a {
     font-family: "Oswald",sans-serif;
 }
 
+/**
+* WC view
+*/
+h1.wc2018{
+    background-image: url(../images/2018_FIFA_WC.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    padding-left: 118px;
+    padding-top: 30px;
+    margin-bottom: 1.5em;
+}
+h1.wc2018:after{
+    border-bottom: 3px solid #e5e5e5;
+    content: "";
+    display: block;
+    margin-top: 25px;
+}
+
+table.footmali-chart {
+    width: 100%;
+}
+
+table.footmali-chart tr:hover {
+    background: #1C9E49;
+    opacity: 0.6;
+    filter: Alpha(Opacity=60);
+    color: #fff;
+}
+
+table.footmali-chart td {
+   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e0e0e0), to(#ececec));
+   background: -webkit-linear-gradient(left, #e0e0e0, #ececec);
+   background: -moz-linear-gradient(left, #e0e0e0, #ececec);
+   background: -o-linear-gradient(left, #e0e0e0, #ececec);
+   background: -ms-linear-gradient(left, #e0e0e0, #ececec);
+   background: linear-gradient(left, #e0e0e0, #ececec);
+   background-color: #e0e0e0;
+   padding: 7px 15px;
+}
+
+table.footmali-chart td.center {
+    text-align: center;
+    padding: 6px;
+}
+
 @media (min-width: 768px) {
     .omb_row-sm-offset-3 div:first-child[class*="col-"] {
         margin-left: 25%;
@@ -272,6 +318,23 @@ article a {
     .node-type-player.kopa-main-col #player-image.col-xs-12 {
         text-align: center;
         margin-bottom: 1em;
+    }
+
+    /**
+    * WC view
+    */
+    .custom-header{
+        padding: 10px 20px;
+    }
+    h1.wc2018 {
+        font-size: 1.25em;
+        height: 80px;
+        padding-left: 80px;
+        padding-top: 20px;
+        line-height: 1.5;
+    }
+    h1.wc2018:after {
+        margin-top: 9px;
     }
 }
 
