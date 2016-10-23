@@ -95,17 +95,14 @@ global $theme_path;
 
                 <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
-                  <?php if(!footmali_ismobile()): ?>
-                  <div class="widget kopa-ads-widget style1" style="margin:0; padding:0;">
-                    <!-- Content wide -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-7538390076513661"
-                         data-ad-slot="5022423913"
-                         data-ad-format="auto"></ins>
-                    </div>
-                  </div>
-                <?php endif; ?>
+                <div class="widget kopa-ads-widget style1">
+                  <!-- Content wide -->
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-7538390076513661"
+                       data-ad-slot="5022423913"
+                       data-ad-format="auto"></ins>
+                </div>
 
                 <div class="kopa-breadcrumb">
                     <div class="wrapper clearfix">
