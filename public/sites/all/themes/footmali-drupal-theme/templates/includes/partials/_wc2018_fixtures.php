@@ -21,14 +21,16 @@ $matches = footmali_get_matches(null, 'Éliminatoire de la Coupe du Monde 2018',
                     $round = $match->round;
 
                 ?>
-                <tr>
-                    <td class="mb-col"><?php print $match_date; ?></td>
-                    <td><strong><?php print $home_team->title; ?></strong></td>
-                    <td class="center"><?php
-                        print $match->matchstatus === '1' ? $home_team_score . '-' . $away_team_score : 'vs';
-                    ?></div>
-                    <td><strong><?php print $away_team->title; ?></strong></td>
-                </li>
+                <?php if(strtolower($home_team->title) === 'mali' || strtolower($away_team->title) === 'mali'): ?>
+                    <tr>
+                        <td class="mb-col"><?php print $match_date; ?></td>
+                        <td><strong><?php print $home_team->title; ?></strong></td>
+                        <td class="center"><?php
+                            print $match->matchstatus === '1' ? $home_team_score . '-' . $away_team_score : 'vs';
+                        ?></div>
+                        <td><strong><?php print $away_team->title; ?></strong></td>
+                    </tr>
+                <?php endif; ?>
             <?php endforeach; ?>
         </table>
     </div>
