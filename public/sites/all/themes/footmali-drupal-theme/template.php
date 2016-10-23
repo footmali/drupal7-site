@@ -77,16 +77,29 @@ function footmali_preprocess_page(&$variables)
 
         $main_links = '';
         foreach ($menu_tree_array as $menu):
-            $main_links .= '<li><a href="'.url($menu['link']['link_path']).'"><span>'.$menu['link']['link_title'].'</span></a>';
+            if(!$menu['link']['hidden']):
+                $sub_menus = '';
+                $main_links .= '<li><a href="'.url($menu['link']['link_path']).'"><span>'.$menu['link']['link_title'].'</span></a>';
 
-        if (count($menu['below']) > 0):
-                $main_links .= '<ul class="sub-menu">';
-        foreach ($menu['below'] as $sub_menu):
-                    $main_links .= '<li><a href="/'.drupal_get_path_alias($sub_menu['link']['link_path']).'">'.$sub_menu['link']['link_title'].'</a></li>';
-        endforeach;
-        $main_links .= '</ul>';
-        endif;
-        $main_links .= '</li>';
+                if(count($menu['below']) > 0):
+                    $sub_menu_count = 0;
+                    $has_sub_menu = false;
+                    foreach ($menu['below'] as $sub_menu):
+                        if(!$sub_menu['link']['hidden']):
+                            if($sub_menu_count == 0) {
+                                $sub_menus = '<ul class="sub-menu">';
+                            }
+                            $sub_menus .= '<li><a href="/'.drupal_get_path_alias($sub_menu['link']['link_path']).'">'.$sub_menu['link']['link_title'].'</a></li>';
+                            $has_sub_menu = true;
+                            $sub_menu_count++;
+                        endif;
+                    endforeach;
+                    if($has_sub_menu){
+                        $sub_menus .= '</ul>';
+                    }
+                endif;
+            endif;
+            $main_links .= $sub_menus.'</li>';
         endforeach;
 
         $variables['main_links'] = $main_links;
