@@ -98,12 +98,12 @@ global $theme_path;
                   <?php if(!footmali_ismobile()): ?>
                   <div class="widget kopa-ads-widget style1" style="margin:0; padding:0;">
                     <!-- Content wide -->
-                    <?php if (module_exists('adsense')) {
-                      print adsense_display(array(
-                        'format' => '728x90',
-                        'slot' => '5022423913'
-                      ));
-                    } ?>
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7538390076513661"
+                         data-ad-slot="5022423913"
+                         data-ad-format="auto"></ins>
+                    </div>
                   </div>
                 <?php endif; ?>
 

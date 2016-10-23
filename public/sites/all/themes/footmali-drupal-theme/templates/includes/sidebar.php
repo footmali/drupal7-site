@@ -5,7 +5,7 @@
 
     <?php if(drupal_is_front_page()): ?>
       <?php include_once('partials/_news_popular.php'); ?>
-      <?php include_once('partials/_sidebar_standings.php'); ?>
+      <?php include_once('partials/_wc2018_sidebar_standings.php'); ?>
     <?php elseif(!drupal_is_front_page()): ?>
       <?php include_once('partials/_news_headlines_popular.php'); ?>
     <?php endif; ?>
@@ -15,12 +15,11 @@
     <?php if(!drupal_is_front_page()): ?>
       <div class="widget kopa-ads-widget style1">
         <!-- Content wide -->
-        <?php if (module_exists('adsense')) {
-          print adsense_display(array(
-            'format' => '300x600',
-            'slot' => '6660607519'
-          ));
-        } ?>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7538390076513661"
+             data-ad-slot="6660607519"
+             data-ad-format="auto"></ins>
       </div>
     <?php endif ?>
 

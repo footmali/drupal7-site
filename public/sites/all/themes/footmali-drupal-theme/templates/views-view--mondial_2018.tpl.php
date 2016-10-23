@@ -73,7 +73,6 @@
                     $thumbnail_uri = $article->field_image[LANGUAGE_NONE][0]['uri'];
                     $image = '';
 
-
                     if($thumbnail_uri){
                         $variable = array(
                             'style_name' => 'content_carrousel_thumb',
