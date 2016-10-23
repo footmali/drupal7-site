@@ -4,6 +4,7 @@ $standings = footmali_get_standings(null, 'Éliminatoire de la Coupe du Monde 20
 
 <div class="widget kopa-team-widget kopa-charts-widget">
     <div class="widget-content">
+        <h3 class="widget-title style17">Éliminatoire de la Coupe du Monde 2018: GROUP C</h3>
         <header>
             <div class="t-col width3"><?php echo t('Rang'); ?></div>
             <div class="t-col width2"><?php echo t('Équipe'); ?></div>
