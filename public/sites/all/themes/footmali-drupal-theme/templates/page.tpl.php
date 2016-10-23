@@ -111,7 +111,6 @@ global $theme_path;
                 </div>
                 <!--/end .breadcrumb-->
 
-
                 <?php print render($page['content']); ?>
                 <?php if($is_front): ?>
                   <?php include('includes/partials/_ad_content_wide.php'); ?>
@@ -119,36 +118,27 @@ global $theme_path;
             </div>
             <!-- main-col -->
 
-            <?php if(!footmali_ismobile()): ?>
-                <?php include_once('includes/sidebar.php'); ?>
-            <?php endif; ?>
+            <?php include_once('includes/sidebar.php'); ?>
 
         </div>
         <!-- row -->
 
     </div>
     <!-- wrapper -->
-
 </div>
 <!-- main-content -->
 
 <?php include_once('includes/footer.php'); ?>
-<?php if(footmali_ismobile()): ?>
-  <div id="mobile-footer-ad">
-    <button type="button" class="btn btn-default" aria-label="close"
-      style="position: absolute; right: 0; top: 0; z-index: 10;"
-      onclick="jQuery('#mobile-footer-ad').hide(); jQuery('#kopa-footer').css('margin-bottom', '0');">
-        <span class="fa fa-remove" aria-hidden="true"></span>
-    </button>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- Mobile Footer Ad -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7538390076513661"
-         data-ad-slot="2487759919"
-         data-ad-format="auto"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-<?php endif; ?>
+<div id="mobile-footer-ad" class="visible-xs visible-sm">
+<button type="button" class="btn btn-default" aria-label="close"
+  style="position: absolute; right: 0; top: 0; z-index: 10;"
+  onclick="jQuery('#mobile-footer-ad').hide(); jQuery('#kopa-footer').css('margin-bottom', '0');">
+    <span class="fa fa-remove" aria-hidden="true"></span>
+</button>
+<!-- Mobile Footer Homepage -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7538390076513661"
+     data-ad-slot="1011026713"
+     data-ad-format="auto"></ins>
+</div>
