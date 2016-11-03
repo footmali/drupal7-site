@@ -90,6 +90,11 @@
             <div class="content-wrap">
                 <div class="row">
                     <div class="kopa-main-col">
+                        <div class="widget visible-xs">
+                            <a href="http://monequipe.footmali.com">
+                                <img src="<?php echo $theme_path; ?>/images/mon-equipe-small-banner.png"  alt="Footmali Mon Équipe"/>
+                            </a>
+                        </div>
                         <?php include('includes/partials/_homepage_featured_2col.php'); ?>
 
                         <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
@@ -112,17 +117,3 @@
     <!-- main-content -->
 
 <?php include('includes/footer.php'); ?>
-
-<div id="mobile-footer-ad" class="visible-xs visible-sm">
-<button type="button" class="btn btn-default" aria-label="close"
-  style="position: absolute; right: 0; top: 0; z-index: 10;"
-  onclick="jQuery('#mobile-footer-ad').hide(); jQuery('#kopa-footer').css('margin-bottom', '0');">
-    <span class="fa fa-remove" aria-hidden="true"></span>
-</button>
-<!-- Mobile Footer Homepage -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7538390076513661"
-     data-ad-slot="1011026713"
-     data-ad-format="auto"></ins>
-</div>

@@ -261,7 +261,8 @@ table.footmali-chart td.center {
     .not-front article .short-des,
     .not-front article .field-name-body,
     #comments {
-      padding: 0 20px;
+      padding: 25px 20px 20px;
+      margin-top: 20px
     }
 
     .not-front article .field-name-body p {
