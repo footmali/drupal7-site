@@ -25,7 +25,7 @@ $index = 1;
                                 <p class="entry-author"><?php echo t('by'); ?> <?php echo footmali_get_article_author($article); ?></p>
                             </footer>
                         </div>
-                        <?php echo footmali_render_share_small($article->nid, $article->title); ?>
+                        
                     </article>
                 </li>
             	<?php endif; ?>

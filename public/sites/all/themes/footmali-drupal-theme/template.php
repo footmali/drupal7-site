@@ -1,7 +1,4 @@
 <?php
-
-require_once __DIR__.'/lib/MobileDetect/Mobile_Detect.php';
-
 /**
  *Override or insert variables into the html template.
  */
@@ -14,11 +11,6 @@ function footmali_preprocess_html(&$variables)
         $variables['head_title'] .= ' - Les actualités du football malien, les aigles du mali, et la femafoot - Footmali.com';
     } else {
         $variables['head_title'] = "Footmali.com - Toute l'actualité du football malien en direct : les aigles du Mali et le championnat malien - Femafoot";
-    }
-
-    // Add additional class to identify mobile view
-    if (footmali_ismobile()) {
-        array_push($variables['classes_array'], 'mobile-view');
     }
 
     // Add conditional CSS for IE < 9.
@@ -929,13 +921,6 @@ function footmali_trim_paragraph($string, $your_desired_width)
     }
 
     return implode(array_slice($parts, 0, $last_part));
-}
-
-function footmali_ismobile()
-{
-    $detect = new Mobile_Detect();
-
-    return $detect->isMobile() && !$detect->isTablet();
 }
 
 function footmali_squad_position_sort($a, $b)

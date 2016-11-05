@@ -1,8 +1,8 @@
-<?php 
+<?php
   $theme_path = path_to_theme();
 ?>
 <div class="sidebar widget-area-11">
-    <div class="widget">
+    <div class="widget" style="text-align:center;">
       <a href="http://monequipe.footmali.com">
         <img src="/<?php echo $theme_path; ?>/images/mon-equipe-square.png"  alt="Footmali Mon Équipe"/>
       </a>

@@ -222,13 +222,33 @@ table.footmali-chart td.center {
       margin: 6px 0 5px;
     }
 
+    .wrapper .spacer {
+        display: none;
+    }
+
     #main-content .wrapper {
       margin: 0;
       padding: 0;
       width: 100%;
     }
 
-    .kopa-article-list-widget .entry-content {
+    #bottom-sidebar {
+        display: none;
+    }
+    #main-content.style1{
+        background: none;
+        padding: 0;
+    }
+    .kopa-article-list-widget {
+        border: none;
+        width: 100%;
+    }
+    .content-wrap {
+        padding: 0;
+    }
+
+    .kopa-article-list-widget .entry-content,
+    .article-list-4 .entry-item .entry-content {
       padding: 1em 1em 2em;
     }
 

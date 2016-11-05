@@ -76,6 +76,10 @@
 
                 var map;
 
+                $('.kopa-charts-widget li:contains("Mali") .t-col').css({
+                    'background': '#77C592',
+                    'color': '#ffffff'
+                });
 
                 /* =========================================================
                  1. top Menu
