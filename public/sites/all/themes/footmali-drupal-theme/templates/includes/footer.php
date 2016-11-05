@@ -1,14 +1,4 @@
-<?php if(!footmali_ismobile()): ?>
 <div id="bottom-sidebar">
-<!--    <div class="bottom-area-2">-->
-<!---->
-<!--        <div class="wrapper">-->
-            <?php //include_once('partials/_footer_sitemap.php'); ?>
-<!--        </div>-->
-        <!-- wrapper -->
-<!--    </div>-->
-    <!-- bottom-area-2 -->
-
     <div class="bottom-area-3">
         <div class="wrapper">
             <?php include_once('partials/_footer_newsletter.php'); ?>
@@ -18,7 +8,6 @@
     <!-- bottom-area-3 -->
 </div>
 <!-- bottom-sidebar -->
-<?php endif; ?>
 
 <footer id="kopa-footer">
 
