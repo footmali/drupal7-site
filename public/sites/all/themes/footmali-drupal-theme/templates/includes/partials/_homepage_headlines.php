@@ -25,7 +25,7 @@ $index = 1;
                                 <p class="entry-author"><?php echo t('by'); ?> <?php echo footmali_get_article_author($article); ?></p>
                             </footer>
                         </div>
-                        
+
                     </article>
                 </li>
             	<?php endif; ?>
@@ -34,7 +34,7 @@ $index = 1;
                   <li class="headlines responsive-ad">
                     <!-- Between Headlines -->
                     <ins class="adsbygoogle"
-                         style="display:block"
+                         style="display:block;"
                          data-ad-client="ca-pub-7538390076513661"
                          data-ad-slot="6917959512"
                          data-ad-format="auto"></ins>

@@ -95,7 +95,7 @@ global $theme_path;
 
                 <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
-                <div class="widget kopa-ads-widget style1">
+                <div class="widget kopa-ads-widget style1" style="padding: 0;">
                   <!-- Content wide -->
                   <ins class="adsbygoogle"
                        style="display:block"
