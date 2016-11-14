@@ -131,6 +131,7 @@ if($page){
         </article>
 
     </div>
+    <?php include('includes/partials/_ad_content_wide.php'); ?>
     <!-- kopa-entry-post -->
     <?php if (count($tags) > 0): ?>
         <div class="kopa-tag-box">
@@ -185,6 +186,8 @@ if($page){
         </div>
         <!-- single-other-post -->
     <?php endif; ?>
+    
+    <?php include('includes/partials/_outbrain_content.php'); ?>
 
     <div id="comments">
       <h4><?php echo t('Reagissez A Cet Article'); ?></h4>

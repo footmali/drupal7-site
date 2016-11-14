@@ -73,45 +73,63 @@
  */
 ?>
 
-<?php global $theme_path; ?>
+<?php
 
-<?php include('includes/header.php'); ?>
+global $theme_path;
 
-    <div id="main-content" class="custom">
+?>
 
-        <div class="wrapper">
-            <div class="spacer" style="margin-bottom: 10px;">&nbsp;</div>
-            <?php print $messages; ?>
-            <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-            <?php print render($page['help']); ?>
-            <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-            <div class="content-wrap">
-                <div class="row">
-                    <div class="kopa-main-col">
-                        <div class="widget visible-xs" style="text-align: center;">
-                            <a href="http://monequipe.footmali.com">
-                                <img src="<?php echo $theme_path; ?>/images/mon-equipe-small-banner.png"  alt="Footmali Mon Équipe"/>
-                            </a>
-                        </div>
-                        <?php include('includes/partials/_homepage_featured_2col.php'); ?>
+<?php include_once('includes/header.php'); ?>
 
-                        <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+<div id="main-content">
+    <div class="wrapper">
 
-                        <?php include('includes/partials/_homepage_headlines.php'); ?>
-                        <?php include('includes/partials/_ad_content_wide.php'); ?>
-                        <?php include('includes/partials/_video_carrousel.php'); ?>
-                        <?php include('includes/partials/_outbrain_content.php'); ?>
-                    </div>
-                    <!-- main-col -->
-                    <?php include('includes/sidebar.php'); ?>
+        <?php print $messages; ?>
+        <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+        <?php print render($page['help']); ?>
+        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+
+        <div class="row">
+
+            <div class="kopa-main-col">
+
+                <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+
+                <div class="widget kopa-ads-widget style1">
+                  <!-- Content Top wide -->
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-7538390076513661"
+                       data-ad-slot="5022423913"
+                       data-ad-format="auto"></ins>
+                       <script>
+                          (adsbygoogle = window.adsbygoogle || []).push({});
+                       </script>
                 </div>
-                <!-- row -->
+
+                <div class="kopa-breadcrumb">
+                    <div class="wrapper clearfix">
+                        <?php print $breadcrumb; ?>
+                    </div>
+                </div>
+                <!--/end .breadcrumb-->
+
+                <?php print render($page['content']); ?>
+
+                <?php include('includes/partials/_ad_content_wide.php'); ?>
+                <?php include('includes/partials/_video_carrousel.php'); ?>
+                <?php include('includes/partials/_outbrain_content.php'); ?>
             </div>
-            <!-- content-wrap-->
+            <!-- main-col -->
+
+            <?php include_once('includes/sidebar.php'); ?>
+
         </div>
-        <!-- wrapper -->
+        <!-- row -->
 
     </div>
-    <!-- main-content -->
+    <!-- wrapper -->
+</div>
+<!-- main-content -->
 
-<?php include('includes/footer.php'); ?>
+<?php include_once('includes/footer.php'); ?>

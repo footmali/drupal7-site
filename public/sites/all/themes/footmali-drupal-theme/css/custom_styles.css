@@ -36,9 +36,9 @@ article a {
     top: 2px;
 }
 
-.site-login {
+.widget.kopa-ads-widget{
+    padding: 0;
 }
-
 
 .omb_loginOr {
     position: relative;
@@ -66,6 +66,10 @@ article a {
     background-color: white;
     width: 3em;
     text-align: center;
+}
+
+.sidebar .kopa-ads-widget{
+    display: block;
 }
 
 /**
@@ -198,6 +202,14 @@ table.footmali-chart td.center {
     padding: 6px;
 }
 
+
+/**
+* Outbrain
+**/
+.ob-widget-header{
+    display: none;
+}
+
 @media (min-width: 768px) {
     .omb_row-sm-offset-3 div:first-child[class*="col-"] {
         margin-left: 25%;
@@ -247,6 +259,11 @@ table.footmali-chart td.center {
         padding: 0;
     }
 
+    .widget.kopa-ads-widget{
+        padding: 0;
+        margin: 0;
+    }
+
     .kopa-article-list-widget .entry-content,
     .article-list-4 .entry-item .entry-content {
       padding: 1em 1em 2em;
@@ -280,9 +297,14 @@ table.footmali-chart td.center {
     .not-front article .entry-meta,
     .not-front article .short-des,
     .not-front article .field-name-body,
-    #comments {
+    #comments,
+    .kopa-related-post {
       padding: 0 20px;
       margin-top: 20px
+    }
+
+    .sidebar {
+        padding: 0 40px;
     }
 
     .not-front article .field-name-body p {
@@ -357,6 +379,18 @@ table.footmali-chart td.center {
     h1.wc2018:after {
         margin-top: 9px;
     }
+
+    /**
+    * Outbrain
+    */
+    .kopa-related-post .TF_6.ob-strip-layout .ob-dynamic-rec-container {
+        width: 49%;
+    }
+
+    .kopa-related-post .TS_1.ob-widget .ob-dynamic-rec-container {
+
+    }
+
 }
 
 /**
