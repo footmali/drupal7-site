@@ -38,6 +38,9 @@ $index = 1;
                          data-ad-client="ca-pub-7538390076513661"
                          data-ad-slot="6917959512"
                          data-ad-format="auto"></ins>
+                     <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                     </script>
                   </li>
                 <?php endif; ?>
             <?php $index++; endforeach; ?>

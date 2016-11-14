@@ -1,12 +1,8 @@
 <?php
   $theme_path = path_to_theme();
+  $node = isset($node) ? $node : false;
 ?>
 <div class="sidebar widget-area-11">
-    <div class="widget" style="text-align:center;">
-      <a href="http://monequipe.footmali.com">
-        <img src="/<?php echo $theme_path; ?>/images/mon-equipe-square.png"  alt="Footmali Mon Équipe"/>
-      </a>
-    </div>
 
     <?php //include_once('partials/_search.php'); ?>
 
@@ -21,5 +17,13 @@
 
     <?php include_once('partials/_facebook_banner.php'); ?>
 
+    <?php if($node && $node->type == 'article'): ?>
+        <div class="widget kopa-article-list-widget article-list-5">
+            <h3 class="widget-title style16">
+                <span>Vous Aimerez Aussi</span>
+            </h3>
+            <div class="OUTBRAIN" data-widget-id="TS_1" data-src="" data-ob-template="Footmali" ></div>
+        </div>
+    <?php endif; ?>
 </div>
 <!-- sidebar -->

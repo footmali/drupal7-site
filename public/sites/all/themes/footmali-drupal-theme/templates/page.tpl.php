@@ -95,13 +95,16 @@ global $theme_path;
 
                 <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
-                <div class="widget kopa-ads-widget style1" style="padding: 0;">
-                  <!-- Content wide -->
+                <div class="widget kopa-ads-widget style1" style="padding: 0; margin: 0;">
+                  <!-- Content Top wide -->
                   <ins class="adsbygoogle"
                        style="display:block"
                        data-ad-client="ca-pub-7538390076513661"
                        data-ad-slot="5022423913"
                        data-ad-format="auto"></ins>
+                       <script>
+                          (adsbygoogle = window.adsbygoogle || []).push({});
+                       </script>
                 </div>
 
                 <div class="kopa-breadcrumb">
@@ -112,9 +115,6 @@ global $theme_path;
                 <!--/end .breadcrumb-->
 
                 <?php print render($page['content']); ?>
-                <?php if($is_front): ?>
-                  <?php include('includes/partials/_ad_content_wide.php'); ?>
-                <?php endif; ?>
             </div>
             <!-- main-col -->
 

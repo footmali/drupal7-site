@@ -62,6 +62,8 @@ global $theme_path;
             }
         </style>
     </noscript>
+
+    <!-- adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
@@ -69,6 +71,9 @@ global $theme_path;
             enable_page_level_ads: true
         });
     </script>
+
+    <!-- outbrain -->
+    <script type="text/javascript" async="async" src="https://widgets.outbrain.com/outbrain.js"></script>
 </head>
 <body class="<?php echo $is_admin? 'admin_user': 'none_admin_user'; ?> <?php echo $is_front ? 'kopa-home-page' : 'kopa-sub-page kopa-single-page';?> <?php print $classes; ?>" <?php print $attributes; ?>>
     <div id="fb-root"></div>
@@ -142,8 +147,5 @@ global $theme_path;
 
     <!-- Google -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
 </body>
 </html>
