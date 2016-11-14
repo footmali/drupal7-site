@@ -13,6 +13,7 @@
     <h3><?php print $title; ?></h3>
 <?php endif; ?>
 
+<?php include('includes/partials/_ad_content_wide.php'); ?>
 <div class="widget kopa-entry-list">
 <?php print $list_type_prefix; ?>
     <?php foreach ($rows as $id => $row): ?>

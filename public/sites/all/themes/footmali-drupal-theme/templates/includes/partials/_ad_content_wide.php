@@ -1,4 +1,4 @@
-<div class="widget kopa-ads-widget style1" style="padding: 0; margin: 0;">
+<div class="widget kopa-ads-widget style1">
   <!-- Content Bottom wide -->
      <ins class="adsbygoogle"
          style="display:block"

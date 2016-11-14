@@ -115,6 +115,10 @@ global $theme_path;
                 <!--/end .breadcrumb-->
 
                 <?php print render($page['content']); ?>
+                
+                <?php include('includes/partials/_ad_content_wide.php'); ?>
+                <?php include('includes/partials/_video_carrousel.php'); ?>
+                <?php include('includes/partials/_outbrain_content.php'); ?>
             </div>
             <!-- main-col -->
 
