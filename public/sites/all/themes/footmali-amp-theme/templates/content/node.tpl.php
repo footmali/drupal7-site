@@ -92,7 +92,7 @@
 
   <?php if ($display_submitted): ?>
     <footer class="submitted">
-      <span><?php setlocale(LC_TIME, 'French'); echo strftime('%d %B %Y', $node->created); ?></span>
+      <span><?php setlocale(LC_TIME, 'fr_FR'); echo strftime('%d %B %Y', $node->created); ?></span>
     </footer>
   <?php endif; ?>
 
@@ -102,9 +102,32 @@
     hide($content['comments']);
     hide($content['links']);
     print render($content);
+
     ?>
   </div>
 
   <?php print render($content['links']); ?>
 
+  <amp-ad
+        class="ad2"
+      type="adsense"
+      layout="responsive"
+      width="300"
+      height="250"
+      data-ad-client="ca-pub-7538390076513661"
+      data-ad-slot="7797165916"></amp-ad>
+        <!-- var ad1 = $('.ad2');
+        $('.field-name-body p').after(ad1); -->
+
 </article>
+<div class="adsense-recommended-content">
+    <h2>Vous Aimerez Aussi</h2>
+    <amp-ad
+        type="adsense"
+        layout="responsive"
+        width="300"
+        height="250"
+        data-ad-format="autorelaxed"
+        data-ad-client="ca-pub-7538390076513661"
+        data-ad-slot="1750632314"></amp-ad>
+</div>
