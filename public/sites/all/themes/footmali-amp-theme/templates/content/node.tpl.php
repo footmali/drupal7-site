@@ -108,19 +108,20 @@
 
   <?php print render($content['links']); ?>
 
-  <amp-ad
-        class="ad2"
-      type="adsense"
-      layout="responsive"
-      width="300"
-      height="250"
-      data-ad-client="ca-pub-7538390076513661"
-      data-ad-slot="7797165916"></amp-ad>
+  <div class="amp-ad">
+      <amp-ad
+          type="adsense"
+          layout="responsive"
+          width="300"
+          height="250"
+          data-ad-client="ca-pub-7538390076513661"
+          data-ad-slot="7797165916"></amp-ad>
+  </div>
         <!-- var ad1 = $('.ad2');
         $('.field-name-body p').after(ad1); -->
 
 </article>
-<div class="adsense-recommended-content">
+<div class="adsense-recommended-content amp-ad">
     <h2>Vous Aimerez Aussi</h2>
     <amp-ad
         type="adsense"

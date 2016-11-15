@@ -85,13 +85,14 @@
     </div></header> <!-- /.section, /#header -->
 
     <div id="main-wrapper"><main role="main" id="main" class="amp-main clearfix">
-        <amp-ad
-              class="ad1"
-            type="adsense"
-            layout="fixed-height"
-            height="100"
-            data-ad-client="ca-pub-7538390076513661"
-            data-ad-slot="6320432719"></amp-ad>
+        <div class="amp-ad">
+            <amp-ad
+                type="adsense"
+                layout="fixed-height"
+                height="100"
+                data-ad-client="ca-pub-7538390076513661"
+                data-ad-slot="6320432719"></amp-ad>
+        </div>
 
         <div id="content" class="amp-main__content column"><div class="section">
             <?php print $messages; ?>
