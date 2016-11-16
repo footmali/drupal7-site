@@ -54,6 +54,11 @@ footer.submitted{
     margin-bottom: 10px;
 }
 
+.field-name-body img, .field-name-body amp-img {
+    max-width: 100%;
+    max-height: 300px;
+}
+
 
 /* ---------- Typography ----------- */
 
