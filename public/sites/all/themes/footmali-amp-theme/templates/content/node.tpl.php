@@ -127,7 +127,7 @@
         type="adsense"
         layout="responsive"
         width="300"
-        height="250"
+        height="510"
         data-ad-format="autorelaxed"
         data-ad-client="ca-pub-7538390076513661"
         data-ad-slot="1750632314"></amp-ad>
