@@ -222,7 +222,9 @@ table.footmali-chart td.center {
 
 @media (max-width: 768px) {
     body{
-      position: relative;
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
     }
 
     .main-nav-mobile .pull {
@@ -280,8 +282,18 @@ table.footmali-chart td.center {
     }
 
     .content-top .entry-title {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0 0 15px;
+    }
+
+    .kopa-home-page article.entry-item footer {
+        display: none;
+    }
+
+    .kopa-entry-post > article .entry-title {
         font-size: 24px;
-        line-height: 28px;
+        line-height: 32px;
     }
 
     .kopa-breadcrumb {
@@ -299,7 +311,7 @@ table.footmali-chart td.center {
     .not-front article .field-name-body,
     #comments,
     .kopa-related-post {
-      padding: 0 20px;
+      padding: 0 15px;
       margin-top: 20px
     }
 

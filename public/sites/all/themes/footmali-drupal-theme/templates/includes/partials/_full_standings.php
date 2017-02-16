@@ -1,12 +1,11 @@
 <?php
-$standings = footmali_get_standings('2015-2016');
+$standings = footmali_get_standings('2016-2017');
 ?>
 
 <?php if($standings && count($standings) > 0): ?>
 <div class="widget kopa-team-widget kopa-charts-widget">
     <h3 class="widget-title style15"><?php echo t('standings table'); ?></h3>
     <div class="widget-content">
-        <h3 class="widget-title style8">Poule A</h3>
         <header>
             <div class="t-col width3"><?php echo t('Rang'); ?></div>
             <div class="t-col width2"><?php echo t('Équipe'); ?></div>
@@ -44,7 +43,6 @@ $standings = footmali_get_standings('2015-2016');
         </ul>
     </div>
     <div class="widget-content">
-        <h3 class="widget-title style8">Poule B</h3>
         <header>
             <div class="t-col width3"><?php echo t('Rang'); ?></div>
             <div class="t-col width2"><?php echo t('Équipe'); ?></div>
