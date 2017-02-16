@@ -9993,7 +9993,7 @@ address {
 
     .article-list-1 .entry-item .entry-thumb, .article-list-1 .latest-item .entry-thumb, .article-list-3 .entry-item .entry-thumb, .article-list-3 .latest-item .entry-thumb, .item-list-entry .entry-item .entry-thumb, .item-list-entry .latest-item .entry-thumb {
         float: none;
-        margin: 0 0 10px;
+        margin: 0 0 15px;
         width: 100%;
     }
 
@@ -10015,7 +10015,7 @@ address {
     }
 
     .article-list-1 > ul > li {
-        padding: 10px;
+        padding: 20px 15px;
     }
 
     .r-item .r-side, .match-item.list-item .r-item .r-side {

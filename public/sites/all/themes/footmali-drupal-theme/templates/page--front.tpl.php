@@ -88,10 +88,16 @@
             <div class="content-wrap">
                 <div class="row">
                     <div class="kopa-main-col">
-                        <div class="widget visible-xs" style="text-align: center;">
-                            <a href="http://monequipe.footmali.com">
-                                <img src="<?php echo $theme_path; ?>/images/mon-equipe-small-banner.png"  alt="Footmali Mon Équipe"/>
-                            </a>
+                        <div class="widget kopa-ads-widget style1 visible-xs" style="text-align: center;">
+                            <!-- Content Top wide -->
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-7538390076513661"
+                                 data-ad-slot="5022423913"
+                                 data-ad-format="auto"></ins>
+                                 <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                 </script>
                         </div>
                         <?php include('includes/partials/_homepage_featured_2col.php'); ?>
 
