@@ -63,6 +63,16 @@ global $theme_path;
         </style>
     </noscript>
 
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59KKT2');</script>
+<!-- End Google Tag Manager -->
+
+
+
     <!-- adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
@@ -74,8 +84,15 @@ global $theme_path;
 
     <!-- outbrain -->
     <script type="text/javascript" async="async" src="https://widgets.outbrain.com/outbrain.js"></script>
-</head>
+    <script src="//assets.adobedtm.com/6c4f3c37567342e11d6ce117c5e68b97415f62a1/satelliteLib-c50ba52e01cda5602f58cf05b5c4e744dd048bd8.js"></script>
+  </head>
 <body class="<?php echo $is_admin? 'admin_user': 'none_admin_user'; ?> <?php echo $is_front ? 'kopa-home-page' : 'kopa-sub-page kopa-single-page';?> <?php print $classes; ?>" <?php print $attributes; ?>>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W59KKT2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
     <div id="fb-root"></div>
     <?php print $page_top; ?>
     <?php print $page; ?>
@@ -147,5 +164,6 @@ global $theme_path;
 
     <!-- Google -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script type="text/javascript">_satellite.pageBottom();</script>
 </body>
 </html>
