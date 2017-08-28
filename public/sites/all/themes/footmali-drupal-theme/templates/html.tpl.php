@@ -85,7 +85,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- outbrain -->
     <script type="text/javascript" async="async" src="https://widgets.outbrain.com/outbrain.js"></script>
     <script src="//assets.adobedtm.com/6c4f3c37567342e11d6ce117c5e68b97415f62a1/satelliteLib-c50ba52e01cda5602f58cf05b5c4e744dd048bd8.js"></script>
-  </head>
+ <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#efefef",
+      "text": "#404040"
+    },
+    "button": {
+      "background": "#8ec760",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "classic",
+  "content": {
+    "message": "En poursuivant votre navigation sur footmali.com, vous acceptez l'utilisation de cookies.",
+	"dismiss": "Ok",
+	"link": "En savoir plus"
+  }
+})});
+</script>
+ </head>
 <body class="<?php echo $is_admin? 'admin_user': 'none_admin_user'; ?> <?php echo $is_front ? 'kopa-home-page' : 'kopa-sub-page kopa-single-page';?> <?php print $classes; ?>" <?php print $attributes; ?>>
 
   <!-- Google Tag Manager (noscript) -->
