@@ -111,10 +111,10 @@ global $theme_path;
                     <?php print render($page['content']); ?>
                 </div>
                 <div class="widget-area-25">
-                    <?php //include_once('includes/partials/_fixtures.php'); ?>
+                    <?php include_once('includes/partials/_fixtures.php'); ?>
                     <?php include_once('includes/partials/_video_carrousel.php'); ?>
 
-                    <?php include('includes/partials/_outbrain_content.php'); ?>
+                    <?php //include('includes/partials/_outbrain_content.php'); ?>
                 </div>
 
             </div>

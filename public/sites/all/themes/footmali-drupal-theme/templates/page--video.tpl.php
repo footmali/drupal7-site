@@ -82,6 +82,7 @@ global $theme_path;
 <?php include_once('includes/header.php'); ?>
 
 <div id="main-content">
+    <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
     <div class="wrapper">
 
@@ -93,8 +94,6 @@ global $theme_path;
         <div class="row">
 
             <div class="kopa-main-col">
-
-                <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
                 <div class="kopa-breadcrumb">
                     <div class="wrapper clearfix">

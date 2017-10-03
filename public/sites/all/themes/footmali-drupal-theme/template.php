@@ -46,7 +46,7 @@ function footmali_css_alter(&$css)
 		'modules/system/system.messages.css' => false,
 		'modules/system/system.theme.css' => false,
 		'modules/aggregator/aggregator.css' => false,
-		'modules/contextual/contextual.css' => false,
+		// 'modules/contextual/contextual.css' => false,
 		'sites/all/modules/date/date_api/date.css' => false,
 		'sites/all/modules/date/date_popup/themes/datepicker.1.7.css' => false,
 		'modules/field/theme/field.css' => false,

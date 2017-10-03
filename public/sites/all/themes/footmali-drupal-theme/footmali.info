@@ -16,3 +16,12 @@ scripts[] = js/modernizr.custom.js
 scripts[] = js/bootstrap.min.js
 scripts[] = js/custom.js
 scripts[] = js/script.js
+
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[content_homepage] = Content Homepage
+regions[sidebar_first] = Left sidebar
+regions[sidebar_second] = Right sidebar
+regions[footer] = Footer

@@ -1,0 +1,7 @@
+name = Footmali Blocks
+description = Custom blocks of contents on the site.
+core = 7.x
+package = Footmali
+version = 7.x-1.0
+dependencies[] = footmali_core
+dependencies[] = footmali_custom
