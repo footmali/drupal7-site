@@ -108,8 +108,8 @@
                         <?php //include('includes/partials/_homepage_headlines.php'); ?>
                         <?php include('includes/partials/_ad_content_wide.php'); ?>
 
-                        <?php //include('includes/partials/_video_carrousel.php'); ?>
-                        <?php //include('includes/partials/_outbrain_content.php'); ?>
+                        <?php include('includes/partials/_video_carrousel.php'); ?>
+                        <?php include('includes/partials/_outbrain_content.php'); ?>
                     </div>
                     <!-- main-col -->
                     <?php include('includes/sidebar.php'); ?>
