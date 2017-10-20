@@ -16,6 +16,8 @@
     <?php if ($page['sidebar_second']){ print render($page['sidebar_second']); } ?>
 
     <?php if(!drupal_is_front_page()): ?>
+        <?php $block = module_invoke('footmali_blocks', 'block_view', 'popular_articles');
+            print render($block['content']); ?>
         <div class="widget kopa-ads-widget">
         <!-- Sidebar -->
         <ins class="adsbygoogle"

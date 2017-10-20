@@ -102,6 +102,10 @@ global $theme_path;
                     </div>
                 </div>
                 <!--/end .breadcrumb-->
+
+                <?php print render($title_prefix); ?>
+                <?php if ($title): ?><h1 class="title entry-title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+                <?php print render($title_suffix); ?>
                 <?php include('includes/partials/_ad_content_wide.php'); ?>
                 <div class="widget-area">
                     <?php $show_poll = false; include_once('includes/partials/_full_standings.php'); ?>

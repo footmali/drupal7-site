@@ -240,6 +240,49 @@ function footmali_preprocess_views_view(&$vars)
 {
     $view = $vars['view'];
     $vars['results'] = $view->result;
+
+}
+
+function footmali_preprocess_views_view_table(&$vars)
+{
+    if($vars['theme_hook_suggestion'] == 'views_view_table__mondial_2018__fixture_block'){
+        unset($vars['options']['columns']['field_date_time']);
+
+        dpm($vars);
+    }
+
+
+}
+
+function footmali_preprocess_entity(&$vars)
+{
+
+    if($vars['entity_type'] == 'bean'){
+
+        switch ($vars['bean']->type) {
+            case 'classement':
+                $competition_field = field_get_items('bean', $vars['bean'], 'field_competition');
+                if($competition_field){
+                    $competition = $competition_field[0]['entity'];
+                    $country_field = field_get_items('taxonomy_term', $competition, 'field_country');
+                    $season_field = field_get_items('bean', $vars['bean'], 'field_season');
+                    $season = $season_field ? $season_field[0]['value'] : null;
+
+                    // function call to get standings data from database
+                    $standings = footmali_get_standings($season, $competition->name, $country_field[0]['value'], false, false);
+                    $vars['standings'] = $standings;
+
+                    // get and set display type variables
+                    $display_field = field_get_items('bean', $vars['bean'], 'field_standing_display_type');
+                    $vars['display_type'] = $display_field ? $display_field[0]['value'] : 'mini';
+
+                    // get and set link for standing variables
+                    $link_field = field_get_items('bean', $vars['bean'], 'field_standing_link');
+                    $vars['page_url'] = $link_field ? $link_field[0]['value'] : null;
+                }
+                break;
+        }
+    }
 }
 
 /*****************************

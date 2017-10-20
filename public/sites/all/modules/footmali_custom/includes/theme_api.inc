@@ -133,9 +133,8 @@ function theme_footmali_standings_block($variables){
     $page_url = $variables['page_url'];
     $output = '';
 
-    if('mini' == $format && $standings){
-        if(!empty($standings)){
-
+    if(!empty($standings)){
+        if('mini' == $format && $standings){
             $output  .= '<div class="widget-area-11">';
                 $output .= '<div class="widget kopa-charts-widget">';
                     $output .= '<div class="widget-content">';
@@ -161,6 +160,7 @@ function theme_footmali_standings_block($variables){
                             $output .= '<div class="t-col">' . $row->played . '</div>';
                             $output .= '<div class="t-col"><strong>' . $row->points . '</strong></div>';
                         $output .= '</li>';
+                        $index++;
                     endforeach;
                     $output .= '</ul>';
 
@@ -170,7 +170,50 @@ function theme_footmali_standings_block($variables){
                 $output .= '</div>';
                 $output .= '</div>';
             $output .= '</div>';
+        }
+        elseif('full' == $format && $standings){
+            $output .= '<div class="widget kopa-team-widget kopa-charts-widget">';
+                $output .= '<div class="widget-content">';
+                    $output .= '<h3 class="widget-title style17">'. t($title) . '</h3>';
+                    $output .= '<header>';
+                        $output .= '<div class="t-col width3">' . t("Rang") . '</div>';
+                        $output .= '<div class="t-col width2">' . t("Équipe") . '</div>';
+                        $output .= '<div class="t-col width3">' . t("Pts") . '</div>';
+                        $output .= '<div class="t-col width3 tbl-col">' . t("J.") . '</div>';
+                        $output .= '<div class="t-col width3 tbl-col">' . t("G.") . '</div>';
+                        $output .= '<div class="t-col width3 tbl-col">' . t("N.") . '</div>';
+                        $output .= '<div class="t-col width3 tbl-col">' . t("P.") . '</div>';
+                        $output .= '<div class="t-col width3 mb-col" style="text-transform: lowercase;">p.</div>';
+                        $output .= '<div class="t-col width3 mb-col" style="text-transform: lowercase;">c.</div>';
+                        $output .= '<div class="t-col width3 mb-col">+/-</div>';
+                    $output .= '</header>';
 
+                    $output .= '<ul class="clearfix">';
+                        $index = 1;
+                        foreach($standings as $row):
+                            $team = node_load($row->team);
+                            $team_short_name = !empty($team->field_short_name) ? $team->field_short_name[LANGUAGE_NONE][0]['value'] : $team->title;
+                            $team_name = strlen($team->title) < 18 ? $team->title : $team_short_name;
+
+                            $output .= '<li>';
+                                $output .= '<div class="t-col width3"><strong>' . $index . '</strong></div>';
+                                $output .= '<div class="t-col width2">';
+                                    $output .= '<strong>' . $team_name . '</strong>';
+                                $output .= '</div>';
+                                $output .= '<div class="t-col width3"><strong>' . $row->points . '</strong></div>';
+                                $output .= '<div class="t-col width3 tbl-col">' . $row->played . '</div>';
+                                $output .= '<div class="t-col width3 tbl-col">' . $row->wins . '</div>';
+                                $output .= '<div class="t-col width3 tbl-col">' . $row->draws . '</div>';
+                                $output .= '<div class="t-col width3 tbl-col">' . $row->lost . '</div>';
+                                $output .= '<div class="t-col width3 mb-col">' . $row->goalsfor . '</div>';
+                                $output .= '<div class="t-col width3 mb-col">' . $row->goalsagainst . '</div>';
+                                $output .= '<div class="t-col width3 mb-col">' . $row->goal_diff . '</div>';
+                            $output .= '</li>';
+                          $index++;
+                        endforeach;
+                    $output .= '</ul>';
+                $output .= '</div>';
+            $output .= '</div>';
         }
     }
 

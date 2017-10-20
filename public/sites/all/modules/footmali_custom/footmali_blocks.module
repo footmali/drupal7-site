@@ -26,6 +26,44 @@ function footmali_blocks_block_info() {
     return $blocks;
 }
 
+/**
+ * Implements hook_block_configure().
+ */
+function footmali_blocks_block_configure($delta = '') {
+    $form = array();
+
+    switch ($delta) {
+        case 'popular_articles':
+            $form['popular_articles_count'] = array(
+                '#type' => 'select',
+                '#title' => t('Number of content items to display'),
+                '#default_value' => variable_get('footmali_blocks_popular_articles_count', 10),
+                '#options' => drupal_map_assoc(array(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 30)),
+            );
+            break;
+
+        // case 'wc_standings_mini':
+        //     $form['competition'] = array(
+        //         '#type' => 'select',
+        //         '#title' => t('Number of content items to display'),
+        //     );
+        //     break;
+    }
+
+    return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function footmali_blocks_block_save($delta = '', $edit = array()) {
+    switch($delta) {
+        case 'popular_articles' :
+            variable_set('footmali_blocks_popular_articles_count', $edit['popular_articles_count']['value']);
+            break;
+    }
+}
+
 function footmali_blocks_block_view($delta = '') {
     $block = array();
 
@@ -44,7 +82,7 @@ function footmali_blocks_block_view($delta = '') {
                 '#theme' => 'footmali_article_block',
                 '#list_type' => 6,
                 '#title' => t('Most Popular'),
-                '#nodes' => popular_articles(),
+                '#nodes' => popular_articles(variable_get('footmali_blocks_popular_articles_count', 10)),
             );
             break;
 

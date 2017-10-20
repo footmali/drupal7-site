@@ -1,3 +1,7 @@
+.element-invisible {
+    display: none;
+}
+
 .kopa-entry-post article {
     -webkit-touch-callout: none;-webkit-user-select: none;
     -khtml-user-select: none;
@@ -165,9 +169,9 @@ article a {
 }
 
 /**
-* WC view
+* WC mondial 2018 russie view
 */
-h1.wc2018{
+.page-mondial-2018-russie h1{
     background-image: url(../images/2018_FIFA_WC.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -176,13 +180,16 @@ h1.wc2018{
     padding-top: 30px;
     margin-bottom: 1.5em;
 }
-h1.wc2018:after{
+.page-mondial-2018-russie h1:after{
     border-bottom: 3px solid #e5e5e5;
     content: "";
     display: block;
     margin-top: 25px;
 }
 
+/**
+* Table
+*/
 table.footmali-chart {
     width: 100%;
 }

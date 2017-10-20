@@ -117,6 +117,10 @@ if( $vocabulary == 'category' ){
                     </div>
                     <!--/end .breadcrumb-->
 
+                    <?php print render($title_prefix); ?>
+                    <?php if ($title): ?><h1 class="title entry-title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+                    <?php print render($title_suffix); ?>
+
                     <div class="widget-area-2">
 
                         <div class="widget kopa-article-list-widget article-list-1">
