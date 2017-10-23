@@ -5,7 +5,7 @@ public/sites/*/settings*.php
 public/sites/*/files
 public/sites/*/private
 
-.htaccess
+public/.htaccess
 
 ### macOS ###
 *.DS_Store
