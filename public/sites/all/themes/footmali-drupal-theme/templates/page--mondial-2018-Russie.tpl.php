@@ -76,7 +76,6 @@
 <?php
 
 global $theme_path;
-dpm($action_links);
 
 ?>
 

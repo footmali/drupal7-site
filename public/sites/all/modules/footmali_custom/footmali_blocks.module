@@ -41,13 +41,6 @@ function footmali_blocks_block_configure($delta = '') {
                 '#options' => drupal_map_assoc(array(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 30)),
             );
             break;
-
-        // case 'wc_standings_mini':
-        //     $form['competition'] = array(
-        //         '#type' => 'select',
-        //         '#title' => t('Number of content items to display'),
-        //     );
-        //     break;
     }
 
     return $form;
