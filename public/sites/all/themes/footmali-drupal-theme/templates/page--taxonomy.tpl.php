@@ -97,6 +97,7 @@ if( $vocabulary == 'category' ){
     <div id="main-content">
 
         <div class="wrapper">
+            <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
             <?php print $messages; ?>
             <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
@@ -106,8 +107,8 @@ if( $vocabulary == 'category' ){
             <div class="row">
 
                 <div class="kopa-main-col">
+                    <?php if ($page['content']){ print render($page['content']); } ?>
 
-                    <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
                     <div class="kopa-breadcrumb">
                         <div class="wrapper clearfix">
@@ -115,6 +116,10 @@ if( $vocabulary == 'category' ){
                         </div>
                     </div>
                     <!--/end .breadcrumb-->
+
+                    <?php print render($title_prefix); ?>
+                    <?php if ($title): ?><h1 class="title entry-title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+                    <?php print render($title_suffix); ?>
 
                     <div class="widget-area-2">
 

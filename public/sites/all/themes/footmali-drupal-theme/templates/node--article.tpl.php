@@ -115,7 +115,6 @@ if($page){
                 <?php endif; ?>
             </p>
 
-            <h4 class="entry-title"><?php print $title; ?></h4>
             <div class="entry-meta">
                 <span class="entry-author"><?php echo t('by'); ?> <?php echo footmali_get_article_author($node); ?></a></span>
                 <span class="entry-date"><?php echo footmali_get_article_published_date($node); ?></span>
@@ -186,7 +185,7 @@ if($page){
         </div>
         <!-- single-other-post -->
     <?php endif; ?>
-    
+
     <?php include('includes/partials/_outbrain_content.php'); ?>
 
     <div id="comments">
@@ -211,6 +210,7 @@ if($page){
             <footer>
                 <!-- todo: link arthur's other articles -->
                 <p class="entry-author"><?php echo t('by'); ?> <?php echo footmali_get_article_author($node); ?></p>
+                <p class="entry-date">&nbsp;<?php echo footmali_get_article_published_date($node); ?></p>
             </footer>
         </div>
         <?php echo footmali_render_share_small($nid, $title); ?>

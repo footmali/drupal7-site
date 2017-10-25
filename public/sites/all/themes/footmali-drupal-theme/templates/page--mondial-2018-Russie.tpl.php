@@ -91,7 +91,7 @@ global $theme_path;
 
         <div class="row">
 
-            <div class="kopa-main-col">
+            <div class="kopa-main-col contextual-links-region">
 
                 <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
@@ -114,6 +114,11 @@ global $theme_path;
                 </div>
                 <!--/end .breadcrumb-->
 
+                <?php print render($title_prefix); ?>
+                <?php if ($title): ?><h1 class="title entry-title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+                <?php print render($title_suffix); ?>
+
+                <?php if ($page['content_top']){ print render($page['content_top']); } ?>
                 <?php print render($page['content']); ?>
 
                 <?php include('includes/partials/_ad_content_wide.php'); ?>

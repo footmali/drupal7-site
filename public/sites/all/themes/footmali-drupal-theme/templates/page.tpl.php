@@ -83,8 +83,10 @@ global $theme_path;
 
 <div id="main-content">
     <div class="wrapper">
+        <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
         <?php print $messages; ?>
+
         <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
         <?php print render($page['help']); ?>
         <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
@@ -92,8 +94,19 @@ global $theme_path;
         <div class="row">
 
             <div class="kopa-main-col">
+                <div class="kopa-breadcrumb">
+                    <div class="wrapper clearfix">
+                        <?php print $breadcrumb; ?>
+                    </div>
+                </div>
+                <!--/end .breadcrumb-->
 
-                <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+                <?php print render($title_prefix); ?>
+                <?php if ($title): ?><h1 class="title entry-title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+                <?php print render($title_suffix); ?>
+
+                <?php if ($page['content_top']){ print render($page['content_top']); } ?>
+                <?php if ($page['content']){ print render($page['content']); } ?>
 
                 <div class="widget kopa-ads-widget style1">
                   <!-- Content Top wide -->
@@ -107,14 +120,7 @@ global $theme_path;
                        </script>
                 </div>
 
-                <div class="kopa-breadcrumb">
-                    <div class="wrapper clearfix">
-                        <?php print $breadcrumb; ?>
-                    </div>
-                </div>
-                <!--/end .breadcrumb-->
 
-                <?php print render($page['content']); ?>
             </div>
             <!-- main-col -->
 

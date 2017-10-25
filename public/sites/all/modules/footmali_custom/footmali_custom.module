@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function footmali_custom_theme(){
+    return array(
+        'footmali_article_list_item' => array(
+            'variables' => array(
+                'list_type' => NULL,
+                'article_list' => false,
+                'node' => NULL,
+            ),
+            'file' => 'includes/theme_api.inc',
+        ),
+
+        'footmali_node_list' => array(
+            'variables' => array(
+                'list_type' => 'default',
+                'article_list' => FALSE,
+                'nodes' => NULL,
+                'wrapper' => NULL,
+            ),
+            'file' => 'includes/theme_api.inc',
+        ),
+
+        'footmali_standings_block' => array(
+            'variables' => array(
+                'format' => 'full',
+                'standings' => NULL,
+                'title' => NULL,
+                'page_url' => NULL,
+            ),
+            'file' => 'includes/theme_api.inc',
+        ),
+
+        'footmali_article_block' => array(
+            'variables' => array(
+                'title' => NULL,
+                'list_type' => 1,
+                'nodes' => NULL,
+            ),
+            'file' => 'includes/theme_api.inc',
+        ),
+
+        'footmali_tab_widget' => array(
+            'variables' => array(
+                'tabs' => null,
+                'tab_type' => 1,
+            ),
+            'file' => 'includes/theme_api.inc',
+        ),
+
+        'footmali_featured_2row' => array(
+            'variables' => array('nodes' => NULL),
+            'file' => 'includes/theme_api.inc',
+        ),
+
+        'footmali_article_list_widget_wrapper' => array(
+            'variables' => array(
+                'title' => NULL,
+                'title_type' => 1,
+                'list_type' => 1,
+            ),
+            'file' => 'includes/theme_api.inc',
+        ),
+
+    );
+}
