@@ -52,7 +52,7 @@ function footmali_blocks_block_configure($delta = '') {
 function footmali_blocks_block_save($delta = '', $edit = array()) {
     switch($delta) {
         case 'popular_articles' :
-            variable_set('footmali_blocks_popular_articles_count', $edit['popular_articles_count']['value']);
+            variable_set('footmali_blocks_popular_articles_count', $edit['popular_articles_count']);
             break;
     }
 }
@@ -75,7 +75,7 @@ function footmali_blocks_block_view($delta = '') {
                 '#theme' => 'footmali_article_block',
                 '#list_type' => 6,
                 '#title' => t('Most Popular'),
-                '#nodes' => popular_articles(10),
+                '#nodes' => popular_articles(variable_get('footmali_blocks_popular_articles_count', 10)),
             );
             break;
 
