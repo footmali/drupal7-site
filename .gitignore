@@ -1,13 +1,13 @@
 # Ignore configuration files that may contain sensitive information.
-public/sites/*/settings*.php
+/public/sites/*/settings*.php
 
 # Ignore paths that contain user-generated content.
-public/sites/default/files/**/*
-public/sites/*/private
-public/sites/all/vendor/**/*
+/public/sites/*/files
+/public/sites/*/private
 
 #allow composer directory
-!public/sites/default/files/composer/
+/public/sites/all/vendor/**/*
+!/public/sites/default/files/composer/composer.json
 
 public/.htaccess
 
