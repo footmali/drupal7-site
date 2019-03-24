@@ -77,14 +77,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-7538390076513661",
+            //google_ad_client: "ca-pub-7538390076513661",
+            google_ad_client: "ca-pub-6013670346438022",
             enable_page_level_ads: true
         });
     </script>
 
     <!-- outbrain -->
     <script type="text/javascript" async="async" src="https://widgets.outbrain.com/outbrain.js"></script>
-    <script src="//assets.adobedtm.com/6c4f3c37567342e11d6ce117c5e68b97415f62a1/satelliteLib-c50ba52e01cda5602f58cf05b5c4e744dd048bd8.js"></script>
+
+   <script src="//assets.adobedtm.com/launch-EN9a2f5dda180f431399f73a3e396a68af.min.js"></script>
+
  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 <script>
