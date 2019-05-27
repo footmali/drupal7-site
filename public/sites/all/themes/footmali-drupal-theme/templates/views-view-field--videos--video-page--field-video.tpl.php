@@ -53,7 +53,7 @@ if($thumbnail_uri){
     </div>
     <div class="entry-content">
         <div class="content-top">
-            <h4 class="entry-title" itemscope="" itemtype="http://schema.org/Event">
+            <h4 class="entry-title" itemscope="" itemtype="https://schema.org/Event">
                 <a itemprop="name" href="/video/<?php echo $row->nid; ?>" class="video-title">
                     <?php echo $row->node_title;?>
                 </a>

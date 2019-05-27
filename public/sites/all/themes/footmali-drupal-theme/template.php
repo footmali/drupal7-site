@@ -143,7 +143,7 @@ function footmali_breadcrumb($variables)
         $array_size = count($breadcrumb);
         $i = 0;
         while ($i < $array_size) {
-            $crumbs .= '<span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="breadcrumb-'.$i;
+            $crumbs .= '<span itemtype="https://data-vocabulary.org/Breadcrumb" itemscope="" class="breadcrumb-'.$i;
             if ($i == 0) {
                 $crumbs .= ' first';
             } elseif ($i + 1 == $array_size) {
@@ -158,12 +158,12 @@ function footmali_breadcrumb($variables)
                 $url = '/taxonomy/term/'.$node->field_category[LANGUAGE_NONE][0]['tid'];
                 $name = $node->field_category[LANGUAGE_NONE][0]['taxonomy_term']->name;
 
-                $crumbs .= '<span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">';
+                $crumbs .= '<span itemtype="https://data-vocabulary.org/Breadcrumb" itemscope="">';
                 $crumbs .= ' <a itemprop="url" href="'.$url.'"><span itemprop="title">'.$name.'</span></a>';
                 $crumbs .= '</span> &nbsp;|&nbsp; ';
             }
         }
-        $crumbs .= '<span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">';
+        $crumbs .= '<span itemtype="https://data-vocabulary.org/Breadcrumb" itemscope="">';
         $crumbs .= ' <a itemprop="url" class="current-page"><span itemprop="title">'.drupal_get_title().'</span></a>';
         $crumbs .= '</span>';
 

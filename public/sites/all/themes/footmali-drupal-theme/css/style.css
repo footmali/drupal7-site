@@ -1,12 +1,12 @@
 /*
 Theme Name: Sport 2.0
-Theme URI: http://kopatheme.com/
+Theme URI: https://kopatheme.com/
 Author: KopaSoft
-Author URI: http://kopatheme.com/
+Author URI: https://kopatheme.com/
 Description: Sport 2.0 theme is designed for portfolios, corporate and e-commerce with flexible layout. The theme is based on KOPATHEME layout manager technique that will let you flexibility choose layout options of every pages within your site. It is very helpful when you are experimenting with visual hierarchy. You can define unlimited sidebar for widget areas, and with powerful custom widgets, the theme provides you more flexibility and ease-of-use for your site
 Version: 1.0.0
 License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready
 
 /*----------------------------------------------------------------
@@ -1490,7 +1490,7 @@ a#logo {
 }
 
 .kopa-area-2 {
-    background: url(http://placehold.it/4397x2974) local 50% 50%;
+    background: url(https://placehold.it/4397x2974) local 50% 50%;
     background-size: cover;
 }
 
@@ -1724,17 +1724,17 @@ img {
     width: 21px;
     height: 14px;
     float: left;
-    background: url("http://placehold.it/21x14");
+    background: url("https://placehold.it/21x14");
     margin-right: 8px;
     margin-top: 5px;
 }
 
 .header-top-list > ul > li ul li a span > i.eng {
-    background: url("http://placehold.it/21x14") no-repeat;
+    background: url("https://placehold.it/21x14") no-repeat;
 }
 
 .header-top-list > ul > li ul li a span > i.vni {
-    background: url("http://placehold.it/21x14") no-repeat;
+    background: url("https://placehold.it/21x14") no-repeat;
 }
 
 /*--- Header middle ---*/
@@ -4508,7 +4508,7 @@ address {
 .kopa-scroll-slider-widget {
     position: relative;
     padding: 40px 30px 40px 15px;
-    background: url("http://placehold.it/1170x260") !important;
+    background: url("https://placehold.it/1170x260") !important;
 }
 
 .kopa-scroll-slider-widget .thumb-left {
@@ -6578,7 +6578,7 @@ ul.style1 > li:first-child {
 
 /*--- kopa-tag-line-widget ---*/
 .kopa-tag-line-widget {
-    background: url("http://placehold.it/1170x260") !important;
+    background: url("https://placehold.it/1170x260") !important;
     color: #fff;
     padding: 50px 50px;
 }
@@ -6627,7 +6627,7 @@ ul.style1 > li:first-child {
 }
 
 .kopa-tag-line-widget.style1 {
-    background: url("http://placehold.it/1170x260") !important;
+    background: url("https://placehold.it/1170x260") !important;
 }
 
 /*--- kopa-product-list-widget ---*/

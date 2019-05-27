@@ -32,7 +32,7 @@ $videos = footmali_get_videos(5);
                         <a class="thumb-icon" href="/video/<?php echo $video->nid; ?>"></a>
                     </div>
                     <div class="entry-content">
-                        <h4 class="entry-title" itemscope="" itemtype="http://schema.org/MediaObject">
+                        <h4 class="entry-title" itemscope="" itemtype="https://schema.org/MediaObject">
                             <a itemprop="name" href="/video/<?php echo $video->nid; ?>"><?php echo $video->title; ?></a>
                         </h4>
                     </div>

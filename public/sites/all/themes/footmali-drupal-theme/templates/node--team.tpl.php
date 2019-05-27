@@ -176,7 +176,7 @@ if(count($field_image) > 0){
                             </div>
                             <div class="entry-content">
                                 <div class="content-top">
-                                    <h4 class="entry-title" itemscope="" itemtype="http://schema.org/Article">
+                                    <h4 class="entry-title" itemscope="" itemtype="https://schema.org/Article">
                                         <a itemprop="name" href="/<?php echo drupal_get_path_alias("node/{$article->nid}"); ?>"><?php echo $article->title; ?></a>
                                     </h4>
                                 </div>
