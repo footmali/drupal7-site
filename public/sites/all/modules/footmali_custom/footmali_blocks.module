@@ -1,0 +1,125 @@
+<?php
+
+module_load_include('inc', 'footmali_custom', 'includes/data_api');
+
+function footmali_blocks_block_info() {
+    $blocks['wc_standings_mini'] = array(
+        'info' => t('Footmali: Recent World Cup standing'),
+    );
+
+    $blocks['popular_articles'] = array(
+        'info' => t('Footmali: Popular articles'),
+    );
+
+    $blocks['recent_and_popular_articles'] = array(
+        'info' => t('Footmali: Recent and popular articles'),
+    );
+
+    $blocks['featured_articles_2row'] = array(
+        'info' => t('Footmali: Featured articles 2row'),
+    );
+
+    $blocks['homepage_headlines'] = array(
+        'info' => t('Footmali: Homepage headlines'),
+    );
+
+    return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function footmali_blocks_block_configure($delta = '') {
+    $form = array();
+
+    switch ($delta) {
+        case 'popular_articles':
+            $form['popular_articles_count'] = array(
+                '#type' => 'select',
+                '#title' => t('Number of content items to display'),
+                '#default_value' => variable_get('footmali_blocks_popular_articles_count', 10),
+                '#options' => drupal_map_assoc(array(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 30)),
+            );
+            break;
+    }
+
+    return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function footmali_blocks_block_save($delta = '', $edit = array()) {
+    switch($delta) {
+        case 'popular_articles' :
+            variable_set('footmali_blocks_popular_articles_count', $edit['popular_articles_count']);
+            break;
+    }
+}
+
+function footmali_blocks_block_view($delta = '') {
+    $block = array();
+
+    switch ($delta) {
+        case 'wc_standings_mini':
+            $block['content'] = array(
+                '#theme' => 'footmali_standings_block',
+                '#format' => 'mini',
+                '#standings' => get_standings(null, 'Éliminatoire de la Coupe du Monde 2018', 'Mondial', false, false),
+                '#title' => t('Éliminatoire de la Coupe du Monde 2018: GROUP C'),
+                '#page_url' => '/mondial-2018-Russie',
+            );
+            break;
+        case 'popular_articles':
+            $block['content'] = array(
+                '#theme' => 'footmali_article_block',
+                '#list_type' => 6,
+                '#title' => t('Most Popular'),
+                '#nodes' => popular_articles(variable_get('footmali_blocks_popular_articles_count', 10)),
+            );
+            break;
+
+        case 'recent_and_popular_articles':
+            $block['content'] = array(
+                '#theme' => 'footmali_tab_widget',
+                '#tab_type' => 1,
+                '#tabs' => array(
+                    'Headlines' => array(
+                        'theme' => 'footmali_node_list',
+                        'list_type' => 'default',
+                        'nodes' => headline_articles(5),
+                    ),
+                    'Most Popular' => array(
+                        'theme' => 'footmali_node_list',
+                        'list_type' => 'order',
+                        'nodes' => popular_articles(5),
+                    ),
+                ),
+            );
+            break;
+
+            case 'featured_articles_2row':
+                $block['content'] = array(
+                    '#theme' => 'footmali_featured_2row',
+                    '#nodes' => featured_articles(),
+                );
+                break;
+
+            case 'homepage_headlines':
+                $block['content'] = array(
+                    '#theme' => 'footmali_node_list',
+                    '#wrapper' => array('footmali_article_list_widget_wrapper', array(
+                        'title' => t('Headlines'),
+                        'title_type' => 12,
+                        'list_type' => 1,
+                    )),
+                    '#nodes' => headline_articles(),
+                    '#list_type' => 'thumb',
+                    '#article_list' => TRUE,
+                );
+                break;
+
+    }
+
+    return $block;
+}

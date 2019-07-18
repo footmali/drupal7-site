@@ -83,7 +83,6 @@
 
 <div class="kopa-entry-post">
 <article class="entry-item">
-    <h4 class="entry-title"><?php print $title; ?></h4>
 
     <!-- kopa-share-post -->
     <?php print render($content); ?>

@@ -1,6 +1,41 @@
 # Ignore configuration files that may contain sensitive information.
-public/sites/*/settings*.php
+/public/sites/*/settings*.php
 
 # Ignore paths that contain user-generated content.
-public/sites/*/files
-public/sites/*/private
+/public/sites/*/files
+/public/sites/*/private
+
+#allow composer directory
+/public/sites/all/vendor/**/*
+!/public/sites/default/files/composer/composer.json
+
+public/.htaccess
+
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# End of https://www.gitignore.io/api/macos

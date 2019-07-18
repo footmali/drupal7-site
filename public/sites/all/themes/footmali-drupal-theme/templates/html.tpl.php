@@ -63,19 +63,62 @@ global $theme_path;
         </style>
     </noscript>
 
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W59KKT2');</script>
+<!-- End Google Tag Manager -->
+
+
+
     <!-- adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-7538390076513661",
+            //google_ad_client: "ca-pub-7538390076513661",
+            google_ad_client: "ca-pub-6013670346438022",
             enable_page_level_ads: true
         });
     </script>
 
     <!-- outbrain -->
     <script type="text/javascript" async="async" src="https://widgets.outbrain.com/outbrain.js"></script>
-</head>
+
+   <script src="//assets.adobedtm.com/launch-EN9a2f5dda180f431399f73a3e396a68af.min.js"></script>
+
+ <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#efefef",
+      "text": "#404040"
+    },
+    "button": {
+      "background": "#8ec760",
+      "text": "#ffffff"
+    }
+  },
+  "theme": "classic",
+  "content": {
+    "message": "En poursuivant votre navigation sur footmali.com, vous acceptez l'utilisation de cookies.",
+	"dismiss": "Ok",
+	"link": "En savoir plus"
+  }
+})});
+</script>
+ </head>
 <body class="<?php echo $is_admin? 'admin_user': 'none_admin_user'; ?> <?php echo $is_front ? 'kopa-home-page' : 'kopa-sub-page kopa-single-page';?> <?php print $classes; ?>" <?php print $attributes; ?>>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W59KKT2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
     <div id="fb-root"></div>
     <?php print $page_top; ?>
     <?php print $page; ?>
@@ -112,7 +155,7 @@ global $theme_path;
                 appId: '714044432027505',
                 status: true,
                 xfbml: true,
-                version: 'v2.5'
+                version: 'v2.10'
             });
         };
 
@@ -147,5 +190,6 @@ global $theme_path;
 
     <!-- Google -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script type="text/javascript">_satellite.pageBottom();</script>
 </body>
 </html>
