@@ -386,12 +386,12 @@ if ( typeof Object.create !== "function" ) {
 
 			base.buttonPrev = $("<div/>",{
 				"class" : "owl-prev",
-				"html" : base.options.navigationText[0] || ""
+				"html" : '<i class="fa fa-chevron-left"></i>'
 				});
 
 			base.buttonNext = $("<div/>",{
 				"class" : "owl-next",
-				"html" : base.options.navigationText[1] || ""
+				"html" : '<i class="fa fa-chevron-right"></i>'
 				});
 
 			buttonsWrapper

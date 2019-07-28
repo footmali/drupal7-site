@@ -17,10 +17,6 @@ global $user;
                         <li>
                             <a href="#" data-toggle="modal" data-target="#footmali_user_login_modal" class="footmali_login_modal_button"><?php echo t('Sign in'); ?></a>
                         </li>
-                        <li>&nbsp;|&nbsp;</li>
-                        <li>
-                            <a href="#"  data-toggle="modal" data-target="#footmali_register_modal" class="footmali_register_modal_button"><?php echo t('Register'); ?></a>
-                        </li>
                     <?php else: ?>
                         <li>
                             <a href="/users/<?php echo $user->name; ?>"><?php echo t('Account'); ?></a>
@@ -38,7 +34,6 @@ global $user;
                     <ul class="clearfix">
                         <li><a href="https://www.facebook.com/footmalicom" target="_blank" class="fa fa-facebook"></a></li>
                         <li><a href="https://twitter.com/footmalicom" target="_blank" class="fa fa-twitter"></a></li>
-                        <li><a href="https://plus.google.com/+Footmalicom" target="_blank" class="fa fa-google-plus"></a></li>
                     </ul>
                 </div>
                 <!-- social-links -->

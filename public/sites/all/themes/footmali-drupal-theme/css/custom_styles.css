@@ -231,9 +231,6 @@ table.footmali-chart td.center {
 .style-bg-color ul li a.fa-whatsapp{
     background: #00E676;
 }
-/* ul li a.fa-whatsapp {
-    color: #00E676;
-} */
 
 @media (min-width: 768px) {
     .omb_row-sm-offset-3 div:first-child[class*="col-"] {

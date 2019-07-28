@@ -49,7 +49,7 @@ if($thumbnail_uri){
         <a href="/video/<?php echo $row->nid; ?>" class="video-thumb">
             <?php echo ! empty($image) ? $image : $default_image_markup; ?>
         </a>
-        <a href="/video/<?php echo $row->nid; ?>" class="thumb-icon style1"></a>
+        <a href="/video/<?php echo $row->nid; ?>" class="thumb-icon style1"><i class="fa fa-play-circle"></i></a>
     </div>
     <div class="entry-content">
         <div class="content-top">

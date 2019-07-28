@@ -2706,7 +2706,7 @@ img {
 }
 
 .entry-item .thumb-icon:before {
-    content: "\f08e";
+    /* content: "\f08e"; */
     margin-top: 0;
 }
 
@@ -2715,7 +2715,7 @@ img {
 }
 
 .video-post .thumb-icon:before {
-    content: '\f04b';
+    /* content: '\f04b'; */
     padding-left: 5px;
     margin-top: 0;
 }
@@ -2964,7 +2964,7 @@ img {
 }
 
 .owl-theme .owl-controls .owl-buttons div.owl-prev:before {
-    content: "\f053";
+    /* content: "\f053"; */
 }
 
 .owl-theme .owl-controls .owl-buttons div.owl-next {
@@ -2973,7 +2973,7 @@ img {
 }
 
 .owl-theme .owl-controls .owl-buttons div.owl-next:before {
-    content: "\f054";
+    /* content: "\f054"; */
 }
 
 .owl-theme .owl-controls .owl-page span {
@@ -3970,7 +3970,7 @@ address {
 }
 
 .owl-carousel-1.owl-theme .owl-controls .owl-buttons div.owl-prev:before {
-    content: "\f0d9";
+    /* content: "\f0d9"; */
 }
 
 .owl-carousel-1.owl-theme .owl-controls .owl-buttons div.owl-next {
@@ -3979,7 +3979,7 @@ address {
 }
 
 .owl-carousel-1.owl-theme .owl-controls .owl-buttons div.owl-next:before {
-    content: "\f0da";
+    /* content: "\f0da"; */
 }
 
 .owl-carousel-1 .item {
@@ -5345,11 +5345,11 @@ address {
 }
 
 .sync4.owl-theme .owl-controls .owl-buttons div.owl-prev:before, .owl-theme.owl-carousel-7 .owl-controls .owl-buttons div.owl-prev:before, .owl-theme.owl-carousel-8 .owl-controls .owl-buttons div.owl-prev:before, .owl-theme.owl-carousel-9 .owl-controls .owl-buttons div.owl-prev:before {
-    content: "\f053";
+    /* content: "\f053"; */
 }
 
 .sync4.owl-theme .owl-controls .owl-buttons div.owl-next:before, .owl-theme.owl-carousel-7 .owl-controls .owl-buttons div.owl-next:before, .owl-theme.owl-carousel-8 .owl-controls .owl-buttons div.owl-next:before, .owl-theme.owl-carousel-9 .owl-controls .owl-buttons div.owl-next:before {
-    content: "\f054";
+    /* content: "\f054"; */
 }
 
 .sync3.style1, .style1.owl-carousel-6 {
@@ -5547,9 +5547,6 @@ address {
     color: #1C9E49;
 }
 
-.kopa-list-icon:before {
-    content: "\f054";
-}
 
 .video-post .kopa-list-icon:before {
     content: "\f01d";
