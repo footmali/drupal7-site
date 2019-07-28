@@ -18,6 +18,7 @@ function mailchimp_lists_field_info() {
       'send_welcome' => TRUE,
       'instance_settings' => array(
         'show_interest_groups' => FALSE,
+        'hide_subscribe_checkbox' => FALSE,
         'interest_groups_title' => NULL,
         'mergefields' => array(),
         'unsubscribe_on_delete' => TRUE,
@@ -45,7 +46,7 @@ function mailchimp_lists_field_settings_form($this_field, $instance, $has_data) 
   $lists_exist = count($lists) > 0;
   $options = array('' => t('-- Select --'));
   foreach ($lists as $mc_list) {
-    $options[$mc_list['id']] = $mc_list['name'];
+    $options[$mc_list->id] = $mc_list->name;
   }
   // Grab the fields list.
   $fields = field_info_fields();
@@ -103,13 +104,6 @@ function mailchimp_lists_field_settings_form($this_field, $instance, $has_data) 
     '#default_value' => isset($this_field['settings']['double_opt_in']) ? $this_field['settings']['double_opt_in'] : FALSE,
     '#disabled' => $disabled,
   );
-  $form['send_welcome'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Send a welcome email to new subscribers'),
-    '#description' => t('New subscribers will be sent a welcome email once they are confirmed.'),
-    '#default_value' => isset($this_field['settings']['send_welcome']) ? $this_field['settings']['send_welcome'] : FALSE,
-    '#disabled' => $disabled,
-  );
   $form['unsubscribe_action'] = array(
     '#type' => 'radios',
     '#title' => t('Action to take when unchecking this field'),
@@ -134,6 +128,17 @@ function mailchimp_lists_field_instance_settings_form($field, $instance) {
     '#title' => t('Enable Interest Groups'),
     '#type' => 'checkbox',
     '#default_value' => $instance['settings']['show_interest_groups'],
+  );
+  $form['hide_subscribe_checkbox'] = array(
+    '#title' => t('Hide Subscribe Checkbox'),
+    '#type' => 'checkbox',
+    '#default_value' => $instance['settings']['hide_subscribe_checkbox'],
+    '#description' => t('When Interest Groups are enabled, the "subscribe" checkbox is hidden and selecting any interest group will subscribe a user to the list.'),
+    '#states' => array(
+      'invisible' => array(
+        ':input[name="instance[settings][show_interest_groups]"]' => array('checked' => FALSE),
+      ),
+    ),
   );
   $form['interest_groups_title'] = array(
     '#title' => t('Interest Groups Label'),
@@ -194,33 +199,33 @@ function _mailchimp_lists_field_instance_settings_form_process($form, &$form_sta
   $fields = mailchimp_lists_fieldmap_options($instance['entity_type'], $instance['bundle']);
   $required_fields = mailchimp_lists_fieldmap_options($instance['entity_type'], $instance['bundle'], TRUE);
   unset($fields[$field['field_name']]);
-  foreach ($mergevars[$mc_list_id]['merge_vars'] as $mergevar) {
-    $default_value = isset($mv_defaults[$mergevar['tag']]) ? $mv_defaults[$mergevar['tag']] : -1;
+  foreach ($mergevars[$mc_list_id] as $mergevar) {
+    $default_value = isset($mv_defaults[$mergevar->tag]) ? $mv_defaults[$mergevar->tag] : -1;
     // If the advanced UI is enabled we use a textfield here, otherwise use a
     // select field.
-    $form[$mergevar['tag']] = array(
+    $form[$mergevar->tag] = array(
       '#type' => $use_advanced_mode ? 'textfield' : 'select',
-      '#title' => check_plain($mergevar['name']),
+      '#title' => check_plain($mergevar->name),
       '#default_value' => $default_value ? $default_value : '',
-      '#required' => $mergevar['req'],
+      '#required' => $mergevar->required,
     );
-    if (!$mergevar['req'] || $mergevar['tag'] === 'EMAIL') {
+    if (!$mergevar->required || ($mergevar->tag === 'EMAIL')) {
       // Add select field options when using basic UI.
       if (!$use_advanced_mode) {
-        $form[$mergevar['tag']]['#options'] = $fields;
+        $form[$mergevar->tag]['#options'] = $fields;
       }
 
-      if ($mergevar['tag'] === 'EMAIL') {
-        $form[$mergevar['tag']]['#description'] = t('Any entity with an empty or invalid email address field value will simply be ignored by the MailChimp subscription system. <em>This is why the Email field is the only required merge field which can sync to non-required fields.</em>');
+      if ($mergevar->tag === 'EMAIL') {
+        $form[$mergevar->tag]['#description'] = t('Any entity with an empty or invalid email address field value will simply be ignored by the MailChimp subscription system. <em>This is why the Email field is the only required merge field which can sync to non-required fields.</em>');
       }
     }
     else {
       // Add options for select fields when using basic UI.
       if (!$use_advanced_mode) {
-        $form[$mergevar['tag']]['#options'] = $required_fields;
+        $form[$mergevar->tag]['#options'] = $required_fields;
       }
 
-      $form[$mergevar['tag']]['#description'] = t("Only 'required' and 'calculated' fields are allowed to be synced with MailChimp 'required' merge fields.");
+      $form[$mergevar->tag]['#description'] = t("Only 'required' and 'calculated' fields are allowed to be synced with MailChimp 'required' merge fields.");
     }
   }
 
@@ -230,8 +235,8 @@ function _mailchimp_lists_field_instance_settings_form_process($form, &$form_sta
   if ($use_advanced_mode && module_exists('token')) {
     // Add element validator for each text field. This allows the token module
     // to provide feedback on token syntax.
-    foreach ($mergevars[$mc_list_id]['merge_vars'] as $mergevar) {
-      $form[$mergevar['tag']] += array(
+    foreach ($mergevars[$mc_list_id] as $mergevar) {
+      $form[$mergevar->tag] += array(
         '#element_validate' => array('token_element_validate'),
         '#token_types' => array($instance['entity_type']),
       );
@@ -332,13 +337,17 @@ function mailchimp_lists_field_widget_form(&$form, &$form_state, $field, $instan
   if (isset($element['#entity'])) {
     $email = mailchimp_lists_load_email($instance, $element['#entity'], FALSE);
     if ($email) {
-      $default = mailchimp_is_subscribed($field['settings']['mc_list_id'], $email);
+      $default = mailchimp_is_subscribed($field['settings']['mc_list_id'], $email, $field['settings']['double_opt_in']);
     }
   }
   $element += array(
     '#title' => check_plain($element['#title']),
     '#type' => 'fieldset',
   );
+
+  // Load the MailChimp list from the field's list ID.
+  $mc_list = mailchimp_get_list($field['settings']['mc_list_id']);
+
   $element['subscribe'] = array(
     '#title' => t('Subscribe'),
     '#type' => 'checkbox',
@@ -346,10 +355,24 @@ function mailchimp_lists_field_widget_form(&$form, &$form_state, $field, $instan
     '#required' => $instance['required'],
     '#disabled' => $instance['required'],
   );
+
+  // Hide the Subscribe checkbox if:
+  // - The field is configured to show interest groups.
+  // - The field is configured to hide the Subscribe checkbox.
+  // - The list has at least one interest group.
+  // This allows users to skip the redundant step of checking the Subscribe
+  // checkbox when also checking interest group checkboxes.
+  if ($instance['settings']['show_interest_groups'] && $instance['settings']['hide_subscribe_checkbox'] && !empty($mc_list->intgroups)) {
+    $element['subscribe']['#access'] = FALSE;
+    $interest_group_element_type = 'container';
+  }
+  else {
+    $interest_group_element_type = 'fieldset';
+  }
+
   if ($instance['settings']['show_interest_groups'] || $form_state['build_info']['form_id'] == 'field_ui_field_edit_form') {
-    $mc_list = mailchimp_get_list($field['settings']['mc_list_id']);
     $element['interest_groups'] = array(
-      '#type' => 'fieldset',
+      '#type' => $interest_group_element_type,
       '#title' => check_plain($instance['settings']['interest_groups_title']),
       '#weight' => 100,
       '#states' => array(
@@ -364,7 +387,8 @@ function mailchimp_lists_field_widget_form(&$form, &$form_state, $field, $instan
       );
     }
     $groups_default = isset($instance['default_value'][0]['interest_groups']) ? $instance['default_value'][0]['interest_groups'] : array();
-    if ($mc_list['stats']['group_count']) {
+
+    if (!empty($mc_list->intgroups)) {
       $element['interest_groups'] += mailchimp_interest_groups_form_elements($mc_list, $groups_default, $email);
     }
   }
@@ -467,7 +491,8 @@ function mailchimp_lists_field_formatter_settings_summary($field, $instance, $vi
  */
 function mailchimp_lists_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
   $element = array();
-  $mc_list = mailchimp_get_list($field['settings']['mc_list_id']);
+  $use_interest_groups = ($instance['settings']['show_interest_groups'] && $display['settings']['show_interest_groups']);
+  $mc_list = mailchimp_get_list($field['settings']['mc_list_id'], $use_interest_groups);
   $email = mailchimp_lists_load_email($instance, $entity, FALSE);
 
   // Display subscription form if accessible.
@@ -477,11 +502,17 @@ function mailchimp_lists_field_formatter_view($entity_type, $entity, $field, $in
   }
   else {
     if ($email) {
-      if (mailchimp_is_subscribed($field['settings']['mc_list_id'], $email)) {
-        $status = t('Subscribed to %list', array('%list' => $mc_list['name']));
-      }
-      else {
-        $status = t('Not subscribed to %list', array('%list' => $mc_list['name']));
+      $member_info = mailchimp_get_memberinfo($field['settings']['mc_list_id'], $email);
+      $member_status = (isset($member_info->status)) ? $member_info->status : NULL;
+      switch ($member_status) {
+        case 'subscribed':
+          $status = t('Subscribed to %list', array('%list' => $mc_list->name));
+          break;
+        case 'pending':
+          $status = t('Pending confirmation for %list', array('%list' => $mc_list->name));
+          break;
+        default:
+          $status = t('Not subscribed to %list', array('%list' => $mc_list->name));
       }
     }
     else {
@@ -491,29 +522,29 @@ function mailchimp_lists_field_formatter_view($entity_type, $entity, $field, $in
       '#markup' => $status,
       '#description' => t('@mc_list_description', array('@mc_list_description' => $instance['description'])),
     );
-    if ($instance['settings']['show_interest_groups'] && $display['settings']['show_interest_groups']) {
-      $memberinfo = mailchimp_get_memberinfo($field['settings']['mc_list_id'], $email);
-      if (isset($memberinfo['merges']['GROUPINGS'])) {
-        $element['interest_groups'] = array(
-          '#type' => 'fieldset',
-          '#title' => t('Interest Groups'),
-          '#weight' => 100,
-        );
-        foreach ($memberinfo['merges']['GROUPINGS'] as $grouping) {
-          $items = array();
-          foreach ($grouping['groups'] as $interest) {
-            if ($interest['interested']) {
-              $items[] = $interest['name'];
-            }
+    if ($use_interest_groups && !empty($mc_list->intgroups)) {
+
+      $element['interest_groups'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('Interest Groups'),
+        '#weight' => 100,
+      );
+
+      foreach ($mc_list->intgroups as $interest_group) {
+        $items = array();
+        foreach ($interest_group->interests as $interest) {
+          if (isset($member_info->interests->{$interest->id}) && ($member_info->interests->{$interest->id} === TRUE)) {
+            $items[] = $interest->name;
           }
-          if (count($items)) {
-            $element['interest_groups'][$grouping['id']] = array(
-              '#title' => $grouping['name'],
-              '#theme' => 'item_list',
-              '#items' => $items,
-              '#type' => 'ul',
-            );
-          }
+        }
+
+        if (count($items) > 0) {
+          $element['interest_groups'][$interest_group->id] = array(
+            '#title' => $interest_group->title,
+            '#theme' => 'item_list',
+            '#items' => $items,
+            '#type' => 'ul',
+          );
         }
       }
     }
@@ -593,7 +624,7 @@ function mailchimp_lists_field_get($entity, array $options, $name, $entity_type,
   $val = array('subscribe' => $subscribed);
   if ($context['instance']['settings']['show_interest_groups']) {
     $mc_list = mailchimp_get_list($context['field']['settings']['mc_list_id']);
-    if (isset($mc_list['intgroups'])) {
+    if (isset($mc_list->intgroups)) {
       $val['interest_groups'] = array();
       $interest_group_settings = mailchimp_interest_groups_form_elements($mc_list, array(), $email);
       foreach ($interest_group_settings as $id => $group) {
@@ -613,7 +644,11 @@ function mailchimp_lists_field_get($entity, array $options, $name, $entity_type,
  * Implements hook_field_insert().
  */
 function mailchimp_lists_field_insert($entity_type, $entity, $field, $instance, $langcode, &$items) {
-  _mailchimp_lists_field_postsave($entity_type, $entity, $field, $instance, $langcode, $items);
+  // This is a new entity, so only process subscription choice if it is an
+  // opt-in.
+  if (!empty($items[0]['subscribe'])) {
+    _mailchimp_lists_field_postsave($entity_type, $entity, $field, $instance, $langcode, $items);
+  }
 }
 
 /**
@@ -637,7 +672,11 @@ function _mailchimp_lists_field_postsave($entity_type, $entity, $field, $instanc
     }
 
     // Check if the field is empty or is set by the system via field_get_default_value().
-    if (empty($items[0]) || !empty($item[0]['is_default'])) {
+    if (empty($items[0])) {
+      // user_save() was called without our field in its $edit
+      return;
+    }
+    else if (!empty($items[0]['is_default'])) {
       // Check if this email is already subscribed.
       $email = mailchimp_lists_load_email($instance, $entity);
       $list_id = $field['settings']['mc_list_id'];
@@ -648,6 +687,24 @@ function _mailchimp_lists_field_postsave($entity_type, $entity, $field, $instanc
       }
 
       $choices = $instance['default_value'][0];
+    }
+
+    // Automatically subscribe if the field is configured to hide the Subscribe
+    // checkbox and at least one interest group checkbox has been checked.
+    if ($instance['settings']['show_interest_groups'] && $instance['settings']['hide_subscribe_checkbox']) {
+      if (!empty($choices['interest_groups'])) {
+        $subscribe_from_interest_groups = FALSE;
+        foreach ($choices['interest_groups'] as $group_id => $interests) {
+          foreach ($interests as $interest_id => $value) {
+            if (!empty($value)) {
+              $subscribe_from_interest_groups = TRUE;
+              continue;
+            }
+          }
+        }
+
+        $choices['subscribe'] = $subscribe_from_interest_groups;
+      }
     }
 
     mailchimp_lists_process_subscribe_form_choices($choices, $instance, $field, $entity);
