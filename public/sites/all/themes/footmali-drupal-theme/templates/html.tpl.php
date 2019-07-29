@@ -156,7 +156,7 @@ window.cookieconsent.initialise({
                 appId: '714044432027505',
                 status: true,
                 xfbml: true,
-                version: 'v2.10'
+                version: 'v4.0'
             });
         };
 
