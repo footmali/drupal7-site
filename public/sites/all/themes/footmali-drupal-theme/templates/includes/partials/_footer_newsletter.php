@@ -14,7 +14,7 @@
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
                 <input type="text" name="b_84641bbbd87416b83377d69d6_a355837c60" tabindex="-1" value="">
             </div>
-            <input type="submit" value="<?php echo t('Subscribe') ?>" name="subscribe" id="mc-embedded-subscribe" class="search-submit button">
+            <input type="submit" value="<?php echo 'Je M\'abonne' ?>" name="subscribe" id="mc-embedded-subscribe" class="search-submit button">
 
         </form>
         <div id="newsletter-response">

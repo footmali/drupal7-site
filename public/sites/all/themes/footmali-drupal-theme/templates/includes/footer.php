@@ -53,19 +53,6 @@
                         ?>
                     </form>
                 </div>
-
-                <div class="row omb_row-sm-offset-3 omb_loginOr">
-                    <div class="col-xs-12 col-sm-6">
-                        <hr class="omb_hrOr">
-                        <span class="omb_spanOr">or</span>
-                    </div>
-                </div>
-
-                <?php if(function_exists('fboauth_action_display')): ?>
-                    <div class="social-login">
-                        <?php print fboauth_action_display('connect'); ?>
-                    </div>
-                <?php endif; ?>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

@@ -46,7 +46,7 @@ $featured_articles = footmali_featured_articles();
             <?php if($index > 1): ?>
                 <li>
                     <article class="entry-item">
-                        <span class="kopa-list-icon"></span>
+                        <span class="kopa-list-icon"><i class="fa fa-chevron-right"></i></span>
                         <h4 class="entry-title">
                             <a href="<?php echo drupal_get_path_alias("node/{$featured_article->nid}"); ?>">
                                 <?php echo $featured_article->title; ?>
