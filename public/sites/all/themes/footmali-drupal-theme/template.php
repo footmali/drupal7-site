@@ -143,7 +143,7 @@ function footmali_breadcrumb($variables)
         $array_size = count($breadcrumb);
         $i = 0;
         while ($i < $array_size) {
-            $crumbs .= '<span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="breadcrumb-'.$i;
+            $crumbs .= '<span itemtype="https://data-vocabulary.org/Breadcrumb" itemscope="" class="breadcrumb-'.$i;
             if ($i == 0) {
                 $crumbs .= ' first';
             } elseif ($i + 1 == $array_size) {
@@ -158,12 +158,12 @@ function footmali_breadcrumb($variables)
                 $url = '/taxonomy/term/'.$node->field_category[LANGUAGE_NONE][0]['tid'];
                 $name = $node->field_category[LANGUAGE_NONE][0]['taxonomy_term']->name;
 
-                $crumbs .= '<span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">';
+                $crumbs .= '<span itemtype="https://data-vocabulary.org/Breadcrumb" itemscope="">';
                 $crumbs .= ' <a itemprop="url" href="'.$url.'"><span itemprop="title">'.$name.'</span></a>';
                 $crumbs .= '</span> &nbsp;|&nbsp; ';
             }
         }
-        $crumbs .= '<span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">';
+        $crumbs .= '<span itemtype="https://data-vocabulary.org/Breadcrumb" itemscope="">';
         $crumbs .= ' <a itemprop="url" class="current-page"><span itemprop="title">'.drupal_get_title().'</span></a>';
         $crumbs .= '</span>';
 
@@ -407,7 +407,7 @@ function footmali_popular_articles()
         $articles_query .= 'WHERE n.status = 1 ';
         $articles_query .= "AND n.type = 'article' ";
         $articles_query .= 'AND c.totalcount >= 1 ';
-        $articles_query .= 'ORDER BY c.totalcount desc, n.created desc ';
+        $articles_query .= 'ORDER BY n.created desc, c.totalcount desc ';
         $articles_query .= 'LIMIT 10 ';
 
         $articles = array();
@@ -879,16 +879,15 @@ function footmali_node_share($nid, $title)
     $twitter_url .= '&url='.urlencode($url);
     $twitter_url .= '&hashtags=footballMalien,footMali,maliFootball';
     $twitter_url .= '&via=FOOTMALICOM';
-    $google_url = 'https://plus.google.com/share?url='.urlencode($url).'&hl='.$lang;
-    $google_onlick = "javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;";
+    $whatsapp_url = 'https://api.whatsapp.com/send?text='.urlencode($title .' '. $url); # mobile & others
+    // $whatsapp_url2 = 'whatsapp://send?text='.urlencode($title .' '. $url); #only mobile
 
     return (object) array(
         'lang' => $lang,
         'url' => $url,
         'facebook_url' => $url,
         'twitter_url' => $twitter_url,
-        'google_url' => $google_url,
-        'google_onclick' => $google_onlick,
+        'whatsapp_url' => $whatsapp_url
     );
 }
 
@@ -900,7 +899,7 @@ function footmali_render_share_normal($nid, $title)
     $output .= '    <ul class="clearfix">';
     $output .= '        <li><a href="javascript:void" data-url="'.$share->url.'" class="fa fa-facebook facebook-share"></a></li>';
     $output .= '        <li><a href="'.$share->twitter_url.'" class="fa fa-twitter"></a></li>';
-    $output .= '        <li><a href="'.$share->google_url.'" class="fa fa-google-plus" onclick="'.$share->google_onclick.'" alt="Share on Google+"></a></li>';
+    $output .= '        <li class="visible-xs"><a href="'.$share->whatsapp_url.'" class="fa fa-whatsapp" data-action="share/whatsapp/share" target="_blank"></a></li>';
     $output .= '    </ul>';
     $output .= '</div>';
 
@@ -916,7 +915,7 @@ function footmali_render_share_small($nid, $title)
     $output .= '<ul>';
     $output .= '<li><a href="javascript:void" data-url="'.$share->url.'" class="fa fa-facebook facebook-share"></a></li>';
     $output .= '<li><a href="'.$share->twitter_url.'" class="fa fa-twitter"></a></li>';
-    $output .= '<li><a href="'.$share->google_url.'" class="fa fa-google-plus" onclick="'.$share->google_onclick.'" alt="Share on Google+"></a></li>';
+    $output .= '<li class="visible-xs"><a href="'.$share->whatsapp_url.'" class="fa fa-whatsapp" data-action="share/whatsapp/share" target="_blank"></a></li>';
     $output .= '</ul>';
     $output .= '</div>';
 

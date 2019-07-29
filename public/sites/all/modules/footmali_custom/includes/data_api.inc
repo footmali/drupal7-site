@@ -111,7 +111,7 @@ function popular_articles($limit = 10) {
         $articles_query .= 'WHERE n.status = 1 ';
         $articles_query .= "AND n.type = 'article' ";
         $articles_query .= 'AND c.totalcount >= 1 ';
-        $articles_query .= 'ORDER BY c.totalcount desc, n.created desc ';
+        $articles_query .= 'ORDER BY n.created desc, c.totalcount desc ';
         $articles_query .= 'LIMIT ' . $limit;
 
         $articles = array();

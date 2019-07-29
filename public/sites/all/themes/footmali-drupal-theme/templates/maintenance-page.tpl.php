@@ -3,8 +3,8 @@
     <title><?php print $head_title; ?></title>
     <?php print $head; ?>
     <style>
-        @import url(http://fonts.googleapis.com/css?family=Montserrat);
-        @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+        @import url(https://fonts.googleapis.com/css?family=Montserrat);
+        @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
     </style>
     <?php print $styles; ?>
     <?php print $scripts; ?>

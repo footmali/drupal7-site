@@ -70,8 +70,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-W59KKT2');</script>
 <!-- End Google Tag Manager -->
-
-
+   
+    <!-- Fontawesome -->
+    <script src="https://use.fontawesome.com/29ccf52a4b.js"></script>
 
     <!-- adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -147,7 +148,7 @@ window.cookieconsent.initialise({
           s.parentNode.insertBefore(wf, s);
        })(document);
     </script>
-
+    
     <!-- Facebook -->
     <script>
         window.fbAsyncInit = function() {
@@ -190,6 +191,6 @@ window.cookieconsent.initialise({
 
     <!-- Google -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <script type="text/javascript">_satellite.pageBottom();</script>
+    <script type="text/javascript">_satellite.pageBottom();</script>
 </body>
 </html>

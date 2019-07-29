@@ -29,10 +29,10 @@ $videos = footmali_get_videos(5);
                 <article class="entry-item video-post">
                     <div class="entry-thumb">
                         <a href="/video/<?php echo $video->nid; ?>"><?php echo ! empty($image) ? $image : $default_image_markup; ?></a>
-                        <a class="thumb-icon" href="/video/<?php echo $video->nid; ?>"></a>
+                        <a class="thumb-icon" href="/video/<?php echo $video->nid; ?>"><i class="fa fa-play-circle"></i></a>
                     </div>
                     <div class="entry-content">
-                        <h4 class="entry-title" itemscope="" itemtype="http://schema.org/MediaObject">
+                        <h4 class="entry-title" itemscope="" itemtype="https://schema.org/MediaObject">
                             <a itemprop="name" href="/video/<?php echo $video->nid; ?>"><?php echo $video->title; ?></a>
                         </h4>
                     </div>
