@@ -876,12 +876,10 @@ function footmali_node_share($nid, $title)
     $url = url(drupal_get_path_alias('node/'.$nid), array('absolute' => true));
     $twitter_url = 'https://twitter.com/intent/tweet?';
     $twitter_url .= 'text='.urlencode($title);
-    $twitter_url .= '&url='.urlencode($url);
+    $twitter_url .= '&url='.urlencode($url . '?utm_source=twitter&utm_medium=Social');
     $twitter_url .= '&hashtags=footballMalien,footMali,maliFootball';
     $twitter_url .= '&via=FOOTMALICOM';
-    $twitter_url .= '&utm_source=twitter&utm_medium=Social';
-    $whatsapp_url = 'https://api.whatsapp.com/send?text='.urlencode($title .' '. $url); # mobile & others
-    $whatsapp_url .= '&utm_source=whatsapp&utm_medium=Social';
+    $whatsapp_url = 'https://api.whatsapp.com/send?text='.urlencode($title .' '. $url.'&utm_source=whatsapp&utm_medium=Social'); # mobile & others
 
     return (object) array(
         'lang' => $lang,
