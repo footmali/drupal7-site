@@ -96,7 +96,8 @@
                                  style="display:block"
                                  data-ad-client="ca-pub-7538390076513661"
                                  data-ad-slot="5022423913"
-                                 data-ad-format="auto"></ins>
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
                                  <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                  </script>

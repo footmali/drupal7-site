@@ -4,9 +4,8 @@ core = 7.x
 dependencies[] = amp
 dependencies[] = dfp
 
-; Information added by Drupal.org packaging script on 2016-07-01
-version = "7.x-1.0"
+; Information added by Drupal.org packaging script on 2018-11-01
+version = "7.x-1.1"
 core = "7.x"
 project = "amp"
-datestamp = "1467416440"
-
+datestamp = "1541034798"

@@ -29,15 +29,21 @@ $index = 1;
                     </article>
                 </li>
             	<?php endif; ?>
-                <?php if($index == 4): ?>
+                <?php if($index % 2 == 0): ?>
                   <!-- headlines ad -->
                   <li class="headlines responsive-ad">
                     <!-- Between Headlines -->
-                    <ins class="adsbygoogle"
+                    <!-- <ins class="adsbygoogle"
                          style="display:block;"
                          data-ad-client="ca-pub-7538390076513661"
                          data-ad-slot="6917959512"
-                         data-ad-format="auto"></ins>
+                         data-ad-format="auto"></ins> -->
+                         <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-format="fluid"
+                            data-ad-layout-key="-66+bs+d-v+ke"
+                            data-ad-client="ca-pub-7538390076513661"
+                            data-ad-slot="1959205546"></ins>
                      <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
                      </script>

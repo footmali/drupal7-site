@@ -879,8 +879,9 @@ function footmali_node_share($nid, $title)
     $twitter_url .= '&url='.urlencode($url);
     $twitter_url .= '&hashtags=footballMalien,footMali,maliFootball';
     $twitter_url .= '&via=FOOTMALICOM';
+    $twitter_url .= '&utm_source=twitter&utm_medium=Social';
     $whatsapp_url = 'https://api.whatsapp.com/send?text='.urlencode($title .' '. $url); # mobile & others
-    // $whatsapp_url2 = 'whatsapp://send?text='.urlencode($title .' '. $url); #only mobile
+    $whatsapp_url .= '&utm_source=whatsapp&utm_medium=Social';
 
     return (object) array(
         'lang' => $lang,

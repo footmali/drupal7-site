@@ -31,11 +31,24 @@
                 return re.test(email);
             }
 
+            var inArticleAd = '<ins class="adsbygoogle"'+
+                                'style="display:block; text-align:center;"' +
+                                'data-ad-layout="in-article"'+
+                                'data-ad-format="fluid"'+
+                                'data-ad-client="ca-pub-7538390076513661"'+
+                                'data-ad-slot="7560792686"></ins>'+
+                        '<script>'+
+                                '(adsbygoogle = window.adsbygoogle || []).push({});'+
+                        '</script>';
+            
+
             // Submit footer newsletter
             $('#mc-embedded-subscribe-form .search-submit').click( function(event){
                 // hide form
                 $('#bottom-sidebar .bottom-area-3').hide();
             });
+
+
         }
     };
 
