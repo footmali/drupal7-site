@@ -84,7 +84,7 @@ function theme_footmali_node_list($variables) {
                         $output .=  '</script>';
                     $output .=  '</li>';
                 endif;
-                if($index == 10):
+                if($index == 15):
                     #Between Headlines ad
                     $output .= '<li class="kopa-ads-widget style1 headlines responsive-ad">';
                         $output .=  '<ins class="adsbygoogle"';
