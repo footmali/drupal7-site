@@ -58,7 +58,7 @@ function theme_footmali_node_list($variables) {
 
                 if($index == 5):
                     #Between Headlines ad
-                    $output .= '<li class="kopa-ads-widget style1 headlines responsive-ad">';
+                    $output .= '<li class="widget kopa-ads-widget style1 headlines responsive-ad">';
                         $output .=  '<ins class="adsbygoogle"';
                             $output .= 'style="display:block"';
                             $output .= 'data-ad-format="fluid"';
@@ -72,7 +72,7 @@ function theme_footmali_node_list($variables) {
                 endif;
                 if($index == 10):
                     #Between Headlines ad
-                    $output .= '<li class="kopa-ads-widget style1 headlines responsive-ad">';
+                    $output .= '<li class="widget kopa-ads-widget style1 headlines responsive-ad">';
                         $output .=  '<ins class="adsbygoogle"';
                             $output .= 'style="display:block"';
                             $output .= 'data-ad-format="auto"';
@@ -86,7 +86,7 @@ function theme_footmali_node_list($variables) {
                 endif;
                 if($index == 15):
                     #Between Headlines ad
-                    $output .= '<li class="kopa-ads-widget style1 headlines responsive-ad">';
+                    $output .= '<li class="widget kopa-ads-widget style1 headlines responsive-ad">';
                         $output .=  '<ins class="adsbygoogle"';
                             $output .= 'style="display:block"';
                             $output .= 'data-ad-format="auto"';
