@@ -113,7 +113,7 @@ function footmali_blocks_block_view($delta = '') {
                         'title_type' => 12,
                         'list_type' => 1,
                     )),
-                    '#nodes' => headline_articles(),
+                    '#nodes' => headline_articles(20),
                     '#list_type' => 'thumb',
                     '#article_list' => TRUE,
                 );
