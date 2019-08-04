@@ -189,7 +189,7 @@ if($page){
     <?php include('includes/partials/_outbrain_content.php'); ?>
 
     <div id="comments">
-      <h4><?php echo t('Reagissez A Cet Article'); ?></h4>
+        <h4><?php echo t('Reagissez A Cet Article'); ?></h4>
         <div class="fb-comments" data-href="<?php drupal_get_path_alias("node/{$nid}"); ?>" data-width="100%" data-numposts="10"></div>
     </div>
     <!-- comment -->
