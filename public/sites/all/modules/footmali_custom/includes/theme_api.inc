@@ -56,6 +56,49 @@ function theme_footmali_node_list($variables) {
 
                 $output .= theme('footmali_article_list_item', $args);
 
+                if($index == 5):
+                    #Between Headlines ad
+                    $output .= '<li class="kopa-ads-widget style1 headlines responsive-ad">';
+                        $output .=  '<ins class="adsbygoogle"';
+                            $output .= 'style="display:block"';
+                            $output .= 'data-ad-format="fluid"';
+                            $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                            $output .= 'data-ad-slot="1959205546"></ins>';
+                        $output .=  '<script>';
+                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                        $output .=  '</script>';
+                    $output .=  '</li>';
+                endif;
+                if($index == 10):
+                    #Between Headlines ad
+                    $output .= '<li class="kopa-ads-widget style1 headlines responsive-ad">';
+                        $output .=  '<ins class="adsbygoogle"';
+                            $output .= 'style="display:block"';
+                            $output .= 'data-ad-format="auto"';
+                            $output .= 'data-full-width-responsive="true"';
+                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                            $output .= 'data-ad-slot="9288445931"></ins>';
+                        $output .=  '<script>';
+                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                        $output .=  '</script>';
+                    $output .=  '</li>';
+                endif;
+                if($index == 15):
+                    #Between Headlines ad
+                    $output .= '<li class="kopa-ads-widget style1 headlines responsive-ad">';
+                        $output .=  '<ins class="adsbygoogle"';
+                            $output .= 'style="display:block"';
+                            $output .= 'data-ad-format="auto"';
+                            $output .= 'data-full-width-responsive="true"';
+                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                            $output .= 'data-ad-slot="9148845132"></ins>';
+                        $output .=  '<script>';
+                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                        $output .=  '</script>';
+                    $output .=  '</li>';
+                endif;
+
                 $index++;
             endforeach;
         endif;

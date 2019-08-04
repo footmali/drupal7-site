@@ -90,7 +90,7 @@
             <div class="content-wrap">
                 <div class="row">
                     <div class="kopa-main-col">
-                        <div class="widget kopa-ads-widget style1 visible-xs" style="text-align: center;">
+                        <div class="widget kopa-ads-widget style1" style="text-align: center;">
                             <!-- Content Top wide -->
                             <ins class="adsbygoogle"
                                  style="display:block"
