@@ -2,13 +2,14 @@
     display: none;
 }
 
-.kopa-entry-post article {
+/* ==== block user text selection ==== */
+/* .kopa-entry-post article {
     -webkit-touch-callout: none;-webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+} */
 
 article a {
     color: #1C9E49;
