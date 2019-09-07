@@ -109,12 +109,12 @@ function footmali_blocks_block_view($delta = '') {
                 $block['content'] = array(
                     '#theme' => 'footmali_node_list',
                     '#wrapper' => array('footmali_article_list_widget_wrapper', array(
-                        'title' => t('Headlines'),
+                        'title' => 'Chrono',
                         'title_type' => 12,
                         'list_type' => 1,
                     )),
                     '#nodes' => headline_articles(20),
-                    '#list_type' => 'thumb',
+                    '#list_type' => 'thumb-small',
                     '#article_list' => TRUE,
                 );
                 break;

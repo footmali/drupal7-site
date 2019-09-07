@@ -40,7 +40,7 @@ function theme_footmali_node_list($variables) {
     endif;
 
     $output = !is_null($wrapper_element) ? $wrapper_element['prefix'] : '';
-    $output .= '<ul class="clearfix ' . $list_class . '">';
+    $output .= '<ul class="clearfix article-list">';
         if(count($nodes) > 0):
             $index = 1;
             foreach($nodes as $article):
@@ -115,7 +115,7 @@ function theme_footmali_article_list_item($variables) {
     $output = '';
         $output .= '<li>';
         if($article_list):
-            $output .= '<article class="entry-item">';
+            $output .= '<article class="clearfix article">';
         endif;
                 if('icon' == $list_type):
                     $output .= '<span class="kopa-list-icon"></span>';
@@ -127,15 +127,21 @@ function theme_footmali_article_list_item($variables) {
                     $output .= '<i class="order-num">' . $variables['index'] . '</i>';
                 endif;
 
-                if('thumb' == $list_type):
-                    $output .= '<div class="entry-thumb">';
-                        $img = output_image('content_carrousel_large', $node->field_image);
+                if('thumb-large' == $list_type):
+                    $output .= '<div class="article-image">';
+                        $img = output_image('large', $node->field_image);
+                        $output .= l($img, $url, array('html' => TRUE));
+                    $output .= '</div>';
+                endif;
+                if('thumb-small' == $list_type):
+                    $output .= '<div class="article-image">';
+                        $img = output_image('medium', $node->field_image);
                         $output .= l($img, $url, array('html' => TRUE));
                     $output .= '</div>';
                 endif;
 
                 if($article_list):
-                    $output .= '<div class="entry-content">';
+                    $output .= '<div class="article-body">';
                         $output .= '<div class="content-top">';
                             $output .= '<h4 class="entry-title">';
                 endif;
@@ -145,12 +151,9 @@ function theme_footmali_article_list_item($variables) {
                         $output .= '</div>'; //content-top
                 endif;
 
-                    if('thumb' == $list_type):
-                        $output .= trim_paragraph($node->body[LANGUAGE_NONE][0]['value'],  140) . '...';
-                        $output .= '<footer>';
-                            $output .= '<p class="entry-author">'. t('by') . ' ' . get_article_author($node);' </p>';
-                        $output .= '</footer>';
-                    endif;
+                $output .= '<div class="summary">';
+                    $output .= trim(trim_paragraph($node->body[LANGUAGE_NONE][0]['value'],  90) . '...');
+                $output .= '</div>';
             if($article_list):
                     $output .= '</div>'; //entry-content
                 $output .= '</article>';
@@ -347,37 +350,21 @@ function theme_footmali_featured_2row($variables) {
 
     $output = '';
     $first_article = array_shift($nodes);
-    $output .= '<div class="widget-area-5">';
-        $output .= '<div class="widget kopa-article-list-widget article-list-4" style="margin-bottom: 0;">';
-            $output .= '<h3 class="widget-title style1">'. t('Features') .'</h3>';
-            $output .= '<ul class="clearfix">';
-                $output .= theme('footmali_article_list_item', array(
-                    'list_type' => 'thumb',
-                    'node' => $first_article,
-                    'article_list' => TRUE,
-                ));
-            $output .= '</ul>';
-        $output .= '</div>';
-    $output .= '</div>';
-
-    $output .= '<div class="widget kopa-article-list-widget article-list-3 hidden-xs">';
-        $output .= '<ul class="clearfix">';
-            foreach($nodes as $featured_article):
-                $output .= theme('footmali_article_list_item', array(
-                    'list_type' => 'icon',
-                    'node' => $featured_article,
-                    'article_list' => TRUE,
-                ));
-            endforeach;
+    $output .= '<div class="article-large">';
+        $output .= '<ul class="clearfix article-list">';
+            $output .= theme('footmali_article_list_item', array(
+                'list_type' => 'thumb-large',
+                'node' => $first_article,
+                'article_list' => TRUE,
+            ));
         $output .= '</ul>';
     $output .= '</div>';
 
-    // mobile only featured articles
-    $output .= '<div class="widget kopa-article-list-widget article-list-1 visible-xs visible-sm">';
-        $output .= '<ul>';
+    $output .= '<div class="article-small">';
+        $output .= '<ul class="clearfix article-list">';
         foreach($nodes as $featured_article):
             $output .= theme('footmali_article_list_item', array(
-                'list_type' => 'thumb',
+                'list_type' => 'thumb-small',
                 'node' => $featured_article,
                 'article_list' => TRUE,
             ));
