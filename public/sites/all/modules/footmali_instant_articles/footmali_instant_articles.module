@@ -55,7 +55,6 @@ function footmali_instant_articles_dev_feed() {
                     "node/" . $node->nid),
                     array('absolute' => TRUE
                   )); ?>">
-                  <meta property="fb:use_automatic_ad_placement" content="true">
                   <meta property="op:markup_version" content="v1.0">
                   <meta property="fb:article_style" content="Footmali Default">
                   <meta property="fb:use_automatic_ad_placement" content="true">
@@ -63,49 +62,6 @@ function footmali_instant_articles_dev_feed() {
                 <body>
                   <article>
                     <header>
-                    	<section class="op-ad-template">
-                    		<figure class="op-ad">
-		                        <iframe height="250" width="300">
-		                        	  <!-- Include full ad code here -->
-		                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		                            <!-- FB Instant Articles -->
-		                            <ins class="adsbygoogle"
-		                                 style="display:inline-block;width:300px;height:250px"
-		                                 data-ad-client="ca-pub-7538390076513661"
-		                                 data-ad-slot="7316411112"></ins>
-		                            <script>
-		                            (adsbygoogle = window.adsbygoogle || []).push({});
-		                            </script>
-		                        </iframe>
-		                    </figure>
-		                    <figure class="op-ad op-ad-default">
-		                    	<iframe height="250" width="300">
-		                    		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-									<!-- FB Instant Articles 2 -->
-									<ins class="adsbygoogle"
-									     style="display:inline-block;width:300px;height:250px"
-									     data-ad-client="ca-pub-7538390076513661"
-									     data-ad-slot="2965643117"></ins>
-									<script>
-									(adsbygoogle = window.adsbygoogle || []).push({});
-									</script>
-		                    	</iframe>
-		                    </figure>
-		                    <figure class="op-ad">
-		                    	<iframe height="250" width="300">
-		                    		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-									<!-- FB Instant Articles 3 -->
-									<ins class="adsbygoogle"
-									     style="display:inline-block;width:300px;height:250px"
-									     data-ad-client="ca-pub-7538390076513661"
-									     data-ad-slot="1349309110"></ins>
-									<script>
-									(adsbygoogle = window.adsbygoogle || []).push({});
-									</script>
-		                    	</iframe>
-		                    </figure>
-                    	</section>
-
                       <!— Article header goes here -->
                       <figure data-mode=aspect-fit>
                         <?php echo footmali_instant_articles_image('homepage_highlight_carousel', $node->field_image); ?>
@@ -207,7 +163,6 @@ function footmali_instant_articles_prod_feed() {
                     "node/" . $node->nid),
                     array('absolute' => TRUE
                   )); ?>">
-                  <meta property="fb:use_automatic_ad_placement" content="true">
                   <meta property="op:markup_version" content="v1.0">
                   <meta property="fb:article_style" content="Footmali Default">
                   <meta property="fb:use_automatic_ad_placement" content="true">
@@ -215,49 +170,6 @@ function footmali_instant_articles_prod_feed() {
                 <body>
                   <article>
                     <header>
-                    	<section class="op-ad-template">
-                    		<figure class="op-ad">
-		                        <iframe height="250" width="300">
-		                        	  <!-- Include full ad code here -->
-		                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		                            <!-- FB Instant Articles -->
-		                            <ins class="adsbygoogle"
-		                                 style="display:inline-block;width:300px;height:250px"
-		                                 data-ad-client="ca-pub-7538390076513661"
-		                                 data-ad-slot="7316411112"></ins>
-		                            <script>
-		                            (adsbygoogle = window.adsbygoogle || []).push({});
-		                            </script>
-		                        </iframe>
-		                    </figure>
-		                    <figure class="op-ad op-ad-default">
-		                    	<iframe height="250" width="300">
-		                    		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-									<!-- FB Instant Articles 2 -->
-									<ins class="adsbygoogle"
-									     style="display:inline-block;width:300px;height:250px"
-									     data-ad-client="ca-pub-7538390076513661"
-									     data-ad-slot="2965643117"></ins>
-									<script>
-									(adsbygoogle = window.adsbygoogle || []).push({});
-									</script>
-		                    	</iframe>
-		                    </figure>
-		                    <figure class="op-ad">
-		                    	<iframe height="250" width="300">
-		                    		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-									<!-- FB Instant Articles 3 -->
-									<ins class="adsbygoogle"
-									     style="display:inline-block;width:300px;height:250px"
-									     data-ad-client="ca-pub-7538390076513661"
-									     data-ad-slot="1349309110"></ins>
-									<script>
-									(adsbygoogle = window.adsbygoogle || []).push({});
-									</script>
-		                    	</iframe>
-		                    </figure>
-                    	</section>
-
                       <!— Article header goes here -->
                       <figure data-mode=aspect-fit>
                         <?php echo footmali_instant_articles_image('homepage_highlight_carousel', $node->field_image); ?>
@@ -290,7 +202,8 @@ function footmali_instant_articles_prod_feed() {
                     
                     <footer>
                       <!— Article footer goes here -->
-                       <small>Footmali © <?php echo date('Y'); ?></small>
+                      <small>Footmali © <?php echo date('Y'); ?></small>
+                      <ul class="op-related-articles"></ul>
                     </footer>
 
                     <figure class="op-tracker">
@@ -307,7 +220,6 @@ function footmali_instant_articles_prod_feed() {
                             ga('set', 'campaignSource', 'Facebook');
                             ga('set', 'campaignMedium', 'Social Instant Article');
                             ga('send', 'pageview', {"title": "<?php echo check_plain($node->title); ?>"});
-
                           </script>
                         </iframe>
                     </figure>

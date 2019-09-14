@@ -86,12 +86,12 @@
 
     <div id="main-wrapper"><main role="main" id="main" class="amp-main clearfix">
         <div class="amp-ad">
-            <amp-ad
+            <!-- <amp-ad
                 type="adsense"
                 layout="fixed-height"
                 height="100"
                 data-ad-client="ca-pub-7538390076513661"
-                data-ad-slot="6320432719"></amp-ad>
+                data-ad-slot="6320432719"></amp-ad> -->
         </div>
 
         <div id="content" class="amp-main__content column"><div class="section">
@@ -108,11 +108,16 @@
 
       </main></div> <!-- /#main, /#main-wrapper -->
 
-    <footer class="amp-footer" role="contentinfo" id="footer">
-        <div class="amp-footer__content section">
-        <?php print render($page['footer']); ?>
-        <p id="copyright" class=""><?php echo t('Copyright'); ?> © Footmali.com <?php echo date('Y'); ?>. <?php echo t('All Rights Reserved'); ?>.</p>
-      </div>
-    </footer> <!-- /.section, /#footer -->
+      <footer id="footer">
+        <div class="container">
+            <div id="footer-menu" class="row">
+                <ul class="clearfix">
+                    <li><a href="/"><span><i class="fa fa-home"></i><span class="text"><?php echo t('Home'); ?></span></span></a></li>
+                    <li><a href="/actu"><span><i class="fa fa-stream"></i><span class="text"><?php echo t('Actu'); ?></span></span></a></li>
+                    <li><a href="/video/index"><span><i class="fa fa-play-circle"></i><span class="text"><?php echo t('Video'); ?></span></span></a></li>
+                </ul>
+            </div>
+        </div>
+      </footer>
 
   </div></div> <!-- /#page, /#page-wrapper -->

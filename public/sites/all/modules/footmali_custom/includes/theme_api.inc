@@ -33,14 +33,9 @@ function theme_footmali_node_list($variables) {
         $wrapper_element = theme($wrapper[0], $wrapper[1]);
     endif;
 
-    if(!$article_list):
-        $list_class .= ' kopa-list kopa-e-list';
-    elseif ('order' == $list_type):
-        $list_class .= ' list-order';
-    endif;
 
     $output = !is_null($wrapper_element) ? $wrapper_element['prefix'] : '';
-    $output .= '<ul class="clearfix ' . $list_class . '">';
+    $output .= '<ul class="clearfix article-list">';
         if(count($nodes) > 0):
             $index = 1;
             foreach($nodes as $article):
@@ -56,46 +51,55 @@ function theme_footmali_node_list($variables) {
 
                 $output .= theme('footmali_article_list_item', $args);
 
+                if($index == 1):
+                    #Between Headlines ad
+                    $output .= '<li class="ads-wrapper">';
+                        $output .= '<div class="ads">';
+                            $output .= '<span class="heading">publicité</span>';
+                            // $output .=  '<ins class="adsbygoogle"';
+                            //     $output .= 'style="display:block"';
+                            //     $output .= 'data-ad-format="fluid"';
+                            //     $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                            //     $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                            //     $output .= 'data-ad-slot="1959205546"></ins>';
+                            // $output .=  '<script>';
+                            // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                            // $output .=  '</script>';
+                        $output .= '</div>';
+                    $output .=  '</li>';
+                endif;
                 if($index == 5):
                     #Between Headlines ad
-                    $output .= '<li class="widget kopa-ads-widget style1 headlines responsive-ad">';
-                        $output .=  '<ins class="adsbygoogle"';
-                            $output .= 'style="display:block"';
-                            $output .= 'data-ad-format="fluid"';
-                            $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
-                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
-                            $output .= 'data-ad-slot="1959205546"></ins>';
-                        $output .=  '<script>';
-                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
-                        $output .=  '</script>';
+                    $output .= '<li class="ads-wrapper">';
+                        $output .= '<div class="ads">';
+                            $output .= '<span class="heading">publicité</span>';
+                            // $output .=  '<ins class="adsbygoogle"';
+                            //     $output .= 'style="display:block"';
+                            //     $output .= 'data-ad-format="fluid"';
+                            //     $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                            //     $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                            //     $output .= 'data-ad-slot="1959205546"></ins>';
+                            // $output .=  '<script>';
+                            // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                            // $output .=  '</script>';
+                        $output .= '</div>';
                     $output .=  '</li>';
                 endif;
-                if($index == 10):
+                if($index == 7):
                     #Between Headlines ad
-                    $output .= '<li class="widget kopa-ads-widget style1 headlines responsive-ad">';
-                        $output .=  '<ins class="adsbygoogle"';
-                            $output .= 'style="display:block"';
-                            $output .= 'data-ad-format="auto"';
-                            $output .= 'data-full-width-responsive="true"';
-                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
-                            $output .= 'data-ad-slot="9288445931"></ins>';
-                        $output .=  '<script>';
-                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
-                        $output .=  '</script>';
-                    $output .=  '</li>';
-                endif;
-                if($index == 15):
-                    #Between Headlines ad
-                    $output .= '<li class="widget kopa-ads-widget style1 headlines responsive-ad">';
-                        $output .=  '<ins class="adsbygoogle"';
-                            $output .= 'style="display:block"';
-                            $output .= 'data-ad-format="auto"';
-                            $output .= 'data-full-width-responsive="true"';
-                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
-                            $output .= 'data-ad-slot="9148845132"></ins>';
-                        $output .=  '<script>';
-                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
-                        $output .=  '</script>';
+                    $output .= '<li class="ads-wrapper">';
+                        $output .= '<div class="ads">';
+                            $output .= '<span class="heading">publicité</span>';
+                            // $output .=  '<ins class="adsbygoogle"';
+                            //     $output .= 'style="display:block"';
+                            //     $output .= 'data-ad-format="fluid"';
+                            //     $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                            //     $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                            //     $output .= 'data-ad-slot="1959205546"></ins>';
+                            // $output .=  '<script>';
+                            // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                            // $output .=  '</script>';
+                        $output .= '</div>';
                     $output .=  '</li>';
                 endif;
 
@@ -115,7 +119,7 @@ function theme_footmali_article_list_item($variables) {
     $output = '';
         $output .= '<li>';
         if($article_list):
-            $output .= '<article class="entry-item">';
+            $output .= '<article class="clearfix article">';
         endif;
                 if('icon' == $list_type):
                     $output .= '<span class="kopa-list-icon"></span>';
@@ -127,15 +131,21 @@ function theme_footmali_article_list_item($variables) {
                     $output .= '<i class="order-num">' . $variables['index'] . '</i>';
                 endif;
 
-                if('thumb' == $list_type):
-                    $output .= '<div class="entry-thumb">';
-                        $img = output_image('content_carrousel_large', $node->field_image);
+                if('thumb-large' == $list_type):
+                    $output .= '<div class="article-image">';
+                        $img = output_image('large', $node->field_image);
+                        $output .= l($img, $url, array('html' => TRUE));
+                    $output .= '</div>';
+                endif;
+                if('thumb-small' == $list_type):
+                    $output .= '<div class="article-image">';
+                        $img = output_image('medium', $node->field_image);
                         $output .= l($img, $url, array('html' => TRUE));
                     $output .= '</div>';
                 endif;
 
                 if($article_list):
-                    $output .= '<div class="entry-content">';
+                    $output .= '<div class="article-body">';
                         $output .= '<div class="content-top">';
                             $output .= '<h4 class="entry-title">';
                 endif;
@@ -145,12 +155,9 @@ function theme_footmali_article_list_item($variables) {
                         $output .= '</div>'; //content-top
                 endif;
 
-                    if('thumb' == $list_type):
-                        $output .= trim_paragraph($node->body[LANGUAGE_NONE][0]['value'],  140) . '...';
-                        $output .= '<footer>';
-                            $output .= '<p class="entry-author">'. t('by') . ' ' . get_article_author($node);' </p>';
-                        $output .= '</footer>';
-                    endif;
+                $output .= '<div class="summary">';
+                    $output .= trim(trim_paragraph($node->body[LANGUAGE_NONE][0]['value'],  120) . '...');
+                $output .= '</div>';
             if($article_list):
                     $output .= '</div>'; //entry-content
                 $output .= '</article>';
@@ -274,7 +281,10 @@ function theme_footmali_article_block($variables){
         $output .= '<div class="widget-content">';
             $output .= '<ul class="kopa-list clearfix">';
             foreach ($nodes as $node):
-                $output .= theme('footmali_article_list_item', array('node' => $node));
+                $output .= theme('footmali_article_list_item', array(
+                    'list_type' => 'thumb-small',
+                    'node' => $node,
+                    'article_list' => TRUE));
             endforeach;
             $output .= '</ul>';
         $output .= '</div>';
@@ -347,40 +357,60 @@ function theme_footmali_featured_2row($variables) {
 
     $output = '';
     $first_article = array_shift($nodes);
-    $output .= '<div class="widget-area-5">';
-        $output .= '<div class="widget kopa-article-list-widget article-list-4" style="margin-bottom: 0;">';
-            $output .= '<h3 class="widget-title style1">'. t('Features') .'</h3>';
-            $output .= '<ul class="clearfix">';
-                $output .= theme('footmali_article_list_item', array(
-                    'list_type' => 'thumb',
-                    'node' => $first_article,
-                    'article_list' => TRUE,
-                ));
-            $output .= '</ul>';
-        $output .= '</div>';
-    $output .= '</div>';
+    $output .= '<div class="article-large">';
+        $output .= '<ul class="clearfix article-list">';
+            $output .= theme('footmali_article_list_item', array(
+                'list_type' => 'thumb-large',
+                'node' => $first_article,
+                'article_list' => TRUE,
+            ));
 
-    $output .= '<div class="widget kopa-article-list-widget article-list-3 hidden-xs">';
-        $output .= '<ul class="clearfix">';
-            foreach($nodes as $featured_article):
-                $output .= theme('footmali_article_list_item', array(
-                    'list_type' => 'icon',
-                    'node' => $featured_article,
-                    'article_list' => TRUE,
-                ));
-            endforeach;
+            $output .= '<li class="ads-wrapper">';
+                $output .= '<div class="ads">';
+                    $output .= '<span class="heading">publicité</span>';
+                    // $output .=  '<ins class="adsbygoogle"';
+                    //     $output .= 'style="display:block"';
+                    //     $output .= 'data-ad-format="fluid"';
+                    //     $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                    //     $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                    //     $output .= 'data-ad-slot="1959205546"></ins>';
+                    // $output .=  '<script>';
+                    // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                    // $output .=  '</script>';
+                $output .= '</div>';
+            $output .=  '</li>';
         $output .= '</ul>';
     $output .= '</div>';
 
-    // mobile only featured articles
-    $output .= '<div class="widget kopa-article-list-widget article-list-1 visible-xs visible-sm">';
-        $output .= '<ul>';
+    $output .= '<div class="article-small">';
+        $output .= '<ul class="clearfix article-list">';
+        $article_small_index = 0;
+
         foreach($nodes as $featured_article):
             $output .= theme('footmali_article_list_item', array(
-                'list_type' => 'thumb',
+                'list_type' => 'thumb-small',
                 'node' => $featured_article,
                 'article_list' => TRUE,
             ));
+
+            if($article_small_index  == 1):
+                #Between Headlines ad
+                $output .= '<li class="ads-wrapper">';
+                    $output .= '<div class="ads">';
+                        $output .= '<span class="heading">publicité</span>';
+                        // $output .=  '<ins class="adsbygoogle"';
+                        //     $output .= 'style="display:block"';
+                        //     $output .= 'data-ad-format="fluid"';
+                        //     $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                        //     $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                        //     $output .= 'data-ad-slot="1959205546"></ins>';
+                        // $output .=  '<script>';
+                        // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                        // $output .=  '</script>';
+                    $output .= '</div>';
+                $output .=  '</li>';
+            endif;
+            $article_small_index++;
         endforeach;
         $output .= '</ul>';
     $output .= '</div>';

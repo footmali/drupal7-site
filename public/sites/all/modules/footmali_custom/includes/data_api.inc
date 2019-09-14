@@ -195,14 +195,30 @@ function get_article_author($node) {
  * @return string
  */
 function output_image($style, $imageEntity) {
+    // $variable = array(
+    //     'path' => $imageEntity[LANGUAGE_NONE][0]['uri'],
+    //     'style_name' => $style,
+    //     'width' => $imageEntity[LANGUAGE_NONE][0]['width'],
+    //     'height' => $imageEntity[LANGUAGE_NONE][0]['height']
+    // );
+
+    // return theme_image_style($variable);
+
     $variable = array(
-        'style_name' => $style,
-        'path' => $imageEntity[LANGUAGE_NONE][0]['uri'],
-        'width' => $imageEntity[LANGUAGE_NONE][0]['width'],
-        'height' => $imageEntity[LANGUAGE_NONE][0]['height'],
+        'item' => array(
+            'uri' => $imageEntity[LANGUAGE_NONE][0]['uri'],
+            'alt' => $imageEntity[LANGUAGE_NONE][0]['alt'],
+        ),
+        'path' => array(),
+        'image_lazy_loader_image_style' => $style,
+        'placeholder' => NULL,
+        'image_lazy_loader_effect' => 'fadeIn',
+        'image_lazy_loader_duration' => '1',
+        'image_lazy_loader_responsive' => NULL
+
     );
 
-    return theme_image_style($variable);
+    return theme_image_lazy_loader_formatter($variable);
 }
 
 function trim_paragraph($string, $your_desired_width){

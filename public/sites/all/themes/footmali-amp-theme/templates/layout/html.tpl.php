@@ -42,28 +42,62 @@
  *
  * @ingroup themeable
  */
-?><!doctype html>
+?>
+<!doctype html>
 <html amp lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="fb:pages" content="59161831864" />
+    
     <title><?php print $head_title; ?></title>
+    
     <?php print $head; ?>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,700" rel="stylesheet">
-    <?php include $amptheme_path_file . '/templates/amp-css/amp-boilerplate-styles-min.inc' ?>
+    
+    <?php include $amptheme_path_file . '/templates/amp-css/amp-boilerplate-styles-min.inc'; ?>
+    
     <?php if (!empty($ampsubtheme_path_file)): ?>
+
       <style amp-custom>
         <?php include $ampsubtheme_path_file . '/css/amp-custom-styles.css' ?>
-      </style>
+      </style>  
+
     <?php endif; ?>
+
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+  
+    <!-- AMP Analytics -->
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
   </head>
+  
   <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+    <!-- Google Tag Manager -->
+    <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-M2KH7SH&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+
     <?php if (!empty($amp_skip_link)): ?>
       <?php print render($amp_skip_link); ?>
     <?php endif; ?>
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
+    <script src="//kit.fontawesome.com/0e64f94b09.js"></script>
+    
+    <script id="jq" async src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
+    <script>
+      var jq = document.querySelector('#jq');
+      jq.addEventListener('load', function() {
+        // in article ads
+        var article_ad1 = jQuery('article > .amp-ad:eq(0)');
+        var article_ad2 = jQuery('article > .amp-ad:eq(1)');
+        var related_article = jQuery('.top-related-articles');
+        jQuery('article .field-name-body p:eq(0)').append(article_ad1);
+        jQuery('article .field-name-body p:eq(1)').append(article_ad2);
+        jQuery('article .field-name-body p:eq(1)').append(related_article);
+      });
+    </script>
   </body>
 </html>

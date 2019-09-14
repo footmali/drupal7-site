@@ -82,8 +82,6 @@
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print $user_picture; ?>
-
   <?php print render($title_prefix); ?>
   <?php if (!$page && !$view_mode == 'amp'): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -97,32 +95,42 @@
   <?php endif; ?>
 
   <div class="content"<?php print $content_attributes; ?>>
-    <?php
-    // We hide the comments and links and render the links later.
-    hide($content['comments']);
-    hide($content['links']);
-    print render($content);
+    <?php print render($content); ?>
+    <?php echo footmali_amp_render_share_small($nid, $title); ?>
 
-    ?>
+    <?php $top_related_articles_block = module_invoke('views', 'block_view', 'news-top_related_articles'); ?>
+    <div class="top-related-articles">
+        <h3>Lire Aussi</h3>
+        <?php print render($top_related_articles_block['content']); ?>
+    </div>
   </div>
 
-  <?php print render($content['links']); ?>
 
   <div class="amp-ad">
-      <amp-ad
+      <!-- <amp-ad
           type="adsense"
           layout="responsive"
           width="300"
           height="250"
           data-ad-client="ca-pub-7538390076513661"
-          data-ad-slot="7797165916"></amp-ad>
+          data-ad-slot="7797165916"></amp-ad> -->
   </div>
-        <!-- var ad1 = $('.ad2');
-        $('.field-name-body p').after(ad1); -->
+  <div class="amp-ad">
+      <!-- <amp-ad
+          type="adsense"
+          layout="responsive"
+          width="300"
+          height="250"
+          data-ad-client="ca-pub-7538390076513661"
+          data-ad-slot="7797165916"></amp-ad> -->
+  </div>
+
+  
 
 </article>
-<div class="adsense-recommended-content amp-ad">
-    <h2>Vous Aimerez Aussi</h2>
+
+<!-- <div class="click-feed adsense-recommended-content amp-ad">
+    <h3>Vous Aimerez Aussi</h3>
     <amp-ad
         type="adsense"
         layout="responsive"
@@ -131,4 +139,4 @@
         data-ad-format="autorelaxed"
         data-ad-client="ca-pub-7538390076513661"
         data-ad-slot="1750632314"></amp-ad>
-</div>
+</div> -->
