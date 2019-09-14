@@ -647,6 +647,11 @@ ul.pager .pager-current {
 
 }
 
+/* TEMP */
+.ads, .social-links small{
+    display: none !important;
+}
+
 /* ==============
     cookieconsent 
 ================= */

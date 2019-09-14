@@ -627,3 +627,8 @@ article .summary {
 .social-links ul li i.fa {
   padding: 0px 5px;
 }
+
+/* TEMP */
+.amp-ad, .social-links {
+  display: none !important;
+}
