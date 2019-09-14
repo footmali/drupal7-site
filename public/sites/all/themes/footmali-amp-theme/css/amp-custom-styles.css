@@ -7,6 +7,7 @@ html {
 
 body {
   min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .amp-header__content,
@@ -118,7 +119,6 @@ h6,
 .heading-d,
 .heading-e,
 .heading-f {
-    font-family: "Oswald", sans-serif;
     font-weight: inherit;
     margin: 1rem 0 0.5rem;
 }
@@ -130,10 +130,9 @@ h1,
 }
 
 h1#page-title {
-    font-size: 28px;
-    font-weight: normal;
-    line-height: 35px;
-    margin-top: 0;
+  font-size: 1.45em;
+  line-height: 26px;
+  font-weight: bold;
 }
 
 h2,
@@ -262,16 +261,19 @@ body {
 
 .amp-header {
   background-color: #1C9E49;
+  border-bottom: 2px solid #17823a;
 }
 
 #logo {
     background-image: url(/sites/all/themes/footmali-amp-theme/logo.png);
     display: block;
-    width: 236px;
-    height: 60px;
+    width: 100%;
+    height: 45px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 0 auto;
+    background-position-x: center;
+    padding: 0;
+    margin: 0;
 }
 
 .amp-main {
@@ -376,6 +378,48 @@ a:active,
   color: rgba(255, 255, 255, 0.95);
 }
 
+#footer {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+
+  background: #f2f2f2;
+  border-top: 2px solid #d6d6d6;
+}
+
+#footer-menu ul {
+    margin: 0 auto;
+    padding: 0;
+    display: table;
+}
+
+#footer-menu ul li {
+    list-style: none;
+    float: left;
+    margin: 0 15px;
+}
+
+#footer-menu  a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5px 15px;
+    text-decoration: none;
+    font-size: 1.5em;
+    line-height: initial;
+    color: #8c8c8c;
+}
+
+#footer-menu  a:hover, #footer-menu a:active, #footer-menu a.active {
+    color: #1c9e49;
+}
+
+#footer-menu span.text {
+    display: block;
+    font-size: .5em;
+}
 
 /* ---------- Skip Link ----------- */
 
@@ -493,4 +537,93 @@ div.messages ul {
 
 div.messages ul li {
   list-style-image: none;
+}
+
+.top-related-articles {
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+
+h3 {
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 26px;
+  margin: 1em 0;
+}
+
+.top-related-articles ul {
+  padding: 0 0 0 15px;
+  list-style-type: square;
+  margin: 1em 0;
+}
+
+.top-related-articles ul li {
+  margin-bottom: 10px;
+}
+
+.top-related-articles ul li:last-child {
+  margin-bottom: 0;
+}
+
+.top-related-articles a {
+  color: #1c9e49;
+}
+
+article .social-links ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+article .social-links ul li {
+  list-style: none;
+  float: left;
+
+  font-size: 1.5em;
+  margin: 0 3px;
+}
+
+article .social-links ul li a {
+  padding: .15em .5em;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+article .social-links .facebook-share {
+  background: #0d5cc8;
+}
+
+article .social-links .twitter-share {
+  background: #28aae1;
+}
+
+article .social-links .whatsapp-share {
+  background: #00e676;
+}
+
+article .social-links .messenger-share {
+  background: #3477E5;
+}
+
+article .summary {
+  display: none;
+}
+
+.social-links.small li {
+  border: none;
+  padding: 0;
+}
+
+.social-links.small li.text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.social-links ul li a {
+  padding: .15em 1em;
+  display: block;
+}
+
+.social-links ul li i.fa {
+  padding: 0px 5px;
 }

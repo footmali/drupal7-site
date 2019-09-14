@@ -53,8 +53,6 @@
     <title><?php print $head_title; ?></title>
     
     <?php print $head; ?>
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,700" rel="stylesheet">
     
     <?php include $amptheme_path_file . '/templates/amp-css/amp-boilerplate-styles-min.inc'; ?>
     
@@ -77,7 +75,10 @@
   
   <body class="<?php print $classes; ?>" <?php print $attributes;?>>
     <!-- Google Tag Manager -->
-    <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-M2KH7SH&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+    <amp-analytics 
+      config="https://www.googletagmanager.com/amp.json?id=GTM-M2KH7SH&gtm.url=SOURCE_URL" 
+      data-credentials="include">
+    </amp-analytics>
 
 
     <?php if (!empty($amp_skip_link)): ?>
@@ -86,5 +87,16 @@
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
+    <script src="//kit.fontawesome.com/0e64f94b09.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      // in article ads
+      var article_ad1 = jQuery('article > .amp-ad:eq(0)');
+      var article_ad2 = jQuery('article > .amp-ad:eq(1)');
+      var related_article = jQuery('.top-related-articles');
+      jQuery('article .field-name-body p:eq(0)').append(article_ad1);
+      jQuery('article .field-name-body p:eq(1)').append(article_ad2);
+      jQuery('article .field-name-body p:eq(1)').append(related_article);
+    </script>
   </body>
 </html>
