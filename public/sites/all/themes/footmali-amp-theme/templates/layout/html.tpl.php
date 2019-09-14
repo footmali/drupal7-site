@@ -83,16 +83,21 @@
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
-    <script async src="//kit.fontawesome.com/0e64f94b09.js"></script>
-    <script async src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//kit.fontawesome.com/0e64f94b09.js"></script>
+    
+    <script id="jq" async src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
     <script>
-      // in article ads
-      var article_ad1 = jQuery('article > .amp-ad:eq(0)');
-      var article_ad2 = jQuery('article > .amp-ad:eq(1)');
-      var related_article = jQuery('.top-related-articles');
-      jQuery('article .field-name-body p:eq(0)').append(article_ad1);
-      jQuery('article .field-name-body p:eq(1)').append(article_ad2);
-      jQuery('article .field-name-body p:eq(1)').append(related_article);
+      var jq = document.querySelector('#jq');
+      jq.addEventListener('load', function() {
+        // in article ads
+        var article_ad1 = jQuery('article > .amp-ad:eq(0)');
+        var article_ad2 = jQuery('article > .amp-ad:eq(1)');
+        var related_article = jQuery('.top-related-articles');
+        jQuery('article .field-name-body p:eq(0)').append(article_ad1);
+        jQuery('article .field-name-body p:eq(1)').append(article_ad2);
+        jQuery('article .field-name-body p:eq(1)').append(related_article);
+      });
     </script>
   </body>
 </html>

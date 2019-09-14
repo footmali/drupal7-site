@@ -39,17 +39,23 @@ body {
 }
 
 .field.field-name-body,
-#page-title {
-    padding: 0 20px;
+#page-title,
+article .content > * {
+    padding: 0 15px;
+}
+
+article .content > .field-name-field-image {
+  padding: 0;
 }
 
 footer.submitted{
-    padding: 0 20px;
+    padding: 0 15px;
     font-size: 80%;
+    margin: 8px 0;
 }
 
 .field-name-field-image {
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .field-name-field-image img,
@@ -59,7 +65,7 @@ footer.submitted{
 }
 
 .amp-ad {
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin-bottom: 10px;
 }
 
@@ -133,6 +139,7 @@ h1#page-title {
   font-size: 1.45em;
   line-height: 26px;
   font-weight: bold;
+  margin: 0;
 }
 
 h2,
@@ -630,5 +637,5 @@ article .summary {
 
 /* TEMP */
 .amp-ad, .social-links {
-  visibility: hidden!important;
+  display: none !important;
 }

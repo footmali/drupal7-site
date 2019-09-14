@@ -108,12 +108,12 @@
                 <span class="heading">publicité</span>
             </div>
 
-            <div class="click-feed">
+            <!-- <div class="click-feed">
                 <h3>Vous Aimerez Aussi</h3>
                 <div class="ads">
                     <span class="heading">publicité</span>
                 </div>
-            </div>
+            </div> -->
         </article>
     </div>
 <?php endif; ?>
