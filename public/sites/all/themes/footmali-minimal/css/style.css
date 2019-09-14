@@ -332,17 +332,6 @@ ul.article-list .entry-title a,
     display: table;
 }
 
-.lozad { 
-    background-color: #8c8c8c;
-    min-width: 100%;
-    min-height: 90px;
-}
-
-.lozad[data-loaded="true"] {
-    min-width: auto;
-    min-height: auto;
-}
-
 ul.pager  {
     list-style: none !important;
     text-align: center !important;

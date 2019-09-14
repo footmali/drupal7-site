@@ -195,23 +195,30 @@ function get_article_author($node) {
  * @return string
  */
 function output_image($style, $imageEntity) {
+    // $variable = array(
+    //     'path' => $imageEntity[LANGUAGE_NONE][0]['uri'],
+    //     'style_name' => $style,
+    //     'width' => $imageEntity[LANGUAGE_NONE][0]['width'],
+    //     'height' => $imageEntity[LANGUAGE_NONE][0]['height']
+    // );
+
+    // return theme_image_style($variable);
+
     $variable = array(
-        'path' => $imageEntity[LANGUAGE_NONE][0]['uri'],
-        'style_name' => $style,
-        'width' => $imageEntity[LANGUAGE_NONE][0]['width'],
-        'height' => $imageEntity[LANGUAGE_NONE][0]['height']
-        // 'attributes' => array(
-        //     'class' => array('lozad'),
-        //     'data-src' => array(image_style_url(
-        //         $style,
-        //         $imageEntity[LANGUAGE_NONE][0]['uri']))
-        // )
+        'item' => array(
+            'uri' => $imageEntity[LANGUAGE_NONE][0]['uri'],
+            'alt' => $imageEntity[LANGUAGE_NONE][0]['alt'],
+        ),
+        'path' => array(),
+        'image_lazy_loader_image_style' => $style,
+        'placeholder' => NULL,
+        'image_lazy_loader_effect' => 'fadeIn',
+        'image_lazy_loader_duration' => '1',
+        'image_lazy_loader_responsive' => NULL
+
     );
 
-    
-
-    return theme_image_style($variable);
-    // return theme_image_lazy_loader_formatter($variable);
+    return theme_image_lazy_loader_formatter($variable);
 }
 
 function trim_paragraph($string, $your_desired_width){

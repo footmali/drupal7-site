@@ -85,7 +85,7 @@
     <div class="node">
         <article id="article">
             <div class="article-image">
-                <?php print render($content['field_image']); ?>
+                <?php echo footmali_output_image('article_page', $node->field_image); ?>
             </div>
             
             <div class="article-body">
@@ -108,12 +108,12 @@
                 <span class="heading">publicité</span>
             </div>
 
-            <div class="click-feed">
+            <!-- <div class="click-feed">
                 <h3>Vous Aimerez Aussi</h3>
                 <div class="ads">
                     <span class="heading">publicité</span>
                 </div>
-            </div>
+            </div> -->
         </article>
     </div>
 <?php endif; ?>
