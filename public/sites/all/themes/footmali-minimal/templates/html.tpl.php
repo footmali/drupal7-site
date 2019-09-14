@@ -95,15 +95,9 @@ global $theme_path;
     <?php print $page_bottom; ?>
 
     <!-- Fontawesome -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
-    <!-- <script src="//use.fontawesome.com/29ccf52a4b.js"></script> -->
     <script src="//kit.fontawesome.com/0e64f94b09.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
     <script>
-      // lazy loads elements with default selector as '.lozad'
-      var observer = lozad();
-      observer.observe();
-
       // in article ads
       var article_ad1 = jQuery('#article .ads:eq(0)');
       var article_ad2 = jQuery('#article .ads:eq(1)');

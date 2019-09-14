@@ -192,6 +192,14 @@ ul.article-list li,
     padding: 15px;
 }
 
+.view-display-id-all_articles .article-small li.actu-articles {
+    margin: 0;
+}
+
+.view-display-id-all_articles .article-small li.actu-articles .article-body {
+    padding: 0;
+}
+
 .article-large ul.article-list li{
     padding: 0px;
 }
@@ -201,7 +209,8 @@ ul.article-list li,
     border: 0;
 }
 
-ul.article-list .article-body {
+ul.article-list .article-body,
+ul.kopa-list .article-body {
     padding: 0;
 }
 
@@ -255,13 +264,11 @@ ul.article-list .entry-title a,
 #block-footmali-blocks-homepage-headlines .article-image,
 #block-footmali-blocks-recent-and-popular-articles .article-image,
 #block-footmali-blocks-popular-articles .article-image {
-    float: left;
-    margin-right: 15px;
-    max-width: 150px;
-    height: 125px;
-    overflow: hidden;
+    float: right;
+    width: 150px;
+    margin-left: 15px;
+    margin-bottom: 8px;
 }
-
 
 #block-footmali-blocks-homepage-headlines .article-body .entry-title,
 #block-footmali-blocks-recent-and-popular-articles .article-body .entry-title,
@@ -349,7 +356,7 @@ ul.pager li.pager-next a,
 ul.pager li.pager-previous a {
     color: #ffffff !important;
     display: inline-block;
-    background: #17823a;
+    background: #1c9e49;
     padding: 8px;
     font-weight: bold;
     text-decoration: none !important;
@@ -429,6 +436,7 @@ ul.pager .pager-current {
 .view-display-id-video_page .item-list ul li {
     list-style: none;
     margin-bottom: 15px;
+    margin-left: 0;
 }
 
 .view-display-id-video_page .item-list ul li .video-thumbnail {
@@ -476,6 +484,33 @@ ul.pager .pager-current {
 
 .top-related-articles a {
     color: #1c9e49;
+}
+
+#user-login {
+    padding: 0 15px;
+}
+
+#user-login .form-item {
+    margin-bottom: 15px;
+}
+
+#user-login input {
+    max-width: 100%;
+}
+
+#user-login .description,
+.page-user #admin {
+    display: none;
+}
+
+#user-login input[type="submit"] {
+    color: #ffffff !important;
+    display: inline-block;
+    background: #1c9e49;
+    padding: 8px;
+    font-weight: bold;
+    text-decoration: none !important;
+    border: none;
 }
 
 /* ==============

@@ -83,8 +83,8 @@
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
-    <script src="//kit.fontawesome.com/0e64f94b09.js"></script>
-    
+
+    <script async src="//kit.fontawesome.com/0e64f94b09.js"></script>
     <script id="jq" async src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <script>
