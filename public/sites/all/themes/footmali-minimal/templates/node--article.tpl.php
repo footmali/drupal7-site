@@ -85,7 +85,7 @@
     <div class="node">
         <article id="article">
             <div class="article-image">
-                <?php print render($content['field_image']); ?>
+                <?php echo footmali_output_image('article_page', $node->field_image); ?>
             </div>
             
             <div class="article-body">
