@@ -133,7 +133,7 @@ global $theme_path;
             "text": "#404040"
           },
           "button": {
-            "background": "#8ec760",
+            "background": "#1c9e49",
             "text": "#ffffff"
           }
         },

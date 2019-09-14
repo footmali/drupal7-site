@@ -630,5 +630,5 @@ article .summary {
 
 /* TEMP */
 .amp-ad, .social-links {
-  display: none !important;
+  visibility: hidden!important;
 }
