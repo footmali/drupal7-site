@@ -33,8 +33,9 @@ function footmali_minimal_css_alter(&$css)
 
 function footmali_get_article_published_date($node)
 {
-    $published_on = 'Le '.date('d/m/Y', $node->created);
-    $published_on .= $node->created != $node->changed ? ' | Mis à jour le '.date('d/m/Y', $node->changed) : '';
+    setlocale(LC_TIME, 'fr_FR');
+    $published_on = strftime('%d %B %Y', $node->created);
+    $published_on .= $node->created != $node->changed ? ' | Mis à jour le '.strftime('%d %B %Y', $node->changed) : '';
 
     return $published_on;
 }
