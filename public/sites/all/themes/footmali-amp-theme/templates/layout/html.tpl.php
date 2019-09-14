@@ -42,23 +42,42 @@
  *
  * @ingroup themeable
  */
-?><!doctype html>
+?>
+<!doctype html>
 <html amp lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
   <head>
     <meta charset="utf-8">
+    
     <title><?php print $head_title; ?></title>
+    
     <?php print $head; ?>
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,700" rel="stylesheet">
-    <?php include $amptheme_path_file . '/templates/amp-css/amp-boilerplate-styles-min.inc' ?>
+    
+    <?php include $amptheme_path_file . '/templates/amp-css/amp-boilerplate-styles-min.inc'; ?>
+    
     <?php if (!empty($ampsubtheme_path_file)): ?>
+
       <style amp-custom>
         <?php include $ampsubtheme_path_file . '/css/amp-custom-styles.css' ?>
-      </style>
+      </style>  
+
     <?php endif; ?>
+
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+  
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+
+    <!-- AMP Analytics -->
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
   </head>
+  
   <body class="<?php print $classes; ?>" <?php print $attributes;?>>
+    <!-- Google Tag Manager -->
+    <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-M2KH7SH&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
+
+
     <?php if (!empty($amp_skip_link)): ?>
       <?php print render($amp_skip_link); ?>
     <?php endif; ?>
