@@ -33,11 +33,6 @@ function theme_footmali_node_list($variables) {
         $wrapper_element = theme($wrapper[0], $wrapper[1]);
     endif;
 
-    if(!$article_list):
-        $list_class .= ' kopa-list kopa-e-list';
-    elseif ('order' == $list_type):
-        $list_class .= ' list-order';
-    endif;
 
     $output = !is_null($wrapper_element) ? $wrapper_element['prefix'] : '';
     $output .= '<ul class="clearfix article-list">';
@@ -56,46 +51,55 @@ function theme_footmali_node_list($variables) {
 
                 $output .= theme('footmali_article_list_item', $args);
 
+                if($index == 1):
+                    #Between Headlines ad
+                    $output .= '<li class="ads-wrapper">';
+                        $output .= '<div class="ads">';
+                            $output .= '<span class="heading">publicité</span>';
+                            $output .=  '<ins class="adsbygoogle"';
+                                $output .= 'style="display:block"';
+                                $output .= 'data-ad-format="fluid"';
+                                $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                                $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                                $output .= 'data-ad-slot="1959205546"></ins>';
+                            $output .=  '<script>';
+                            $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                            $output .=  '</script>';
+                        $output .= '</div>';
+                    $output .=  '</li>';
+                endif;
                 if($index == 5):
                     #Between Headlines ad
-                    $output .= '<li class="widget kopa-ads-widget style1 headlines responsive-ad">';
-                        $output .=  '<ins class="adsbygoogle"';
-                            $output .= 'style="display:block"';
-                            $output .= 'data-ad-format="fluid"';
-                            $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
-                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
-                            $output .= 'data-ad-slot="1959205546"></ins>';
-                        $output .=  '<script>';
-                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
-                        $output .=  '</script>';
+                    $output .= '<li class="ads-wrapper">';
+                        $output .= '<div class="ads">';
+                            $output .= '<span class="heading">publicité</span>';
+                            $output .=  '<ins class="adsbygoogle"';
+                                $output .= 'style="display:block"';
+                                $output .= 'data-ad-format="fluid"';
+                                $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                                $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                                $output .= 'data-ad-slot="1959205546"></ins>';
+                            $output .=  '<script>';
+                            $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                            $output .=  '</script>';
+                        $output .= '</div>';
                     $output .=  '</li>';
                 endif;
-                if($index == 10):
+                if($index == 7):
                     #Between Headlines ad
-                    $output .= '<li class="widget kopa-ads-widget style1 headlines responsive-ad">';
-                        $output .=  '<ins class="adsbygoogle"';
-                            $output .= 'style="display:block"';
-                            $output .= 'data-ad-format="auto"';
-                            $output .= 'data-full-width-responsive="true"';
-                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
-                            $output .= 'data-ad-slot="9288445931"></ins>';
-                        $output .=  '<script>';
-                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
-                        $output .=  '</script>';
-                    $output .=  '</li>';
-                endif;
-                if($index == 15):
-                    #Between Headlines ad
-                    $output .= '<li class="widget kopa-ads-widget style1 headlines responsive-ad">';
-                        $output .=  '<ins class="adsbygoogle"';
-                            $output .= 'style="display:block"';
-                            $output .= 'data-ad-format="auto"';
-                            $output .= 'data-full-width-responsive="true"';
-                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
-                            $output .= 'data-ad-slot="9148845132"></ins>';
-                        $output .=  '<script>';
-                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
-                        $output .=  '</script>';
+                    $output .= '<li class="ads-wrapper">';
+                        $output .= '<div class="ads">';
+                            $output .= '<span class="heading">publicité</span>';
+                            $output .=  '<ins class="adsbygoogle"';
+                                $output .= 'style="display:block"';
+                                $output .= 'data-ad-format="fluid"';
+                                $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                                $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                                $output .= 'data-ad-slot="1959205546"></ins>';
+                            $output .=  '<script>';
+                            $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                            $output .=  '</script>';
+                        $output .= '</div>';
                     $output .=  '</li>';
                 endif;
 
@@ -152,7 +156,7 @@ function theme_footmali_article_list_item($variables) {
                 endif;
 
                 $output .= '<div class="summary">';
-                    $output .= trim(trim_paragraph($node->body[LANGUAGE_NONE][0]['value'],  90) . '...');
+                    $output .= trim(trim_paragraph($node->body[LANGUAGE_NONE][0]['value'],  120) . '...');
                 $output .= '</div>';
             if($article_list):
                     $output .= '</div>'; //entry-content
@@ -277,7 +281,10 @@ function theme_footmali_article_block($variables){
         $output .= '<div class="widget-content">';
             $output .= '<ul class="kopa-list clearfix">';
             foreach ($nodes as $node):
-                $output .= theme('footmali_article_list_item', array('node' => $node));
+                $output .= theme('footmali_article_list_item', array(
+                    'list_type' => 'thumb-small',
+                    'node' => $node,
+                    'article_list' => TRUE));
             endforeach;
             $output .= '</ul>';
         $output .= '</div>';
@@ -357,17 +364,53 @@ function theme_footmali_featured_2row($variables) {
                 'node' => $first_article,
                 'article_list' => TRUE,
             ));
+
+            $output .= '<li class="ads-wrapper">';
+                $output .= '<div class="ads">';
+                    $output .= '<span class="heading">publicité</span>';
+                    $output .=  '<ins class="adsbygoogle"';
+                        $output .= 'style="display:block"';
+                        $output .= 'data-ad-format="fluid"';
+                        $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                        $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                        $output .= 'data-ad-slot="1959205546"></ins>';
+                    $output .=  '<script>';
+                    $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                    $output .=  '</script>';
+                $output .= '</div>';
+            $output .=  '</li>';
         $output .= '</ul>';
     $output .= '</div>';
 
     $output .= '<div class="article-small">';
         $output .= '<ul class="clearfix article-list">';
+        $article_small_index = 0;
+
         foreach($nodes as $featured_article):
             $output .= theme('footmali_article_list_item', array(
                 'list_type' => 'thumb-small',
                 'node' => $featured_article,
                 'article_list' => TRUE,
             ));
+
+            if($article_small_index  == 1):
+                #Between Headlines ad
+                $output .= '<li class="ads-wrapper">';
+                    $output .= '<div class="ads">';
+                        $output .= '<span class="heading">publicité</span>';
+                        $output .=  '<ins class="adsbygoogle"';
+                            $output .= 'style="display:block"';
+                            $output .= 'data-ad-format="fluid"';
+                            $output .= 'data-ad-layout-key="-66+bs+d-v+ke"';
+                            $output .= 'data-ad-client="ca-pub-7538390076513661"';
+                            $output .= 'data-ad-slot="1959205546"></ins>';
+                        $output .=  '<script>';
+                        $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                        $output .=  '</script>';
+                    $output .= '</div>';
+                $output .=  '</li>';
+            endif;
+            $article_small_index++;
         endforeach;
         $output .= '</ul>';
     $output .= '</div>';

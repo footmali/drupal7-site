@@ -72,6 +72,16 @@ function footmali_blocks_block_view($delta = '') {
             break;
         case 'popular_articles':
             $block['content'] = array(
+                // '#theme' => 'footmali_node_list',
+                // '#wrapper' => array('footmali_article_list_widget_wrapper', array(
+                //     'title' => 'Les + Populaires',
+                //     'title_type' => 12,
+                //     'list_type' => 1,
+                // )),
+                // '#nodes' => popular_articles(variable_get('footmali_blocks_popular_articles_count', 10)),
+                // '#list_type' => 'thumb-small',
+                // '#article_list' => TRUE,
+
                 '#theme' => 'footmali_article_block',
                 '#list_type' => 6,
                 '#title' => t('Most Popular'),
@@ -81,20 +91,30 @@ function footmali_blocks_block_view($delta = '') {
 
         case 'recent_and_popular_articles':
             $block['content'] = array(
-                '#theme' => 'footmali_tab_widget',
-                '#tab_type' => 1,
-                '#tabs' => array(
-                    'Headlines' => array(
-                        'theme' => 'footmali_node_list',
-                        'list_type' => 'default',
-                        'nodes' => headline_articles(5),
-                    ),
-                    'Most Popular' => array(
-                        'theme' => 'footmali_node_list',
-                        'list_type' => 'order',
-                        'nodes' => popular_articles(5),
-                    ),
-                ),
+                '#theme' => 'footmali_node_list',
+                '#wrapper' => array('footmali_article_list_widget_wrapper', array(
+                    'title' => 'Chrono',
+                    'title_type' => 12,
+                    'list_type' => 1,
+                )),
+                '#nodes' => headline_articles(5),
+                '#list_type' => 'thumb-small',
+                '#article_list' => TRUE,
+
+                // '#theme' => 'footmali_tab_widget',
+                // '#tab_type' => 1,
+                // '#tabs' => array(
+                //     'Headlines' => array(
+                //         'theme' => 'footmali_node_list',
+                //         'list_type' => 'default',
+                //         'nodes' => headline_articles(5),
+                //     ),
+                //     'Most Popular' => array(
+                //         'theme' => 'footmali_node_list',
+                //         'list_type' => 'order',
+                //         'nodes' => popular_articles(5),
+                //     ),
+                // ),
             );
             break;
 

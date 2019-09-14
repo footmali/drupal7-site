@@ -63,13 +63,16 @@ function footmali_node_share($nid, $title)
     $twitter_url .= '&hashtags=footballMalien,footMali,maliFootball';
     $twitter_url .= '&via=FOOTMALICOM';
     $whatsapp_url = 'https://api.whatsapp.com/send?text='.urlencode($title .' '. $url.'&utm_source=whatsapp&utm_medium=Social'); # mobile & others
+    $messenger_url = 'fb-messenger://share/?link='.urlencode($url . '?utm_source=twitter&utm_medium=Social');
+    $messenger_url .= '&app_id=714044432027505';
 
     return (object) array(
         'lang' => $lang,
         'url' => $url,
         'facebook_url' => $url,
         'twitter_url' => $twitter_url,
-        'whatsapp_url' => $whatsapp_url
+        'whatsapp_url' => $whatsapp_url,
+        'messenger_url' => $messenger_url
     );
 }
 
@@ -79,9 +82,10 @@ function footmali_render_share_normal($nid, $title)
 
     $output = '<div class="social-links">';
     $output .= '    <ul class="clearfix">';
-    $output .= '        <li><a href="javascript:void" data-url="'.$share->url.'" class="fa fa-facebook facebook-share"></a></li>';
+    $output .= '        <li><a href="javascript:void" data-url="'.$share->url.'" class="fa fa-facebook-ffacebook-share"></a></li>';
     $output .= '        <li><a href="'.$share->twitter_url.'" class="fa fa-twitter"></a></li>';
-    $output .= '        <li class="visible-xs"><a href="'.$share->whatsapp_url.'" class="fa fa-whatsapp" data-action="share/whatsapp/share" target="_blank"></a></li>';
+    $output .= '        <li class="visible-mobile"><a href="'.$share->whatsapp_url.'" class="fa fa-whatsapp" data-action="share/whatsapp/share" target="_blank"></a></li>';
+    $output .= '        <li class="visible-mobile"><a href="'.$share->messenger_url.'" class="fa fa-facebook-messenger"></a></li>';
     $output .= '    </ul>';
     $output .= '</div>';
 
@@ -96,9 +100,10 @@ function footmali_render_share_small($nid, $title)
 
     $output .= '<ul class="clearfix">';
     $output .= '<li class="text"><i class="fa fa-share-alt-square" aria-hidden="true"></i>partager</li>';
-    $output .= '<li><a href="javascript:void" data-url="'.$share->url.'" class="fa fa-facebook facebook-share"></a></li>';
-    $output .= '<li><a href="'.$share->twitter_url.'" class="fa fa-twitter"></a></li>';
-    $output .= '<li class="visible-xs"><a href="'.$share->whatsapp_url.'" class="fa fa-whatsapp" data-action="share/whatsapp/share" target="_blank"></a></li>';
+    $output .= '<li><a href="javascript:void" data-url="'.$share->url.'" class="facebook-share"><i class="fab fa-facebook-f"></i></a></li>';
+    $output .= '<li><a href="'.$share->twitter_url.'" class="twitter-share"><i class="fab fa-twitter"></i></a></li>';
+    $output .= '<li class="visible-mobile"><a href="'.$share->whatsapp_url.'" class="whatsapp-share" data-action="share/whatsapp/share" target="_blank"><i class="fab fa-whatsapp"></i></a></li>';
+    $output .= '<li class="visible-mobile"><a href="'.$share->messenger_url.'" class="messenger-share"><i class="fab fa-facebook-messenger" aria-hidden="true"></i></a></li>';
     $output .= '</ul>';
     $output .= '</div>';
 
@@ -141,9 +146,14 @@ function footmali_output_image($style, $imageEntity)
 {
     $variable = array(
         'style_name' => $style,
-        'path' => $imageEntity[LANGUAGE_NONE][0]['uri'],
         'width' => $imageEntity[LANGUAGE_NONE][0]['width'],
         'height' => $imageEntity[LANGUAGE_NONE][0]['height'],
+        'attributes' => array(
+            'class' => array('lozad'),
+            'data-src' => array(image_style_url(
+                $style,
+                $imageEntity[LANGUAGE_NONE][0]['uri']))
+        )
     );
 
     return theme_image_style($variable);

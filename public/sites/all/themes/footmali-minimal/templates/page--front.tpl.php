@@ -88,8 +88,8 @@
         <div id="header-menu" class="row">
             <ul class="clearfix">
                 <li><a href="/" <?php if($path == '/'){ echo 'class="active"';} ?> ><span><i class="fa fa-home"></i><span class="text"><?php echo t('Home'); ?></span></span></a></li>
-                <li><a href="/actu" <?php if($path == '/actu' ){ echo 'class="active"';} ?> ><span><i class="fa fa-newspaper-o"></i><span class="text"><?php echo t('Actu'); ?></span></span></a></li>
-                <li><a href="/video/index" <?php if(explode('/', $_SERVER['REQUEST_URI'])[1] == 'video'){ echo 'class="active"';} ?> ><span><i class="fa fa-play-circle-o"></i><span class="text"><?php echo t('Video'); ?></span></span></a></li>
+                <li><a href="/actu" <?php if($path == '/actu' ){ echo 'class="active"';} ?> ><span><i class="fa fa-stream"></i><span class="text"><?php echo t('Actu'); ?></span></span></a></li>
+                <li><a href="/video/index" <?php if(explode('/', $_SERVER['REQUEST_URI'])[1] == 'video'){ echo 'class="active"';} ?> ><span><i class="fa fa-play-circle"></i><span class="text"><?php echo t('Video'); ?></span></span></a></li>
             </ul>
         </div>
     </nav> 
@@ -115,13 +115,19 @@
             <?php endif; ?>
         </div>
 
-        <div id="content" class="row">
-            <?php if ($page['content_homepage']){ print render($page['content_homepage']); } ?>
+        <div id="content" class="row clearfix">
+            <div class="ads">
+                <span class="heading">publicité</span>
+            </div>
+
+            <div id="column1" class="clearfix">
+                <?php if ($page['content_homepage']){ print render($page['content_homepage']); } ?>
+            </div>
 
             <!-- sidebar -->
-            <!-- <aside id="sidebar">
-                <?php// if ($page['sidebar_second']){ print render($page['sidebar_second']); } ?>
-            </aside> -->
+            <aside id="column2" class="clearfix">
+                <?php if ($page['sidebar_second']){ print render($page['sidebar_second']); } ?>
+            </aside>
         </div>
     </div>
 </main>
@@ -131,8 +137,8 @@
         <div id="footer-menu" class="row">
             <ul class="clearfix">
                 <li><a href="/" <?php if($path == '/'){ echo 'class="active"';} ?> ><span><i class="fa fa-home"></i><span class="text"><?php echo t('Home'); ?></span></span></a></li>
-                <li><a href="/actu" <?php if($path == '/actu' ){ echo 'class="active"';} ?> ><span><i class="fa fa-newspaper-o"></i><span class="text"><?php echo t('Actu'); ?></span></span></a></li>
-                <li><a href="/video/index" <?php if(explode('/', $_SERVER['REQUEST_URI'])[1] == 'video'){ echo 'class="active"';} ?> ><span><i class="fa fa-play-circle-o"></i><span class="text"><?php echo t('Video'); ?></span></span></a></li>
+                <li><a href="/actu" <?php if($path == '/actu' ){ echo 'class="active"';} ?> ><span><i class="fa fa-stream"></i><span class="text"><?php echo t('Actu'); ?></span></span></a></li>
+                <li><a href="/video/index" <?php if(explode('/', $_SERVER['REQUEST_URI'])[1] == 'video'){ echo 'class="active"';} ?> ><span><i class="fa fa-play-circle"></i><span class="text"><?php echo t('Video'); ?></span></span></a></li>
             </ul>
         </div>
     </div>

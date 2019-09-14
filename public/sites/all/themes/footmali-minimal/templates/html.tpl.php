@@ -63,12 +63,19 @@ global $theme_path;
     <?php print $styles; ?>
 
     <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PZ9QB3K');</script>
+    <!-- End Google Tag Manager -->
 
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes; ?>>
-
-  <!-- Google Tag Manager (noscript) -->
-  <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZ9QB3K"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <?php print $page_top; ?>
     <?php print $page; ?>
@@ -78,28 +85,55 @@ global $theme_path;
     <?php print $page_bottom; ?>
 
     <!-- Fontawesome -->
-    <script src="//use.fontawesome.com/29ccf52a4b.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+    <!-- <script src="//use.fontawesome.com/29ccf52a4b.js"></script> -->
+    <script src="//kit.fontawesome.com/0e64f94b09.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
     <script>
-    window.addEventListener("load", function(){
-    window.cookieconsent.initialise({
-      "palette": {
-        "popup": {
-          "background": "#efefef",
-          "text": "#404040"
+      // lazy loads elements with default selector as '.lozad'
+      var observer = lozad();
+      observer.observe();
+
+      // in article ads
+      var article_ad1 = jQuery('#article .ads:eq(0)');
+      var article_ad2 = jQuery('#article .ads:eq(1)');
+      var related_article = jQuery('.top-related-articles');
+      jQuery('#article .field-name-body p:eq(0)').append(article_ad1);
+      jQuery('#article .field-name-body p:eq(1)').append(article_ad2);
+      jQuery('#article .field-name-body p:eq(1)').append(related_article);
+
+      // in actu ads
+      var actu_ad1 = jQuery('.page-actu .view-footer .ads:eq(0)');
+      var actu_ad2 = jQuery('.page-actu .view-footer .ads:eq(1)');
+      jQuery('.page-actu .article-small li.actu-articles:eq(0)').after(actu_ad1);
+      jQuery('.page-actu .article-small li.actu-articles:eq(2)').after(actu_ad2);
+
+      // in video ads
+      var actu_ad1 = jQuery('.view-display-id-video_page .view-footer .ads:eq(0)');
+      var actu_ad2 = jQuery('.view-display-id-video_page .view-footer .ads:eq(1)');
+      jQuery('.view-display-id-video_page li.video-card:eq(0)').after(actu_ad1);
+      jQuery('.view-display-id-video_page li.video-card:eq(2)').after(actu_ad2);
+
+      // cookie consent
+      window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": "#efefef",
+            "text": "#404040"
+          },
+          "button": {
+            "background": "#8ec760",
+            "text": "#ffffff"
+          }
         },
-        "button": {
-          "background": "#8ec760",
-          "text": "#ffffff"
+        "theme": "classic",
+        "content": {
+          "message": "En poursuivant votre navigation sur footmali.com, vous acceptez l'utilisation de cookies.",
+        "dismiss": "Ok",
+        "link": "En savoir plus"
         }
-      },
-      "theme": "classic",
-      "content": {
-        "message": "En poursuivant votre navigation sur footmali.com, vous acceptez l'utilisation de cookies.",
-      "dismiss": "Ok",
-      "link": "En savoir plus"
-      }
-    })});
+      })});
     </script>
 </body>
 </html>

@@ -93,10 +93,26 @@
                     <span class="article-author"><?php echo footmali_get_article_author($node); ?></a></span>
                     <span class="article-date"><?php echo footmali_get_article_published_date($node); ?></span>
                 </div>
-
-                <!-- kopa-share-post -->
                 <?php echo footmali_render_share_small($nid, $title); ?>
                 <?php print render($content['body']); ?>
+                <?php $top_related_articles_block = module_invoke('views', 'block_view', 'news-top_related_articles'); ?>
+                <div class="top-related-articles">
+                    <h3>Lire Aussi</h3>
+                    <?php print render($top_related_articles_block['content']); ?>
+                </div>
+            </div>
+            <div class="ads">
+                <span class="heading">publicité</span>
+            </div>
+            <div class="ads">
+                <span class="heading">publicité</span>
+            </div>
+
+            <div class="click-feed">
+                <h3>Vous Aimerez Aussi</h3>
+                <div class="ads">
+                    <span class="heading">publicité</span>
+                </div>
             </div>
         </article>
     </div>
@@ -113,7 +129,7 @@
             <div class="content-top">
                 <h4 class="entry-title"><a href="/<?php echo drupal_get_path_alias('node/' . $node->nid); ?>"><?php echo $title; ?></a></h4>
                 <div class="summary">
-                    <p><?php echo footmali_trim_paragraph($body[0]['value'], 90) . '...'; ?></p>
+                    <p><?php echo footmali_trim_paragraph($body[0]['value'], 150) . '...'; ?></p>
                 </div>
             </div>
         </div>

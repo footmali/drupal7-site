@@ -197,9 +197,14 @@ function get_article_author($node) {
 function output_image($style, $imageEntity) {
     $variable = array(
         'style_name' => $style,
-        'path' => $imageEntity[LANGUAGE_NONE][0]['uri'],
         'width' => $imageEntity[LANGUAGE_NONE][0]['width'],
         'height' => $imageEntity[LANGUAGE_NONE][0]['height'],
+        'attributes' => array(
+            'class' => array('lozad'),
+            'data-src' => array(image_style_url(
+                $style,
+                $imageEntity[LANGUAGE_NONE][0]['uri']))
+        )
     );
 
     return theme_image_style($variable);
