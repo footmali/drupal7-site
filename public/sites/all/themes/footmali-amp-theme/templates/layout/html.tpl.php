@@ -66,20 +66,16 @@
 
     <script async src="https://cdn.ampproject.org/v0.js"></script>
   
-    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-
     <!-- AMP Analytics -->
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+    <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 
   </head>
   
   <body class="<?php print $classes; ?>" <?php print $attributes;?>>
     <!-- Google Tag Manager -->
-    <amp-analytics 
-      config="https://www.googletagmanager.com/amp.json?id=GTM-M2KH7SH&gtm.url=SOURCE_URL" 
-      data-credentials="include">
-    </amp-analytics>
-
+    <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-M2KH7SH&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
 
     <?php if (!empty($amp_skip_link)): ?>
       <?php print render($amp_skip_link); ?>
@@ -87,8 +83,8 @@
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
-    <script src="//kit.fontawesome.com/0e64f94b09.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script async src="//kit.fontawesome.com/0e64f94b09.js"></script>
+    <script async src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
       // in article ads
       var article_ad1 = jQuery('article > .amp-ad:eq(0)');
