@@ -47,6 +47,8 @@
 <html amp lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="fb:pages" content="59161831864" />
     
     <title><?php print $head_title; ?></title>
     

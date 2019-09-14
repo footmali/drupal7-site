@@ -82,8 +82,6 @@
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print $user_picture; ?>
-
   <?php print render($title_prefix); ?>
   <?php if (!$page && !$view_mode == 'amp'): ?>
     <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
@@ -117,8 +115,6 @@
           data-ad-client="ca-pub-7538390076513661"
           data-ad-slot="7797165916"></amp-ad>
   </div>
-        <!-- var ad1 = $('.ad2');
-        $('.field-name-body p').after(ad1); -->
 
 </article>
 <div class="adsense-recommended-content amp-ad">
