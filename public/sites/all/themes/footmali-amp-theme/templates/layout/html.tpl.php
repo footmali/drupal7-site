@@ -70,6 +70,7 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
   </head>
   
@@ -77,7 +78,7 @@
     <!-- Google Tag Manager -->
     <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-M2KH7SH&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
 
-    <amp-auto-ads type="adsense"data-ad-client="ca-pub-7538390076513661"></amp-auto-ads>
+    <amp-auto-ads type="adsense"data-ad-client="ca-pub-1792676367399829"></amp-auto-ads>
 
     <?php if (!empty($amp_skip_link)): ?>
       <?php print render($amp_skip_link); ?>
