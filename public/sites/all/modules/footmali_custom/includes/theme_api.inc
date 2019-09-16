@@ -373,7 +373,7 @@ function theme_footmali_featured_2row($variables) {
 
             $output .= '<li class="ads-wrapper" style="display: block !important;">';
                 $output .= '<div class="ads" style="display: block !important;">';
-                    $output .= '<span class="heading">publicité</span>';
+                    // $output .= '<span class="heading">publicité</span>';
                     $output .= '<div id="featured_article">';
                     $output .=  '<ins class="adsbygoogle"';
                         $output .= 'style="display:block"';
