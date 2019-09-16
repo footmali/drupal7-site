@@ -118,6 +118,7 @@
         <div id="content" class="row clearfix">
             <div class="ads">
                 <span class="heading">publicité</span>
+                <div id="header-banner"></div>
             </div>
 
             <div id="column1" class="clearfix">

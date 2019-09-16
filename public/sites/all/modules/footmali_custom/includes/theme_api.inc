@@ -56,6 +56,7 @@ function theme_footmali_node_list($variables) {
                     $output .= '<li class="ads-wrapper">';
                         $output .= '<div class="ads">';
                             $output .= '<span class="heading">publicité</span>';
+                            $output .= '<div id="headlines_1">';
                             // $output .=  '<ins class="adsbygoogle"';
                             //     $output .= 'style="display:block"';
                             //     $output .= 'data-ad-format="fluid"';
@@ -65,6 +66,7 @@ function theme_footmali_node_list($variables) {
                             // $output .=  '<script>';
                             // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
                             // $output .=  '</script>';
+                            $output .= '</div>';
                         $output .= '</div>';
                     $output .=  '</li>';
                 endif;
@@ -73,6 +75,7 @@ function theme_footmali_node_list($variables) {
                     $output .= '<li class="ads-wrapper">';
                         $output .= '<div class="ads">';
                             $output .= '<span class="heading">publicité</span>';
+                            $output .= '<div id="headlines_2">';
                             // $output .=  '<ins class="adsbygoogle"';
                             //     $output .= 'style="display:block"';
                             //     $output .= 'data-ad-format="fluid"';
@@ -82,6 +85,7 @@ function theme_footmali_node_list($variables) {
                             // $output .=  '<script>';
                             // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
                             // $output .=  '</script>';
+                            $output .= '</div>';
                         $output .= '</div>';
                     $output .=  '</li>';
                 endif;
@@ -90,6 +94,7 @@ function theme_footmali_node_list($variables) {
                     $output .= '<li class="ads-wrapper">';
                         $output .= '<div class="ads">';
                             $output .= '<span class="heading">publicité</span>';
+                            $output .= '<div id="headlines_3">';
                             // $output .=  '<ins class="adsbygoogle"';
                             //     $output .= 'style="display:block"';
                             //     $output .= 'data-ad-format="fluid"';
@@ -99,6 +104,7 @@ function theme_footmali_node_list($variables) {
                             // $output .=  '<script>';
                             // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
                             // $output .=  '</script>';
+                            $output .= '</div>';
                         $output .= '</div>';
                     $output .=  '</li>';
                 endif;
@@ -368,6 +374,7 @@ function theme_footmali_featured_2row($variables) {
             $output .= '<li class="ads-wrapper">';
                 $output .= '<div class="ads">';
                     $output .= '<span class="heading">publicité</span>';
+                    $output .= '<div id="featured_article">';
                     // $output .=  '<ins class="adsbygoogle"';
                     //     $output .= 'style="display:block"';
                     //     $output .= 'data-ad-format="fluid"';
@@ -377,6 +384,7 @@ function theme_footmali_featured_2row($variables) {
                     // $output .=  '<script>';
                     // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
                     // $output .=  '</script>';
+                    $output .= '</div>';
                 $output .= '</div>';
             $output .=  '</li>';
         $output .= '</ul>';
@@ -394,10 +402,10 @@ function theme_footmali_featured_2row($variables) {
             ));
 
             if($article_small_index  == 1):
-                #Between Headlines ad
                 $output .= '<li class="ads-wrapper">';
                     $output .= '<div class="ads">';
                         $output .= '<span class="heading">publicité</span>';
+                        $output .= '<div id="in_between_features">';
                         // $output .=  '<ins class="adsbygoogle"';
                         //     $output .= 'style="display:block"';
                         //     $output .= 'data-ad-format="fluid"';
@@ -407,6 +415,7 @@ function theme_footmali_featured_2row($variables) {
                         // $output .=  '<script>';
                         // $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
                         // $output .=  '</script>';
+                        $output .= '</div>';
                     $output .= '</div>';
                 $output .=  '</li>';
             endif;
