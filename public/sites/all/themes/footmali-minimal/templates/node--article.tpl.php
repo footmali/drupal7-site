@@ -103,9 +103,11 @@
             </div>
             <div class="ads">
                 <span class="heading">publicité</span>
+                <div id="in_between_article_1"></div>
             </div>
             <div class="ads">
                 <span class="heading">publicité</span>
+                <div id="in_between_article_2"></div>
             </div>
 
             <!-- <div class="click-feed">

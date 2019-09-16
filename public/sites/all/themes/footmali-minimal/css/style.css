@@ -672,7 +672,9 @@ ul.pager .pager-current {
 }
 
 /* TEMP */
-.ads, .social-links, li.ads-wrapper {
+/* .ads,
+li.ads-wrapper, */
+.social-links {
     display: none!important;
 }
 
