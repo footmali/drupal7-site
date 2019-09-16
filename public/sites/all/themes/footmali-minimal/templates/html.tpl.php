@@ -74,15 +74,13 @@ global $theme_path;
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-1792676367399829",
-        enable_page_level_ads: true
+        google_ad_client: "ca-pub-1792676367399829"
       });
     </script>
     <!-- LEGACY -->
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-7538390076513661",
-        enable_page_level_ads: false
+        google_ad_client: "ca-pub-7538390076513661"
       });
     </script>
     <!-- Google AdSense -->
