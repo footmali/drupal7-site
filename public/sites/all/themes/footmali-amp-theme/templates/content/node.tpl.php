@@ -104,39 +104,5 @@
         <?php print render($top_related_articles_block['content']); ?>
     </div>
   </div>
-
-
-  <div class="amp-ad">
-      <!-- <amp-ad
-          type="adsense"
-          layout="responsive"
-          width="300"
-          height="250"
-          data-ad-client="ca-pub-7538390076513661"
-          data-ad-slot="7797165916"></amp-ad> -->
-  </div>
-  <div class="amp-ad">
-      <!-- <amp-ad
-          type="adsense"
-          layout="responsive"
-          width="300"
-          height="250"
-          data-ad-client="ca-pub-7538390076513661"
-          data-ad-slot="7797165916"></amp-ad> -->
-  </div>
-
-  
-
 </article>
 
-<!-- <div class="click-feed adsense-recommended-content amp-ad">
-    <h3>Vous Aimerez Aussi</h3>
-    <amp-ad
-        type="adsense"
-        layout="responsive"
-        width="300"
-        height="510"
-        data-ad-format="autorelaxed"
-        data-ad-client="ca-pub-7538390076513661"
-        data-ad-slot="1750632314"></amp-ad>
-</div> -->

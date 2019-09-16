@@ -672,8 +672,8 @@ ul.pager .pager-current {
 }
 
 /* TEMP */
-/* .ads,
-li.ads-wrapper, */
+.ads,
+li.ads-wrapper,
 .social-links {
     display: none!important;
 }

@@ -77,6 +77,8 @@
     <!-- Google Tag Manager -->
     <amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-M2KH7SH&gtm.url=SOURCE_URL" data-credentials="include"></amp-analytics>
 
+    <amp-auto-ads type="adsense"data-ad-client="ca-pub-7538390076513661"></amp-auto-ads>
+
     <?php if (!empty($amp_skip_link)): ?>
       <?php print render($amp_skip_link); ?>
     <?php endif; ?>
@@ -91,11 +93,7 @@
       var jq = document.querySelector('#jq');
       jq.addEventListener('load', function() {
         // in article ads
-        var article_ad1 = jQuery('article > .amp-ad:eq(0)');
-        var article_ad2 = jQuery('article > .amp-ad:eq(1)');
         var related_article = jQuery('.top-related-articles');
-        jQuery('article .field-name-body p:eq(0)').append(article_ad1);
-        jQuery('article .field-name-body p:eq(1)').append(article_ad2);
         jQuery('article .field-name-body p:eq(1)').append(related_article);
       });
     </script>
