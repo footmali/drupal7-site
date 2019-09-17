@@ -91,7 +91,7 @@
             <div class="article-body">
                 <div class="article-meta">
                     <span class="article-author"><?php echo footmali_get_article_author($node); ?></a></span>
-                    <span class="article-date"><?php echo footmali_get_article_published_date($node); ?></span>
+                    <span class="article-date"><?php setlocale(LC_TIME, 'fr_FR'); echo strftime('%d %B %Y', $node->created); ?></span>
                 </div>
                 <?php echo footmali_render_share_small($nid, $title); ?>
                 <?php print render($content['body']); ?>

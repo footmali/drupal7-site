@@ -35,7 +35,7 @@ function footmali_get_article_published_date($node)
 {
     setlocale(LC_TIME, 'fr_FR');
     $published_on = strftime('%d %B %Y', $node->created);
-    $published_on .= $node->created != $node->changed ? ' | Mis à jour le '.strftime('%d %B %Y', $node->changed) : '';
+    // $published_on .= $node->created != $node->changed ? ' | Mis à jour le '.strftime('%d %B %Y', $node->changed) : '';
 
     return $published_on;
 }
