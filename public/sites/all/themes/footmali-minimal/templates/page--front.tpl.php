@@ -116,10 +116,9 @@
         </div>
 
         <div id="content" class="row clearfix">
-            <div class="ads">
-                <!-- <span class="heading">publicité</span> -->
+            <!-- <div class="ads">
+                <span class="heading">publicité</span>
                 <div id="header-banner">
-                    <!-- header_banner -->
                     <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-client="ca-pub-1792676367399829"
@@ -130,7 +129,7 @@
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
-            </div>
+            </div> -->
 
             <div id="column1" class="clearfix">
                 <?php if ($page['content_homepage']){ print render($page['content_homepage']); } ?>
