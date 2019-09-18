@@ -84,6 +84,14 @@
       </div>
     </div></header> <!-- /.section, /#header -->
 
+    <amp-ad width="100vw" height=320
+        type="adsense"
+        data-ad-client="ca-pub-1792676367399829"
+        data-ad-slot="5413856475"
+        data-auto-format="rspv"
+        data-full-width>
+      <div overflow></div>
+    </amp-ad>
     <div id="main-wrapper"><main role="main" id="main" class="amp-main clearfix">
 
         <div id="content" class="amp-main__content column"><div class="section">

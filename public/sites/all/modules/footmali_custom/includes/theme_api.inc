@@ -371,22 +371,22 @@ function theme_footmali_featured_2row($variables) {
                 'article_list' => TRUE,
             ));
 
-            // $output .= '<li class="ads-wrapper" style="display: block !important;">';
-            //     $output .= '<div class="ads" style="display: block !important;">';
-            //         // $output .= '<span class="heading">publicité</span>';
-            //         $output .= '<div id="featured_article">';
-            //         $output .=  '<ins class="adsbygoogle"';
-            //             $output .= 'style="display:block"';
-            //             $output .= 'data-ad-client="ca-pub-1792676367399829"';
-            //             $output .= 'data-ad-slot="2972328290"';
-            //             $output .= 'data-ad-format="auto"';
-            //             $output .= 'data-full-width-responsive="true"></ins>';
-            //         $output .=  '<script>';
-            //         $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
-            //         $output .=  '</script>';
-            //         $output .= '</div>';
-            //     $output .= '</div>';
-            // $output .=  '</li>';
+            $output .= '<li class="ads-wrapper" style="display: block !important;">';
+                $output .= '<div class="ads" style="display: block !important;">';
+                    // $output .= '<span class="heading">publicité</span>';
+                    $output .= '<div id="featured_article">';
+                    $output .=  '<ins class="adsbygoogle"';
+                        $output .= 'style="display:block"';
+                        $output .= 'data-ad-client="ca-pub-1792676367399829"';
+                        $output .= 'data-ad-slot="2972328290"';
+                        $output .= 'data-ad-format="auto"';
+                        $output .= 'data-full-width-responsive="true"></ins>';
+                    $output .=  '<script>';
+                    $output .=  '(adsbygoogle = window.adsbygoogle || []).push({});';
+                    $output .=  '</script>';
+                    $output .= '</div>';
+                $output .= '</div>';
+            $output .=  '</li>';
         $output .= '</ul>';
     $output .= '</div>';
 
