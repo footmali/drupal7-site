@@ -118,8 +118,8 @@
 
         <div id="content" class="row clearfix">
             <div id="column1" class="clearfix">
-                <!-- <div class="ads">
-                    <span class="heading">publicité</span>
+                <div class="ads">
+                    <!-- <span class="heading">publicité</span> -->
                     <div id="header-banner">
                         <ins class="adsbygoogle"
                             style="display:block"
@@ -131,7 +131,7 @@
                             (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
                     </div>
-                </div> -->
+                </div>
                 <?php print render($title_prefix); ?>
                     <?php if ($title): ?><h1 class="title entry-title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
                 <?php print render($title_suffix); ?>
