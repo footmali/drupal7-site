@@ -117,7 +117,7 @@
 
         <div id="content" class="row clearfix">
             <div class="ads">
-                <span class="heading">publicité</span>
+                <!-- <span class="heading">publicité</span> -->
                 <div id="header-banner">
                     <!-- header_banner -->
                     <ins class="adsbygoogle"

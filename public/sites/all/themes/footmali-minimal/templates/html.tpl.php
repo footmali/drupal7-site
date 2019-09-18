@@ -104,7 +104,7 @@ global $theme_path;
       var article_ad2 = jQuery('#article .ads:eq(1)');
       var related_article = jQuery('.top-related-articles');
       jQuery('#article .field-name-body p:eq(0)').append(article_ad1);
-      jQuery('#article .field-name-body p:eq(1)').append(article_ad2);
+      jQuery('#article .field-name-body p:eq(3)').append(article_ad2);
       jQuery('#article .field-name-body p:eq(1)').append(related_article);
 
       // in actu ads
