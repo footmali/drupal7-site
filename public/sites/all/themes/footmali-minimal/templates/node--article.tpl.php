@@ -103,11 +103,33 @@
             </div>
             <div class="ads">
                 <span class="heading">publicité</span>
-                <div id="in_between_article_1"></div>
+                <div id="between_article_text_1">
+                    <!-- between_article_text_1 -->
+                    <ins class="adsbygoogle"
+                        style="display:block; text-align:center;"
+                        data-ad-layout="in-article"
+                        data-ad-format="fluid"
+                        data-ad-client="ca-pub-1792676367399829"
+                        data-ad-slot="1579742613"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
             </div>
             <div class="ads">
                 <span class="heading">publicité</span>
-                <div id="in_between_article_2"></div>
+                <div id="between_article_text_2">
+                    <!-- between_article_text_2 -->
+                    <ins class="adsbygoogle"
+                        style="display:block; text-align:center;"
+                        data-ad-layout="in-article"
+                        data-ad-format="fluid"
+                        data-ad-client="ca-pub-1792676367399829"
+                        data-ad-slot="1787626173"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
             </div>
 
             <!-- <div class="click-feed">

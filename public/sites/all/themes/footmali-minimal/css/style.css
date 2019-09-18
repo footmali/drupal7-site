@@ -513,6 +513,14 @@ ul.pager .pager-current {
     border: none;
 }
 
+/* #block-footmali-blocks-featured-articles-2row .ads-wrapper {
+    display: none !important;
+}
+
+#featured_article .adsbygoogle {
+    display: none !important;
+} */
+
 /* ==============
     tablet 
 ================= */
@@ -526,6 +534,18 @@ ul.pager .pager-current {
     #main-content {
         max-width: 660px;
         margin: 0 auto;
+    }
+
+    #page-title {
+        padding: 15px 25px;
+    }
+
+    .article-large {
+        padding-top: 15px;
+    }
+
+    .article-body {
+        padding: 0 25px;
     }
 
     .article-image img {
@@ -640,6 +660,10 @@ ul.pager .pager-current {
         display: block;
     }
 
+    /* #featured_article .adsbygoogle {
+        display: inline-block;
+    } */
+
     .cc-window {
         margin-bottom: 0;
     }
@@ -672,8 +696,8 @@ ul.pager .pager-current {
 }
 
 /* TEMP */
-.ads,
-li.ads-wrapper,
+/* .ads,
+li.ads-wrapper, */
 .social-links {
     display: none!important;
 }

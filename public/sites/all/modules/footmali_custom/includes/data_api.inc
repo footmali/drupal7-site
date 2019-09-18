@@ -164,6 +164,7 @@ function featured_articles() {
         ->propertyCondition('status', NODE_PUBLISHED)
         ->fieldCondition('field_featured', 'value', '1', '=')
         ->range(0, 5)
+        ->propertyOrderBy('sticky', 'DESC')
         ->propertyOrderBy('created', 'DESC');
 
     $articles = array();
