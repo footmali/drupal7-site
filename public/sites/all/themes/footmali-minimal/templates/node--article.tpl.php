@@ -105,7 +105,7 @@
                 <!-- <span class="heading">publicité</span> -->
                 <div id="between_article_text_1">
                     <!-- between_article_text_1 -->
-                    <ins class="adsbygoogle"
+                    <!-- <ins class="adsbygoogle"
                         style="display:block; text-align:center;"
                         data-ad-layout="in-article"
                         data-ad-format="fluid"
@@ -113,14 +113,21 @@
                         data-ad-slot="1579742613"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    </script> -->
+
+                    <!-- /21851464166/FM_between_article_text_1 -->
+                    <div id='div-gpt-ad-1568924190561-0'>
+                        <script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1568924190561-0'); });
+                        </script>
+                    </div>
                 </div>
             </div>
             <div class="ads">
                 <!-- <span class="heading">publicité</span> -->
                 <div id="between_article_text_2">
                     <!-- between_article_text_2 -->
-                    <ins class="adsbygoogle"
+                    <!-- <ins class="adsbygoogle"
                         style="display:block; text-align:center;"
                         data-ad-layout="in-article"
                         data-ad-format="fluid"
@@ -128,7 +135,14 @@
                         data-ad-slot="1787626173"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    </script> -->
+
+                    <!-- /21851464166/FM_between_article_text_2 -->
+                    <div id='div-gpt-ad-1568924114183-0'>
+                        <script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1568924114183-0'); });
+                        </script>
+                    </div>
                 </div>
             </div>
 
