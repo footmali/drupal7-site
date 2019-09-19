@@ -75,8 +75,7 @@ global $theme_path;
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
               google_ad_client: "ca-pub-1792676367399829",
-              enable_page_level_ads: true,
-              overlays: {bottom: true}
+              enable_page_level_ads: true
         });
     </script>
     <!-- Google AdSense -->
