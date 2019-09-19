@@ -373,6 +373,7 @@ ul.pager .pager-current {
     width: 100%;
     min-height: 50px;
     margin: 8px 0;
+    text-align: center;
 }
 
 .ads .heading {
@@ -637,6 +638,7 @@ ul.pager .pager-current {
     .view-display-id-video_page .ads {
         margin: 0 0 15px;
         min-height: auto;
+        text-align: center;
     }
 
     .view-display-id-video_page .item-list ul li.video-card .video-thumbnail {
