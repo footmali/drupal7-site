@@ -121,7 +121,7 @@
                 <div class="ads">
                     <!-- <span class="heading">publicité</span> -->
                     <div id="header-banner">
-                        <ins class="adsbygoogle"
+                        <!-- <ins class="adsbygoogle"
                             style="display:block"
                             data-ad-client="ca-pub-1792676367399829"
                             data-ad-slot="5413856475"
@@ -129,7 +129,14 @@
                             data-full-width-responsive="true"></ins>
                         <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+                        </script> -->
+
+                        <!-- /21851464166/FM_header_banner -->
+                        <div id='div-gpt-ad-1568923278328-0'>
+                            <script>
+                                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1568923278328-0'); });
+                            </script>
+                        </div>
                     </div>
                 </div>
                 <?php print render($title_prefix); ?>

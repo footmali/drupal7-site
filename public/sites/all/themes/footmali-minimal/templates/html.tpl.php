@@ -78,7 +78,21 @@ global $theme_path;
               enable_page_level_ads: true
         });
     </script>
-    <!-- Google AdSense -->
+    <!-- End Google AdSense -->
+
+    <!-- Google Ad Manager -->
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        googletag.defineSlot('/21851464166/FM_header_banner', [[468, 60], [300, 250], [320, 50], [234, 60], [728, 90], [300, 600]], 'div-gpt-ad-1568923278328-0').addService(googletag.pubads());
+        googletag.defineSlot('/21851464166/FM_between_article_text_1', [[468, 60], [970, 90], [300, 100], [200, 200], [320, 50], [180, 150], [125, 125], [250, 250], [728, 90], [234, 60]], 'div-gpt-ad-1568924190561-0').addService(googletag.pubads());
+        googletag.defineSlot('/21851464166/FM_between_article_text_2', [[468, 60], [300, 100], [200, 200], [728, 90], [320, 50], [125, 125], [250, 250], [234, 60], [180, 150]], 'div-gpt-ad-1568924114183-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
+    <!-- End Google Ad Manager -->
 
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes; ?>>
