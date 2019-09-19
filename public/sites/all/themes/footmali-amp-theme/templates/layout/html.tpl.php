@@ -94,7 +94,11 @@
       var jq = document.querySelector('#jq');
       jq.addEventListener('load', function() {
         // in article ads
+        var article_ad1 = jQuery('#article .ads.node:eq(0)');
+        var article_ad2 = jQuery('#article .ads.node:eq(1)');
         var related_article = jQuery('.top-related-articles');
+        jQuery('#article .field-name-body p:eq(0)').append(article_ad1);
+        jQuery('#article .field-name-body p:eq(3)').append(article_ad2);
         jQuery('article .field-name-body p:eq(1)').append(related_article);
       });
     </script>

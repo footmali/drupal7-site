@@ -98,6 +98,32 @@
     <?php print render($content); ?>
     <?php echo footmali_amp_render_share_small($nid, $title); ?>
 
+    <div class="ads node">
+      <div id="between_article_text_1">
+        <amp-ad width="100vw" height=320
+            type="adsense"
+            data-ad-client="ca-pub-1792676367399829"
+            data-ad-slot="4461304241"
+            data-auto-format="rspv"
+            data-full-width>
+          <div overflow></div>
+        </amp-ad>
+      </div>
+    </div>
+
+    <div class="ads node">
+      <div id="between_article_text_1">
+        <amp-ad width="100vw" height=320
+            type="adsense"
+            data-ad-client="ca-pub-1792676367399829"
+            data-ad-slot="6258791014"
+            data-auto-format="rspv"
+            data-full-width>
+          <div overflow></div>
+        </amp-ad>
+      </div>
+    </div>
+    
     <?php $top_related_articles_block = module_invoke('views', 'block_view', 'news-top_related_articles'); ?>
     <div class="top-related-articles">
         <h3>Lire Aussi</h3>
