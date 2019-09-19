@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="ads">
-                <span class="heading">publicité</span>
+                <!-- <span class="heading">publicité</span> -->
                 <div id="between_article_text_1">
                     <!-- between_article_text_1 -->
                     <ins class="adsbygoogle"
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="ads">
-                <span class="heading">publicité</span>
+                <!-- <span class="heading">publicité</span> -->
                 <div id="between_article_text_2">
                     <!-- between_article_text_2 -->
                     <ins class="adsbygoogle"
