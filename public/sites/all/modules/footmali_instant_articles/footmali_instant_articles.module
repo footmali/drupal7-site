@@ -104,6 +104,38 @@ function footmali_instant_articles_dev_feed() {
 
                     <!— Article body goes here -->
                     <?php echo render($node->body[LANGUAGE_NONE][0]['value']); ?>
+
+                    <figure class="op-ad">
+                      <iframe height="300" width="250">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- amp_between_article_text_1 -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1792676367399829"
+                            data-ad-slot="4461304241"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </iframe>
+                    </figure>
+
+                    <figure class="op-ad">
+                      <iframe height="300" width="250">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- amp_between_article_text_1 -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1792676367399829"
+                            data-ad-slot="6258791014"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </iframe>
+                    </figure>
                     
                     <footer>
                       <ul class="op-related-articles">
@@ -213,11 +245,50 @@ function footmali_instant_articles_prod_feed() {
 
                     <!— Article body goes here -->
                     <?php echo render($node->body[LANGUAGE_NONE][0]['value']); ?>
+
+                    <figure class="op-ad">
+                      <iframe height="300" width="250">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- amp_between_article_text_1 -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1792676367399829"
+                            data-ad-slot="4461304241"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </iframe>
+                    </figure>
+
+                    <figure class="op-ad">
+                      <iframe height="300" width="250">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- amp_between_article_text_1 -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1792676367399829"
+                            data-ad-slot="6258791014"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </iframe>
+                    </figure>
                     
                     <footer>
                       <!— Article footer goes here -->
                       <small>Footmali © <?php echo date('Y'); ?></small>
-                      <ul class="op-related-articles"></ul>
+                      <ul class="op-related-articles">
+                        <?php $related = false ?>
+                        <?php if($related = get_next_article_link($node->nid)): ?>
+                        <?php else: ?>
+                          <?php $related = get_previous_article_link($node->nid); ?>
+                        <?php endif; ?>
+                        <li><a href="<?php echo $related; ?>"></a></li>
+                      </ul>
                     </footer>
                   </article>
                 </body>
