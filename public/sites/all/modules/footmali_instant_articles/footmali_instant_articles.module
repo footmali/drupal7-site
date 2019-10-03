@@ -60,20 +60,20 @@ function footmali_instant_articles_dev_feed() {
                   <meta property="fb:use_automatic_ad_placement" content="true">
                 </head>
                 <body>
-
-                  <!-- Google Tag Manager -->
-                  <figure class="op-tracker">
-                      <iframe>
-                        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                        })(window,document,'script','dataLayer','GTM-PZ9QB3K');</script>
-                      </iframe>
-                  </figure>
-                  <!-- End Google Tag Manager -->
-
                   <article>
+
+                    <!-- Google Tag Manager -->
+                    <figure class="op-tracker">
+                        <iframe>
+                          <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                          })(window,document,'script','dataLayer','GTM-PZ9QB3K');</script>
+                        </iframe>
+                    </figure>
+                    <!-- End Google Tag Manager -->
+
                     <header>
                       <!— Article header goes here -->
                       <figure data-mode=aspect-fit>
@@ -202,19 +202,20 @@ function footmali_instant_articles_prod_feed() {
                 </head>
                 <body>
 
-                  <!-- Google Tag Manager -->
-                  <figure class="op-tracker">
-                      <iframe>
-                        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                        })(window,document,'script','dataLayer','GTM-PZ9QB3K');</script>
-                      </iframe>
-                  </figure>
-                  <!-- End Google Tag Manager -->
-
                   <article>
+
+                    <!-- Google Tag Manager -->
+                    <figure class="op-tracker">
+                        <iframe>
+                          <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                          })(window,document,'script','dataLayer','GTM-PZ9QB3K');</script>
+                        </iframe>
+                    </figure>
+                    <!-- End Google Tag Manager -->
+
                     <header>
                       <!— Article header goes here -->
                       <figure data-mode=aspect-fit>
