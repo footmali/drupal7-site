@@ -60,6 +60,19 @@ function footmali_instant_articles_dev_feed() {
                   <meta property="fb:use_automatic_ad_placement" content="true">
                 </head>
                 <body>
+
+                  <!-- Google Tag Manager -->
+                  <figure class="op-tracker">
+                      <iframe>
+                        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','GTM-PZ9QB3K');</script>
+                      </iframe>
+                  </figure>
+                  <!-- End Google Tag Manager -->
+
                   <article>
                     <header>
                       <!— Article header goes here -->
@@ -91,29 +104,49 @@ function footmali_instant_articles_dev_feed() {
 
                     <!— Article body goes here -->
                     <?php echo render($node->body[LANGUAGE_NONE][0]['value']); ?>
+
+                    <figure class="op-ad">
+                      <iframe height="300" width="250">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- amp_between_article_text_1 -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1792676367399829"
+                            data-ad-slot="4461304241"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </iframe>
+                    </figure>
+
+                    <figure class="op-ad">
+                      <iframe height="300" width="250">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- amp_between_article_text_1 -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1792676367399829"
+                            data-ad-slot="6258791014"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </iframe>
+                    </figure>
                     
                     <footer>
-                      <ul class="op-related-articles"></ul>
+                      <ul class="op-related-articles">
+                        <?php $related = false ?>
+                        <?php if($related = get_next_article_link($node->nid)): ?>
+                        <?php else: ?>
+                          <?php $related = get_previous_article_link($node->nid); ?>
+                        <?php endif; ?>
+                        <li><a href="<?php echo $related; ?>"></a></li>
+                      </ul>
                     </footer>
-
-                    <figure class="op-tracker">
-                        <iframe>
-                        	<!-- Include full analytics code here -->
-                          <script>
-                            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                            ga('create', 'UA-20124674-1', 'auto');
-                            ga('require', 'displayfeatures');
-                            ga('set', 'campaignSource', 'Facebook');
-                            ga('set', 'campaignMedium', 'Social Instant Article');
-                            ga('send', 'pageview', {"title": "<?php echo check_plain($node->title); ?>"});
-
-                          </script>
-                        </iframe>
-                    </figure>
                   </article>
                 </body>
               </html>
@@ -168,6 +201,19 @@ function footmali_instant_articles_prod_feed() {
                   <meta property="fb:use_automatic_ad_placement" content="true">
                 </head>
                 <body>
+
+                  <!-- Google Tag Manager -->
+                  <figure class="op-tracker">
+                      <iframe>
+                        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','GTM-PZ9QB3K');</script>
+                      </iframe>
+                  </figure>
+                  <!-- End Google Tag Manager -->
+
                   <article>
                     <header>
                       <!— Article header goes here -->
@@ -199,30 +245,51 @@ function footmali_instant_articles_prod_feed() {
 
                     <!— Article body goes here -->
                     <?php echo render($node->body[LANGUAGE_NONE][0]['value']); ?>
+
+                    <figure class="op-ad">
+                      <iframe height="300" width="250">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- amp_between_article_text_1 -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1792676367399829"
+                            data-ad-slot="4461304241"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </iframe>
+                    </figure>
+
+                    <figure class="op-ad">
+                      <iframe height="300" width="250">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- amp_between_article_text_1 -->
+                        <ins class="adsbygoogle"
+                            style="display:block"
+                            data-ad-client="ca-pub-1792676367399829"
+                            data-ad-slot="6258791014"
+                            data-ad-format="auto"
+                            data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                      </iframe>
+                    </figure>
                     
                     <footer>
                       <!— Article footer goes here -->
                       <small>Footmali © <?php echo date('Y'); ?></small>
-                      <ul class="op-related-articles"></ul>
+                      <ul class="op-related-articles">
+                        <?php $related = false ?>
+                        <?php if($related = get_next_article_link($node->nid)): ?>
+                        <?php else: ?>
+                          <?php $related = get_previous_article_link($node->nid); ?>
+                        <?php endif; ?>
+                        <li><a href="<?php echo $related; ?>"></a></li>
+                      </ul>
                     </footer>
-
-                    <figure class="op-tracker">
-                        <iframe>
-                        	<!-- Include full analytics code here -->
-                          <script>
-                            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                            ga('create', 'UA-20124674-1', 'auto');
-                            ga('require', 'displayfeatures');
-                            ga('set', 'campaignSource', 'Facebook');
-                            ga('set', 'campaignMedium', 'Social Instant Article');
-                            ga('send', 'pageview', {"title": "<?php echo check_plain($node->title); ?>"});
-                          </script>
-                        </iframe>
-                    </figure>
                   </article>
                 </body>
               </html>
@@ -297,4 +364,42 @@ function footmali_instant_articles_trim_paragraph($string, $your_desired_width) 
         if ($length > $your_desired_width) { break; }
     }
     return implode(array_slice($parts, 0, $last_part));
+}
+
+function get_next_article_link($nid)
+{
+    $next_article_query = new EntityFieldQuery();
+    $next_article_query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'article')
+        ->propertyCondition('status', NODE_PUBLISHED, '=')
+        ->propertyCondition('nid', $nid, '>')
+        ->range(0, 1)
+        ->propertyOrderBy('created', 'ASC');
+
+    $next_article_result = $next_article_query->execute();
+    $next_article_id = count($next_article_result) > 0 ? array_keys($next_article_result['node']) : false;
+
+    $node = node_load(current($next_article_id));
+    $path = 'node/' . $node->nid;
+
+    return $next_article_id ? url($path, array('absolute' => true)) : false;
+}
+
+function get_previous_article_link($nid)
+{
+    $prev_article_query = new EntityFieldQuery();
+    $prev_article_query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'article')
+        ->propertyCondition('status', NODE_PUBLISHED, '=')
+        ->propertyCondition('nid', $nid, '<')
+        ->range(0, 1)
+        ->propertyOrderBy('created', 'DESC');
+
+    $prev_article_result = $prev_article_query->execute();
+    $prev_article_id = count($prev_article_result) ? array_keys($prev_article_result['node']) : false;
+
+    $node = node_load(current($prev_article_id));
+    $path = 'node/' . $node->nid;
+
+    return $prev_article_id ? url($path, array('absolute' => true)) : false;
 }
